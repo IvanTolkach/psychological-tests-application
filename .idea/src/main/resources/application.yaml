@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: psychologicalTestsApplication
+
+  docker:
+    compose:
+      enabled: false
+
+  datasource:
+    url: jdbc:postgresql://localhost/psychologicalTestsDB
+  # spring.datasource.username=${DB_USERNAME}
+  # spring.datasource.password=${DB_PASSWORD}
+    username: postgres
+    password: 1111
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
