@@ -33,6 +33,10 @@ public class StudentService implements StudentUseCase {
                 .orElseThrow(() -> new IllegalArgumentException("Faculty not found with id: " + student.getFacultyId()));
 
         if (student.getId() == null) {
+            List<Student> existingStudents = studentRepository.findByFilter(student);
+            if (!existingStudents.isEmpty()) {
+                return existingStudents.getFirst();
+            }
             return studentRepository.save(student);
         } else {
             Student existing = studentRepository.findById(student.getId())
