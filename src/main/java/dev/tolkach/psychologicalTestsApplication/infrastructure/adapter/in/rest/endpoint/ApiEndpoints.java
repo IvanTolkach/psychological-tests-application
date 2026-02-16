@@ -9,4 +9,8 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{studentId}";
     }
+
+    public static class Faculty {
+        public static final String SEARCH = API_BASE + "/faculties" + "/search";
+    }
 }

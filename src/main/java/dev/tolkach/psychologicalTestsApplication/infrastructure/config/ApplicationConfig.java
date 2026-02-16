@@ -1,6 +1,8 @@
 package dev.tolkach.psychologicalTestsApplication.infrastructure.config;
 
+import dev.tolkach.psychologicalTestsApplication.application.service.FacultyService;
 import dev.tolkach.psychologicalTestsApplication.application.service.StudentService;
+import dev.tolkach.psychologicalTestsApplication.domain.port.in.FacultyUseCase;
 import dev.tolkach.psychologicalTestsApplication.domain.port.in.StudentUseCase;
 import dev.tolkach.psychologicalTestsApplication.domain.port.out.FacultyRepository;
 import dev.tolkach.psychologicalTestsApplication.domain.port.out.StudentRepository;
@@ -13,5 +15,10 @@ public class ApplicationConfig {
     @Bean
     public StudentUseCase studentUseCase(StudentRepository studentRepository, FacultyRepository facultyRepository) {
         return new StudentService(studentRepository, facultyRepository);
+    }
+
+    @Bean
+    public FacultyUseCase facultyUseCase(FacultyRepository facultyRepository) {
+        return new FacultyService(facultyRepository);
     }
 }

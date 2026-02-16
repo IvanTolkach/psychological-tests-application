@@ -4,38 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/StudentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Faculty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/StudentUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/FacultyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/StudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/StudentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/StudentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/StudentEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/StudentDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/FacultyEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/StudentEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/FacultyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/StudentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/FacultyRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaFacultyRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaStudentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/StudentRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/StudentSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/changes/001-init-schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Load of unversioned files">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/FacultyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/FacultyUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/FacultyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/FacultyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/FacultyEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/FacultyDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/FacultySpecification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/FacultyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/FacultyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/FacultyRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/FacultyRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaFacultyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaFacultyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +142,7 @@
     "Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (2).executor": "Run",
     "Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3).executor": "Run",
     "Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle.executor": "Run",
+    "Gradle.psychologicaltestsapplication [dependencies].executor": "Run",
     "Gradle.psychologicaltestsapplication.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -169,6 +152,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHELLCHECK.PATH": "C:\\Users\\PC\\AppData\\Roaming\\JetBrains\\IntelliJIdea2024.3\\plugins\\Shell Script\\shellcheck.exe",
     "Spring Boot.PsychologicalTestsApplication.executor": "Run",
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
@@ -189,29 +173,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.PsychologicalTestsApplication">
-    <configuration name="C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (2)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea/build.gradle" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
     <configuration name="C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -246,6 +207,31 @@
         </option>
         <option name="taskNames">
           <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="psychologicaltestsapplication [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
@@ -301,18 +287,18 @@
     </configuration>
     <list>
       <item itemvalue="Gradle.psychologicaltestsapplication" />
+      <item itemvalue="Gradle.psychologicaltestsapplication [dependencies]" />
       <item itemvalue="Gradle..idea" />
-      <item itemvalue="Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (2)" />
       <item itemvalue="Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3)" />
       <item itemvalue="Spring Boot.PsychologicalTestsApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.PsychologicalTestsApplication" />
+        <item itemvalue="Gradle.psychologicaltestsapplication [dependencies]" />
         <item itemvalue="Gradle.psychologicaltestsapplication" />
         <item itemvalue="Gradle..idea" />
         <item itemvalue="Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3)" />
-        <item itemvalue="Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -330,8 +316,25 @@
       <workItem from="1770814867510" duration="4730000" />
       <workItem from="1770902940440" duration="5092000" />
       <workItem from="1770971185817" duration="12140000" />
-      <workItem from="1771231099444" duration="4992000" />
+      <workItem from="1771231099444" duration="12056000" />
     </task>
+    <task id="LOCAL-00001" summary="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter.">
+      <option name="closed" value="true" />
+      <created>1771236354183</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1771236354183</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Load of unversioned files">
+      <option name="closed" value="true" />
+      <created>1771236397183</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1771236397183</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +350,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter." />
+    <MESSAGE value="Load of unversioned files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Load of unversioned files" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
