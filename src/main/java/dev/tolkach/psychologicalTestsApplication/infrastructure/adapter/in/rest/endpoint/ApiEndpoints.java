@@ -11,6 +11,15 @@ public final class ApiEndpoints {
     }
 
     public static class Faculty {
-        public static final String SEARCH = API_BASE + "/faculties" + "/search";
+        public static final String BASE = API_BASE + "/faculties";
+        public static final String SEARCH = BASE + "/search";
+    }
+
+    public static class Admin {
+        public static final String BASE = API_BASE + "/admins";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{adminId}";
+        public static final String CHANGE_PASSWORD = BY_ID + "/change-password";
+
     }
 }
