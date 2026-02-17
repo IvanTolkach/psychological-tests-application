@@ -1,14 +1,8 @@
 package dev.tolkach.psychologicalTestsApplication.infrastructure.config;
 
-import dev.tolkach.psychologicalTestsApplication.application.service.AdminService;
-import dev.tolkach.psychologicalTestsApplication.application.service.FacultyService;
-import dev.tolkach.psychologicalTestsApplication.application.service.StudentService;
-import dev.tolkach.psychologicalTestsApplication.domain.port.in.AdminUseCase;
-import dev.tolkach.psychologicalTestsApplication.domain.port.in.FacultyUseCase;
-import dev.tolkach.psychologicalTestsApplication.domain.port.in.StudentUseCase;
-import dev.tolkach.psychologicalTestsApplication.domain.port.out.AdminRepository;
-import dev.tolkach.psychologicalTestsApplication.domain.port.out.FacultyRepository;
-import dev.tolkach.psychologicalTestsApplication.domain.port.out.StudentRepository;
+import dev.tolkach.psychologicalTestsApplication.application.service.*;
+import dev.tolkach.psychologicalTestsApplication.domain.port.in.*;
+import dev.tolkach.psychologicalTestsApplication.domain.port.out.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -35,5 +29,20 @@ public class ApplicationConfig {
     @Bean
     public AdminUseCase adminUseCase(AdminRepository adminRepository, PasswordEncoder passwordEncoder) {
         return new AdminService(adminRepository, passwordEncoder);
+    }
+
+    @Bean
+    public MethodologyUseCase methodologyUseCase(MethodologyRepository methodologyRepository) {
+        return new MethodologyService(methodologyRepository);
+    }
+
+    @Bean
+    public ScaleUseCase scaleUseCase(ScaleRepository scaleRepository, MethodologyRepository methodologyRepository) {
+        return new ScaleService(scaleRepository, methodologyRepository);
+    }
+
+    @Bean
+    public ScoreRangeUseCase scoreRangeUseCase(ScoreRangeRepository scoreRangeRepository, ScaleRepository scaleRepository) {
+        return new ScoreRangeService(scoreRangeRepository, scaleRepository);
     }
 }
