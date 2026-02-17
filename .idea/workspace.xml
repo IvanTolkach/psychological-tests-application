@@ -4,23 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Add the entire list of BNTU faculties to the Liquibase query.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/AdminService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/AdminRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/AdminUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/AdminRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/AdminDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/AdminEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/AdminDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/AdminEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/AdminMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/AdminRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaAdminRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/AdminSpecification.java" afterDir="false" />
+    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Add raw Admin entity with basic functionality">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/MethodologyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScaleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScoreRangeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Methodology.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Scale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/ScoreRange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/MethodologyUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/ScaleUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/ScoreRangeUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/MethodologyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/ScaleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/ScoreRangeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/MethodologyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/ScaleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/ScoreRangeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/MethodologyDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/ScaleDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/ScoreRangeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/MethodologyEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ScaleEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ScoreRangeEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/MethodologyDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/ScaleDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/ScoreRangeDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/MethodologyEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/ScaleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/ScoreRangeEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/MethodologyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/ScaleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/ScoreRangeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaMethodologyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaScaleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaScoreRangeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/MethodologyRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/ScaleRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/ScoreRangeRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/MethodologySpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/ScaleSpecification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/ScoreRangeSpecification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/AdminDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/AdminDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/FacultyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/FacultyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/StudentDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/AdminDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/AdminDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/FacultyDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/FacultyDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/StudentDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/StudentDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/AdminMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -324,7 +356,7 @@
       <workItem from="1770902940440" duration="5092000" />
       <workItem from="1770971185817" duration="12140000" />
       <workItem from="1771231099444" duration="19053000" />
-      <workItem from="1771317211548" duration="8052000" />
+      <workItem from="1771317211548" duration="19927000" />
     </task>
     <task id="LOCAL-00001" summary="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter.">
       <option name="closed" value="true" />
@@ -366,7 +398,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771251746867</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add raw Admin entity with basic functionality">
+      <option name="closed" value="true" />
+      <created>1771328491027</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1771328491027</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +429,8 @@
     <MESSAGE value="Add faculty findByFilter endpoint" />
     <MESSAGE value="Add feature that duplicated students won't be added to the DB" />
     <MESSAGE value="Add the entire list of BNTU faculties to the Liquibase query." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add the entire list of BNTU faculties to the Liquibase query." />
+    <MESSAGE value="Add raw Admin entity with basic functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add raw Admin entity with basic functionality" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
