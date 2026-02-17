@@ -2,7 +2,6 @@ package dev.tolkach.psychologicalTestsApplication.infrastructure.adapter.in.rest
 
 import dev.tolkach.psychologicalTestsApplication.domain.model.Gender;
 
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -15,7 +14,6 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 public class StudentDto {
-    @Id
     private UUID id;
 
     @NotBlank(message = "Sname cannot be blank")
