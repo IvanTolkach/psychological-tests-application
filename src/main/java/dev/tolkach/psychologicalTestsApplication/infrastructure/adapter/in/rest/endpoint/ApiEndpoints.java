@@ -20,6 +20,23 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{adminId}";
         public static final String CHANGE_PASSWORD = BY_ID + "/change-password";
+    }
 
+    public static class Methodology {
+        public static final String BASE = API_BASE + "/methodologies";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{methodologyId}";
+    }
+
+    public static class Scale {
+        public static final String BASE = API_BASE + "/scales";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{scaleId}";
+    }
+
+    public static class ScoreRange {
+        public static final String BASE = API_BASE + "/score-ranges";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{scoreRangeId}";
     }
 }
