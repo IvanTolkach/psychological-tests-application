@@ -60,4 +60,9 @@ public class ApplicationConfig {
     public AnswerOptionUseCase answerOptionUseCase(AnswerOptionRepository answerOptionRepository, QuestionRepository questionRepository) {
         return new AnswerOptionService(answerOptionRepository, questionRepository);
     }
+
+    @Bean
+    public ScaleQuestionUseCase scaleQuestionUseCase(ScaleQuestionRepository scaleQuestionRepository, ScaleRepository scaleRepository, QuestionRepository questionRepository) {
+        return new ScaleQuestionService(scaleQuestionRepository, scaleRepository, questionRepository);
+    }
 }

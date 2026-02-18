@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Add @NoArgsConstructor annotations">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/AnswerOptionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/AnswerOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/AnswerOptionUseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/AnswerOptionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/AnswerOptionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/AnswerOptionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/AnswerOptionEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/AnswerOptionDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/AnswerOptionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/AnswerOptionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/AnswerOptionRepositoryAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaAnswerOptionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/AnswerOptionSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Add AnswerOption entity and its CRUD">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScaleQuestionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/ScaleQuestion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/ScaleQuestionUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/ScaleQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/ScaleQuestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/ScaleQuestionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ScaleQuestionEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/ScaleQuestionDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/ScaleQuestionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/ScaleQuestionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaScaleQuestionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/ScaleQuestionRepositoryAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/ScaleQuestionSpecification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" afterDir="false" />
     </list>
@@ -324,7 +323,7 @@
       <workItem from="1770971185817" duration="12140000" />
       <workItem from="1771231099444" duration="19053000" />
       <workItem from="1771317211548" duration="20261000" />
-      <workItem from="1771405348610" duration="15849000" />
+      <workItem from="1771405348610" duration="18643000" />
     </task>
     <task id="LOCAL-00001" summary="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter.">
       <option name="closed" value="true" />
@@ -446,7 +445,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771419521782</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add AnswerOption entity and its CRUD">
+      <option name="closed" value="true" />
+      <created>1771421370748</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1771421370748</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +486,8 @@
     <MESSAGE value="Add Test entity and its CRUD and the ability to open/close Test" />
     <MESSAGE value="Add Question entity and its CRUD" />
     <MESSAGE value="Add @NoArgsConstructor annotations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add @NoArgsConstructor annotations" />
+    <MESSAGE value="Add AnswerOption entity and its CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add AnswerOption entity and its CRUD" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
