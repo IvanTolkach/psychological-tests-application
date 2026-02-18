@@ -50,4 +50,9 @@ public class ApplicationConfig {
     public TestUseCase testUseCase(TestRepository testRepository, MethodologyRepository methodologyRepository, AdminRepository adminRepository) {
         return new TestService(testRepository, methodologyRepository, adminRepository);
     }
+
+    @Bean
+    public QuestionUseCase questionUseCase(QuestionRepository questionRepository, TestRepository testRepository) {
+        return new QuestionService(questionRepository, testRepository);
+    }
 }
