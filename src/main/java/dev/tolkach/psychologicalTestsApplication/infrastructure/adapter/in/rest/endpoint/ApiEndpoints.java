@@ -39,4 +39,11 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{scoreRangeId}";
     }
+
+    public static class Test {
+        public static final String BASE = API_BASE + "/tests";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{testId}";
+        public static final String UPDATE_STATUS = BY_ID + "/update-status";
+    }
 }

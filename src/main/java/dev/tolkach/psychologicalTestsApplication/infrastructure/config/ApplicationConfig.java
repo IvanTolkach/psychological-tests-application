@@ -45,4 +45,9 @@ public class ApplicationConfig {
     public ScoreRangeUseCase scoreRangeUseCase(ScoreRangeRepository scoreRangeRepository, ScaleRepository scaleRepository) {
         return new ScoreRangeService(scoreRangeRepository, scaleRepository);
     }
+
+    @Bean
+    public TestUseCase testUseCase(TestRepository testRepository, MethodologyRepository methodologyRepository, AdminRepository adminRepository) {
+        return new TestService(testRepository, methodologyRepository, adminRepository);
+    }
 }
