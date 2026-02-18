@@ -52,4 +52,10 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{questionId}";
     }
+
+    public static class AnswerOption {
+        public static final String BASE = API_BASE + "/answer-options";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{answerOptionId}";
+    }
 }

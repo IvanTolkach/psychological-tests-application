@@ -55,4 +55,9 @@ public class ApplicationConfig {
     public QuestionUseCase questionUseCase(QuestionRepository questionRepository, TestRepository testRepository) {
         return new QuestionService(questionRepository, testRepository);
     }
+
+    @Bean
+    public AnswerOptionUseCase answerOptionUseCase(AnswerOptionRepository answerOptionRepository, QuestionRepository questionRepository) {
+        return new AnswerOptionService(answerOptionRepository, questionRepository);
+    }
 }
