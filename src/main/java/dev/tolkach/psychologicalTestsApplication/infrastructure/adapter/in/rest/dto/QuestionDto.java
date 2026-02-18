@@ -3,10 +3,12 @@ package dev.tolkach.psychologicalTestsApplication.infrastructure.adapter.in.rest
 import dev.tolkach.psychologicalTestsApplication.domain.model.QuestionType;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Data
+@NoArgsConstructor
 public class QuestionDto {
     private UUID id;
 
