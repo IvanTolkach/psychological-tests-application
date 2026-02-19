@@ -1,5 +1,6 @@
 package dev.tolkach.psychologicalTestsApplication.infrastructure.adapter.in.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +21,8 @@ public class TestAttemptDto {
 
     private LocalDateTime attemptDate;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime attemptDateFrom;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime attemptDateTo;
 }

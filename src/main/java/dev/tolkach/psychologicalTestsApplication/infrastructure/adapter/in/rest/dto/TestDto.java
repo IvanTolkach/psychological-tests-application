@@ -1,5 +1,6 @@
 package dev.tolkach.psychologicalTestsApplication.infrastructure.adapter.in.rest.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -29,7 +30,9 @@ public class TestDto {
 
     private LocalDateTime createdAt;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime createdAtFrom;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime createdAtTo;
 
     //TODO сделать автоматическую подстановку
@@ -37,6 +40,8 @@ public class TestDto {
 
     private LocalDateTime updatedAt;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime updatedAtFrom;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime updatedAtTo;
 }
