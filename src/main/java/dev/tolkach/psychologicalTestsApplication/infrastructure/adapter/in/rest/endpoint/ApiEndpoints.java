@@ -60,8 +60,14 @@ public final class ApiEndpoints {
     }
 
     public static class ScaleQuestion {
-        public static final String BASE = API_BASE + "/scale-question";
+        public static final String BASE = API_BASE + "/scale-questions";
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{scaleQuestionId}";
+    }
+
+    public static class TestAttempt {
+        public static final String BASE = API_BASE + "/test-attempts";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{testAttemptId}";
     }
 }

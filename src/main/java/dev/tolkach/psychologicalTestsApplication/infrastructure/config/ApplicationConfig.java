@@ -65,4 +65,9 @@ public class ApplicationConfig {
     public ScaleQuestionUseCase scaleQuestionUseCase(ScaleQuestionRepository scaleQuestionRepository, ScaleRepository scaleRepository, QuestionRepository questionRepository) {
         return new ScaleQuestionService(scaleQuestionRepository, scaleRepository, questionRepository);
     }
+
+    @Bean
+    public TestAttemptUseCase testAttemptUseCase(TestAttemptRepository testAttemptRepository, StudentRepository studentRepository, TestRepository testRepository) {
+        return new TestAttemptService(testAttemptRepository, studentRepository, testRepository);
+    }
 }
