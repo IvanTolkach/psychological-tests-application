@@ -70,4 +70,9 @@ public class ApplicationConfig {
     public TestAttemptUseCase testAttemptUseCase(TestAttemptRepository testAttemptRepository, StudentRepository studentRepository, TestRepository testRepository) {
         return new TestAttemptService(testAttemptRepository, studentRepository, testRepository);
     }
+
+    @Bean
+    public StudentAnswerUseCase studentAnswerUseCase(StudentAnswerRepository studentAnswerRepository, TestAttemptRepository testAttemptRepository, QuestionRepository questionRepository, AnswerOptionRepository answerOptionRepository) {
+        return new StudentAnswerService(studentAnswerRepository, testAttemptRepository, questionRepository, answerOptionRepository);
+    }
 }
