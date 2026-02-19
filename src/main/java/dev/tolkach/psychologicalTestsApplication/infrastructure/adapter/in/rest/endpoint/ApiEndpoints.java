@@ -76,4 +76,10 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{studentAnswerId}";
     }
+
+    public static class TestAttemptScore {
+        public static final String BASE = API_BASE + "/test-attempt-scores";
+        public static final String SEARCH = BASE + "/search";
+        public static final String BY_ID = BASE + "/{testAttemptScoreId}";
+    }
 }

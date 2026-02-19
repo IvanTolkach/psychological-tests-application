@@ -75,4 +75,9 @@ public class ApplicationConfig {
     public StudentAnswerUseCase studentAnswerUseCase(StudentAnswerRepository studentAnswerRepository, TestAttemptRepository testAttemptRepository, QuestionRepository questionRepository, AnswerOptionRepository answerOptionRepository) {
         return new StudentAnswerService(studentAnswerRepository, testAttemptRepository, questionRepository, answerOptionRepository);
     }
+
+    @Bean
+    public TestAttemptScoreUseCase testAttemptScoreUseCase(TestAttemptScoreRepository testAttemptScoreRepository, TestAttemptRepository testAttemptRepository, ScaleRepository scaleRepository) {
+        return new TestAttemptScoreService(testAttemptScoreRepository, testAttemptRepository, scaleRepository);
+    }
 }
