@@ -123,17 +123,16 @@ CREATE TABLE StudentAnswer (
                                FOREIGN KEY (selected_option_id) REFERENCES AnswerOption(id)
 );
 
---rollback
---DROP TABLE StudentAnswer;
---DROP TABLE TestAttemptScore;
---DROP TABLE TestAttempt;
---DROP TABLE AnswerOption;
---DROP TABLE ScoreRange;
---DROP TABLE ScaleQuestion;
---DROP TABLE Scale;
---DROP TABLE Question;
---DROP TABLE Test;
---DROP TABLE Methodology;
---DROP TABLE Admin;
---DROP TABLE Student;
---DROP TABLE Faculty;
+--rollback DROP TABLE StudentAnswer;
+--rollback DROP TABLE TestAttemptScore;
+--rollback DROP TABLE TestAttempt;
+--rollback DROP TABLE AnswerOption;
+--rollback DROP TABLE ScoreRange;
+--rollback DROP TABLE ScaleQuestion;
+--rollback DROP TABLE Scale;
+--rollback DROP TABLE Question;
+--rollback DROP TABLE Test;
+--rollback DROP TABLE Methodology;
+--rollback DROP TABLE Admin;
+--rollback DROP TABLE Student;
+--rollback DROP TABLE Faculty;
