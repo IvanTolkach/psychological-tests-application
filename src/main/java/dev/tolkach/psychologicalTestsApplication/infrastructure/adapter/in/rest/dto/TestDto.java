@@ -29,8 +29,14 @@ public class TestDto {
 
     private LocalDateTime createdAt;
 
+    private LocalDateTime createdAtFrom;
+    private LocalDateTime createdAtTo;
+
     //TODO сделать автоматическую подстановку
     private UUID updatedBy;
 
     private LocalDateTime updatedAt;
+
+    private LocalDateTime updatedAtFrom;
+    private LocalDateTime updatedAtTo;
 }

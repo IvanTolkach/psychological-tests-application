@@ -1,6 +1,5 @@
 package dev.tolkach.psychologicalTestsApplication.infrastructure.adapter.out.persistence.specification;
 
-import dev.tolkach.psychologicalTestsApplication.domain.model.Test;
 import dev.tolkach.psychologicalTestsApplication.domain.model.TestFilter;
 import dev.tolkach.psychologicalTestsApplication.infrastructure.adapter.out.persistence.entity.TestEntity;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -32,19 +31,19 @@ public class TestSpecification {
             if (filter.getCreatedBy() != null) {
                 predicates.add(cb.equal(root.get("createdBy"), filter.getCreatedBy()));
             }
+            if (filter.getUpdatedBy() != null) {
+                predicates.add(cb.equal(root.get("updatedBy"), filter.getUpdatedBy()));
+            }
             if (filter.getCreatedAtFrom() != null) {
                 predicates.add(cb.greaterThanOrEqualTo(root.get("createdAt"), filter.getCreatedAtFrom()));
             }
             if (filter.getCreatedAtTo() != null) {
                 predicates.add(cb.lessThanOrEqualTo(root.get("createdAt"), filter.getCreatedAtTo()));
             }
-            if (filter.getUpdatedBy() != null) {
-                predicates.add(cb.equal(root.get("updatedBy"), filter.getUpdatedBy()));
-            }
-            if (filter.getCreatedAtFrom() != null) {
+            if (filter.getUpdatedAtFrom() != null) {
                 predicates.add(cb.greaterThanOrEqualTo(root.get("updatedAt"), filter.getUpdatedAtFrom()));
             }
-            if (filter.getCreatedAtTo() != null) {
+            if (filter.getUpdatedAtTo() != null) {
                 predicates.add(cb.lessThanOrEqualTo(root.get("updatedAt"), filter.getUpdatedAtTo()));
             }
 
