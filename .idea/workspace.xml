@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Unnecessary imports removed">
+    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Added a business rule to check the uniqueness of the answer option text in AnswerOption">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/AnswerOptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/AnswerOptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/QuestionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/QuestionDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +313,7 @@
       <workItem from="1771317211548" duration="20261000" />
       <workItem from="1771405348610" duration="18947000" />
       <workItem from="1771493598934" duration="15258000" />
-      <workItem from="1771576414329" duration="12806000" />
+      <workItem from="1771576414329" duration="16547000" />
     </task>
     <task id="LOCAL-00001" summary="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter.">
       <option name="closed" value="true" />
@@ -538,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771588038569</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added a business rule to check the uniqueness of the answer option text in AnswerOption">
+      <option name="closed" value="true" />
+      <created>1771589587307</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1771589587307</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add feature that duplicated students won't be added to the DB" />
     <MESSAGE value="Add the entire list of BNTU faculties to the Liquibase query." />
     <MESSAGE value="Add raw Admin entity with basic functionality" />
     <MESSAGE value="Delete @Id annotations" />
@@ -581,7 +589,8 @@
     <MESSAGE value="Added a business rule where only one isTotal == true Scale can exist for one Methodology" />
     <MESSAGE value="Added a business rule that only ScoreRange must have a unique interpretation, and ranges within the same Scale must not overlap" />
     <MESSAGE value="Unnecessary imports removed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unnecessary imports removed" />
+    <MESSAGE value="Added a business rule to check the uniqueness of the answer option text in AnswerOption" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a business rule to check the uniqueness of the answer option text in AnswerOption" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -22,7 +22,6 @@ public class QuestionDto {
     @NotNull(message = "Question type cannot be null")
     private QuestionType type;
 
-    @NotNull(message = "Position is required")
     @PositiveOrZero(message = "Position must be non-negative")
     private Integer position;
 }
