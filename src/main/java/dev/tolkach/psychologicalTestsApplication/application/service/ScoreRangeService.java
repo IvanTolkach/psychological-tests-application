@@ -1,6 +1,5 @@
 package dev.tolkach.psychologicalTestsApplication.application.service;
 
-import dev.tolkach.psychologicalTestsApplication.domain.model.Scale;
 import dev.tolkach.psychologicalTestsApplication.domain.model.ScoreRange;
 import dev.tolkach.psychologicalTestsApplication.domain.port.in.ScoreRangeUseCase;
 import dev.tolkach.psychologicalTestsApplication.domain.port.out.ScaleRepository;
