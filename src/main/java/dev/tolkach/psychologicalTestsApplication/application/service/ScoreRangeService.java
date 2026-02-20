@@ -1,5 +1,6 @@
 package dev.tolkach.psychologicalTestsApplication.application.service;
 
+import dev.tolkach.psychologicalTestsApplication.domain.model.Scale;
 import dev.tolkach.psychologicalTestsApplication.domain.model.ScoreRange;
 import dev.tolkach.psychologicalTestsApplication.domain.port.in.ScoreRangeUseCase;
 import dev.tolkach.psychologicalTestsApplication.domain.port.out.ScaleRepository;
@@ -40,6 +41,46 @@ public class ScoreRangeService implements ScoreRangeUseCase {
         }
         if (scoreRange.getInterpretation() == null || scoreRange.getInterpretation().isBlank()) {
             throw new IllegalArgumentException("Interpretation is required");
+        }
+
+        ScoreRange checkFilter = new ScoreRange();
+        checkFilter.setScaleId(scoreRange.getScaleId());
+        checkFilter.setInterpretation(scoreRange.getInterpretation());
+
+        List<ScoreRange> existingWithSameInterpretation = scoreRangeRepository.findByFilter(checkFilter);
+
+        boolean interpretationConflict = existingWithSameInterpretation.stream()
+                .anyMatch(s -> !s.getId().equals(scoreRange.getId()));
+
+        if (interpretationConflict) {
+            throw new IllegalArgumentException(
+                    "ScoreRange with interpretation '" + scoreRange.getInterpretation() + "' already exists for scale " + scoreRange.getScaleId()
+            );
+        }
+
+        checkFilter.setInterpretation(null);
+
+        List<ScoreRange> allRangesInScale = scoreRangeRepository.findByFilter(checkFilter);
+
+        for (ScoreRange existing : allRangesInScale) {
+            if (existing.getId() != null && existing.getId().equals(scoreRange.getId())) {
+                continue;
+            }
+
+            Integer existingMin = existing.getMinScore();
+            Integer existingMax = existing.getMaxScore();
+            Integer newMin = scoreRange.getMinScore();
+            Integer newMax = scoreRange.getMaxScore();
+
+            boolean overlaps = !(newMax < existingMin || newMin > existingMax);
+
+            if (overlaps) {
+                throw new IllegalArgumentException(
+                        "Score ranges overlap: new range [" + newMin + "–" + newMax + "] " +
+                                "conflicts with existing range [" + existingMin + "–" + existingMax + "] " +
+                                "in scale " + scoreRange.getScaleId()
+                );
+            }
         }
 
         if (scoreRange.getId() == null) {

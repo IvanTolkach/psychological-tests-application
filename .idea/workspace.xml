@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Fix a bug where the Admin entity could not be modified without specifying a password or email">
+    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Added a business rule where only one isTotal == true Scale can exist for one Methodology">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScoreRangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScoreRangeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -312,7 +312,7 @@
       <workItem from="1771317211548" duration="20261000" />
       <workItem from="1771405348610" duration="18947000" />
       <workItem from="1771493598934" duration="15258000" />
-      <workItem from="1771576414329" duration="10592000" />
+      <workItem from="1771576414329" duration="11279000" />
     </task>
     <task id="LOCAL-00001" summary="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter.">
       <option name="closed" value="true" />
@@ -514,7 +514,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771585350206</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added a business rule where only one isTotal == true Scale can exist for one Methodology">
+      <option name="closed" value="true" />
+      <created>1771587123159</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1771587123159</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -532,7 +540,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter." />
     <MESSAGE value="Load of unversioned files" />
     <MESSAGE value="Add faculty findByFilter endpoint" />
     <MESSAGE value="Add feature that duplicated students won't be added to the DB" />
@@ -557,7 +564,8 @@
     <MESSAGE value="Add TestAttemptScore entity and its CRUD" />
     <MESSAGE value="Add password strength validation" />
     <MESSAGE value="Fix a bug where the Admin entity could not be modified without specifying a password or email" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix a bug where the Admin entity could not be modified without specifying a password or email" />
+    <MESSAGE value="Added a business rule where only one isTotal == true Scale can exist for one Methodology" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a business rule where only one isTotal == true Scale can exist for one Methodology" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
