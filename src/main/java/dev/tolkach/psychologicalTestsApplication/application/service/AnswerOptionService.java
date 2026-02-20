@@ -32,6 +32,19 @@ public class AnswerOptionService implements AnswerOptionUseCase {
         questionRepository.findById(answerOption.getQuestionId())
                 .orElseThrow(() -> new IllegalArgumentException("Question not found with id: " + answerOption.getQuestionId()));
 
+        AnswerOption checkFilter = new AnswerOption();
+        checkFilter.setQuestionId(answerOption.getQuestionId());
+
+        List<AnswerOption> existingInSameQuestion = answerOptionRepository.findByFilter(checkFilter);
+
+        for (AnswerOption optionOfQuestion : existingInSameQuestion) {
+            if (answerOption.getText().trim().equalsIgnoreCase(optionOfQuestion.getText().trim())) {
+                throw new IllegalArgumentException(
+                        "Answer option with the same text '" + answerOption.getText() + "' already exists for question " + answerOption.getQuestionId()
+                );
+            }
+        }
+
         if (answerOption.getId() == null) {
             return answerOptionRepository.save(answerOption);
         } else {
