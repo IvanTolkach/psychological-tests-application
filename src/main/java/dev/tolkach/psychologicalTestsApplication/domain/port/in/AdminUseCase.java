@@ -9,5 +9,5 @@ public interface AdminUseCase {
     List<Admin> getAdminsByFilter(Admin filter);
     Admin createUpdateAdmin(Admin admin);
     void changePassword(UUID id, String oldPassword, String newPassword);
-    Admin deactivateAdmin(UUID id);
+    void deactivateAdmin(UUID id);
 }

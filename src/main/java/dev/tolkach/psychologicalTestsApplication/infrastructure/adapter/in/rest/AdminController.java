@@ -44,7 +44,7 @@ public class AdminController implements AdminEndpoint {
     }
 
     @Override
-    public ResponseEntity<AdminDto> deactivateAdmin(UUID adminId) {
+    public ResponseEntity<Void> deactivateAdmin(UUID adminId) {
         adminUseCase.deactivateAdmin(adminId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }

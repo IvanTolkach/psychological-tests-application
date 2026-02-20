@@ -26,18 +26,16 @@ public class AdminDto {
     @Size(max = 50)
     private String mname;
 
-    @NotBlank(message = "Email cannot be blank")
     @Email(message = "Invalid email format")
     @Size(max = 255)
     private String email;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @NotBlank(message = "Password is required")
     @Size(min = 12, message = "New password must be at least 12 characters")
     private String password;
 
-    @NotBlank(message = "Phone number cannot be blank")
     @Size(max = 20)
+    @NotBlank(message = "Phone number cannot be blank")
     private String phoneNumber;
 
     private AdminRole role;

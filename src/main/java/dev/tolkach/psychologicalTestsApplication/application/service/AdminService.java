@@ -35,6 +35,12 @@ public class AdminService implements AdminUseCase {
         }
 
         if (admin.getId() == null) {
+            if (admin.getEmail() == null || admin.getEmail().isBlank()) {
+                throw new IllegalArgumentException("Email is required for creation");
+            }
+            if (admin.getPassword() == null || admin.getPassword().isBlank()) {
+                throw new IllegalArgumentException("Password is required for creation");
+            }
             if (!isPasswordStrong(admin.getPassword(), admin.getSname(), admin.getEmail(), admin.getPhoneNumber())) {
                 throw new IllegalArgumentException("Password is too weak. It must be at least 12 characters long, " +
                         "contain uppercase, lowercase, digit and special character, and avoid common patterns.");
@@ -78,14 +84,14 @@ public class AdminService implements AdminUseCase {
 
     //TODO может только SUPER_ADMIN
     @Override
-    public Admin deactivateAdmin(UUID id) {
+    public void deactivateAdmin(UUID id) {
         Admin existing = adminRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Admin not found with id: " + id));
         if (!existing.getIsActive()) {
             throw new IllegalArgumentException("Admin is already deactivated with id: " + id);
         }
         existing.setIsActive(false);
-        return adminRepository.save(existing);
+        adminRepository.save(existing);
     }
 
     //TODO отдельная логика для смены ROLE и IS_ACTIVE

@@ -16,7 +16,7 @@ public interface AdminEndpoint {
     ResponseEntity<AdminDto> createUpdateAdmin(@Valid @RequestBody AdminDto dto);
 
     @DeleteMapping(ApiEndpoints.Admin.BY_ID)
-    ResponseEntity<AdminDto> deactivateAdmin(@PathVariable UUID adminId);
+    ResponseEntity<Void> deactivateAdmin(@PathVariable UUID adminId);
 
     @PatchMapping(ApiEndpoints.Admin.CHANGE_PASSWORD)
     ResponseEntity<Void> changePassword(@PathVariable UUID adminId, @RequestParam String oldPassword, @RequestParam String newPassword);
