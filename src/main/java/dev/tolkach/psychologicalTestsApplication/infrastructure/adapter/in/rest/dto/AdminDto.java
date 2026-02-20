@@ -32,8 +32,8 @@ public class AdminDto {
     private String email;
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    @NotBlank(message = "New password is required")
-    @Size(min = 8, message = "New password must be at least 8 characters")
+    @NotBlank(message = "Password is required")
+    @Size(min = 12, message = "New password must be at least 12 characters")
     private String password;
 
     @NotBlank(message = "Phone number cannot be blank")
