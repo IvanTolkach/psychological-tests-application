@@ -47,6 +47,23 @@ public class ScaleService implements ScaleUseCase {
             );
         }
 
+        if (Boolean.TRUE.equals(scale.getIsTotal())) {
+            checkFilter.setName(null);
+            checkFilter.setIsTotal(true);
+
+            List<Scale> existingTotalScales = scaleRepository.findByFilter(checkFilter);
+
+            boolean hasAnotherTotal = existingTotalScales.stream()
+                    .anyMatch(s -> !s.getId().equals(scale.getId()));
+
+            if (hasAnotherTotal) {
+                throw new IllegalArgumentException(
+                        "Methodology " + scale.getMethodologyId() + " already has a total scale (isTotal = true). " +
+                                "Only one total scale per methodology is allowed."
+                );
+            }
+        }
+
         if (scale.getId() == null) {
             return scaleRepository.save(scale);
         } else {
