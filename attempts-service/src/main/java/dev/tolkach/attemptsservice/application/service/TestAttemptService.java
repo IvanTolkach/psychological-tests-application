@@ -6,6 +6,7 @@ import dev.tolkach.attemptsservice.application.port.in.TestAttemptUseCase;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptRepository;
 import dev.tolkach.attemptsservice.application.port.out.TestsPort;
 import dev.tolkach.attemptsservice.application.port.out.UsersPort;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,6 +26,7 @@ public class TestAttemptService implements TestAttemptUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<TestAttempt> getTestAttemptsByFilter(TestAttemptFilter filter) {
         if (filter.getStudentId() != null) {
             usersPort.validateStudentExists(filter.getStudentId());
@@ -36,6 +38,7 @@ public class TestAttemptService implements TestAttemptUseCase {
     }
 
     @Override
+    @Transactional
     public TestAttempt createUpdateTestAttempt(TestAttempt testAttempt) {
         usersPort.validateStudentExists(testAttempt.getStudentId());
 
@@ -62,6 +65,7 @@ public class TestAttemptService implements TestAttemptUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteTestAttempt(UUID id) {
         if (testAttemptRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("TestAttempt not found with id: " + id);

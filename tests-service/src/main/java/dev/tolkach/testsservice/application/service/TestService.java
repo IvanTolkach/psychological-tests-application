@@ -6,6 +6,7 @@ import dev.tolkach.testsservice.application.port.in.TestUseCase;
 import dev.tolkach.testsservice.application.port.out.MethodologiesPort;
 import dev.tolkach.testsservice.application.port.out.TestRepository;
 import dev.tolkach.testsservice.application.port.out.UsersPort;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -25,6 +26,7 @@ public class TestService implements TestUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Test> getTestsByFilter(TestFilter filter) {
         if (filter.getMethodologyId() != null) {
             methodologiesPort.validateMethodologyExists(filter.getMethodologyId());
@@ -40,12 +42,14 @@ public class TestService implements TestUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Test getTestById(UUID id) {
         return testRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Test not found with id: " + id));
     }
 
     @Override
+    @Transactional
     public Test createUpdateTest(Test test) {
         methodologiesPort.validateMethodologyExists(test.getMethodologyId());
 
@@ -89,6 +93,7 @@ public class TestService implements TestUseCase {
     }
 
     @Override
+    @Transactional
     public void updateTestStatus(UUID id) {
         Test existing = testRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Test not found with id: " + id));
@@ -98,6 +103,7 @@ public class TestService implements TestUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteTest(UUID id) {
         if (testRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("Test not found with id: " + id);

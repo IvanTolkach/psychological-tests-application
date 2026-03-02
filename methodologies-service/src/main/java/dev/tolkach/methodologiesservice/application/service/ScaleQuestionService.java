@@ -5,6 +5,7 @@ import dev.tolkach.methodologiesservice.application.port.in.ScaleQuestionUseCase
 import dev.tolkach.methodologiesservice.application.port.out.ScaleQuestionRepository;
 import dev.tolkach.methodologiesservice.application.port.out.ScaleRepository;
 import dev.tolkach.methodologiesservice.application.port.out.TestsPort;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -23,6 +24,7 @@ public class ScaleQuestionService implements ScaleQuestionUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<ScaleQuestion> getScaleQuestionsByFilter(ScaleQuestion filter) {
         if (filter.getScaleId() != null) {
             scaleRepository.findById(filter.getScaleId())
@@ -35,6 +37,7 @@ public class ScaleQuestionService implements ScaleQuestionUseCase {
     }
 
     @Override
+    @Transactional
     public ScaleQuestion createScaleQuestion(ScaleQuestion scaleQuestion) {
         scaleRepository.findById(scaleQuestion.getScaleId())
                 .orElseThrow(() -> new NoSuchElementException("Scale not found with id: " + scaleQuestion.getScaleId()));
@@ -58,6 +61,7 @@ public class ScaleQuestionService implements ScaleQuestionUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteScaleQuestion(UUID id) {
         if (scaleQuestionRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("ScaleQuestion link not found with id: " + id);

@@ -4,6 +4,7 @@ import dev.tolkach.usersservice.application.model.Student;
 import dev.tolkach.usersservice.application.port.in.StudentUseCase;
 import dev.tolkach.usersservice.application.port.out.FacultyRepository;
 import dev.tolkach.usersservice.application.port.out.StudentRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -20,6 +21,7 @@ public class StudentService implements StudentUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Student> getStudentsByFilter(Student filter) {
         if (filter.getFacultyId() != null) {
             facultyRepository.findById(filter.getFacultyId())
@@ -29,12 +31,14 @@ public class StudentService implements StudentUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Student getStudentById(UUID id) {
         return studentRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Student not found with id: " + id));
     }
 
     @Override
+    @Transactional
     public Student createUpdateStudent(Student student) {
         facultyRepository.findById(student.getFacultyId())
                 .orElseThrow(() -> new NoSuchElementException("Faculty not found with id: " + student.getFacultyId()));
@@ -62,6 +66,7 @@ public class StudentService implements StudentUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteStudent(UUID id) {
         studentRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Student not found with id: " + id));

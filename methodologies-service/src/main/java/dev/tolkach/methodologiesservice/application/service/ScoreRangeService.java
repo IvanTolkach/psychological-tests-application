@@ -4,6 +4,7 @@ import dev.tolkach.methodologiesservice.application.model.ScoreRange;
 import dev.tolkach.methodologiesservice.application.port.in.ScoreRangeUseCase;
 import dev.tolkach.methodologiesservice.application.port.out.ScaleRepository;
 import dev.tolkach.methodologiesservice.application.port.out.ScoreRangeRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -20,6 +21,7 @@ public class ScoreRangeService implements ScoreRangeUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<ScoreRange> getScoreRangesByFilter(ScoreRange filter) {
         if (filter.getScaleId() != null) {
             scaleRepository.findById(filter.getScaleId())
@@ -29,6 +31,7 @@ public class ScoreRangeService implements ScoreRangeUseCase {
     }
 
     @Override
+    @Transactional
     public ScoreRange createUpdateScoreRange(ScoreRange scoreRange) {
         scaleRepository.findById(scoreRange.getScaleId())
                 .orElseThrow(() -> new NoSuchElementException("Scale not found with id: " + scoreRange.getScaleId()));
@@ -100,6 +103,7 @@ public class ScoreRangeService implements ScoreRangeUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteScoreRange(UUID id) {
         scoreRangeRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("ScoreRange not found with id: " + id));

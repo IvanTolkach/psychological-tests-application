@@ -4,6 +4,7 @@ import dev.tolkach.testsservice.application.model.AnswerOption;
 import dev.tolkach.testsservice.application.port.in.AnswerOptionUseCase;
 import dev.tolkach.testsservice.application.port.out.AnswerOptionRepository;
 import dev.tolkach.testsservice.application.port.out.QuestionRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -20,6 +21,7 @@ public class AnswerOptionService implements AnswerOptionUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<AnswerOption> getAnswerOptionsByFilter(AnswerOption filter) {
         if (filter.getQuestionId() != null) {
             questionRepository.findById(filter.getQuestionId())
@@ -29,12 +31,14 @@ public class AnswerOptionService implements AnswerOptionUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public AnswerOption getAnswerOptionById(UUID id) {
         return answerOptionRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("AnswerOption not found with id: " + id));
     }
 
     @Override
+    @Transactional
     public AnswerOption createUpdateAnswerOption(AnswerOption answerOption) {
         questionRepository.findById(answerOption.getQuestionId())
                 .orElseThrow(() -> new NoSuchElementException("Question not found with id: " + answerOption.getQuestionId()));
@@ -67,6 +71,7 @@ public class AnswerOptionService implements AnswerOptionUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteAnswerOption(UUID id) {
         if (answerOptionRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("AnswerOption not found with id: " + id);

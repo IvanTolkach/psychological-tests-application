@@ -3,6 +3,7 @@ package dev.tolkach.methodologiesservice.application.service;
 import dev.tolkach.methodologiesservice.application.model.Methodology;
 import dev.tolkach.methodologiesservice.application.port.in.MethodologyUseCase;
 import dev.tolkach.methodologiesservice.application.port.out.MethodologyRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -17,17 +18,20 @@ public class MethodologyService implements MethodologyUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Methodology> getMethodologiesByFilter(Methodology filter) {
         return methodologyRepository.findByFilter(filter);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Methodology getMethodologyById(UUID id) {
         return methodologyRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Methodology not found with id: " + id));
     }
 
     @Override
+    @Transactional
     public Methodology createUpdateMethodology(Methodology methodology) {
         methodologyRepository.findByFilter(new Methodology() {{
                     setName(methodology.getName());
@@ -52,6 +56,7 @@ public class MethodologyService implements MethodologyUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteMethodology(UUID id) {
         if (methodologyRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("Methodology not found with id: " + id);

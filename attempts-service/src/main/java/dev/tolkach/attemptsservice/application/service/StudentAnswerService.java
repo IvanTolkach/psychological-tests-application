@@ -5,6 +5,7 @@ import dev.tolkach.attemptsservice.application.port.in.StudentAnswerUseCase;
 import dev.tolkach.attemptsservice.application.port.out.StudentAnswerRepository;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptRepository;
 import dev.tolkach.attemptsservice.application.port.out.TestsPort;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -23,6 +24,7 @@ public class StudentAnswerService implements StudentAnswerUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<StudentAnswer> getStudentAnswersByFilter(StudentAnswer filter) {
         if (filter.getTestAttemptId() != null) {
             testAttemptRepository.findById(filter.getTestAttemptId())
@@ -38,6 +40,7 @@ public class StudentAnswerService implements StudentAnswerUseCase {
     }
 
     @Override
+    @Transactional
     public StudentAnswer createUpdateStudentAnswer(StudentAnswer studentAnswer) {
         testAttemptRepository.findById(studentAnswer.getTestAttemptId())
                 .orElseThrow(() -> new NoSuchElementException("TestAttempt not found with id: " + studentAnswer.getTestAttemptId()));
@@ -78,6 +81,7 @@ public class StudentAnswerService implements StudentAnswerUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteStudentAnswer(UUID id) {
         if (studentAnswerRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("StudentAnswer not found with id: " + id);

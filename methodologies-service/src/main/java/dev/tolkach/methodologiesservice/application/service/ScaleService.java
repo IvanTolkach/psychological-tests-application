@@ -4,6 +4,7 @@ import dev.tolkach.methodologiesservice.application.model.Scale;
 import dev.tolkach.methodologiesservice.application.port.in.ScaleUseCase;
 import dev.tolkach.methodologiesservice.application.port.out.MethodologyRepository;
 import dev.tolkach.methodologiesservice.application.port.out.ScaleRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -20,6 +21,7 @@ public class ScaleService implements ScaleUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Scale> getScalesByFilter(Scale filter) {
         if (filter.getMethodologyId() != null) {
             methodologyRepository.findById(filter.getMethodologyId())
@@ -29,12 +31,14 @@ public class ScaleService implements ScaleUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Scale getScaleById(UUID id) {
         return scaleRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Scale not found with id: " + id));
     }
 
     @Override
+    @Transactional
     public Scale createUpdateScale(Scale scale) {
         methodologyRepository.findById(scale.getMethodologyId())
                 .orElseThrow(() -> new NoSuchElementException("Methodology not found with id: " + scale.getMethodologyId()));
@@ -87,6 +91,7 @@ public class ScaleService implements ScaleUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteScale(UUID id) {
         if (scaleRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("Scale not found with id: " + id);

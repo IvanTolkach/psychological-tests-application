@@ -5,6 +5,7 @@ import dev.tolkach.attemptsservice.application.port.in.TestAttemptScoreUseCase;
 import dev.tolkach.attemptsservice.application.port.out.MethodologiesPort;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptRepository;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptScoreRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -23,6 +24,7 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<TestAttemptScore> getTestAttemptScoresByFilter(TestAttemptScore filter) {
         if (filter.getTestAttemptId() != null) {
             testAttemptRepository.findById(filter.getTestAttemptId())
@@ -35,6 +37,7 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
     }
 
     @Override
+    @Transactional
     public TestAttemptScore createUpdateTestAttemptScore(TestAttemptScore testAttemptScore) {
         testAttemptRepository.findById(testAttemptScore.getTestAttemptId())
                 .orElseThrow(() -> new NoSuchElementException("TestAttempt not found with id: " + testAttemptScore.getTestAttemptId()));
@@ -72,6 +75,7 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteTestAttemptScore(UUID id) {
         if (testAttemptScoreRepository.findById(id).isEmpty()) {
             throw new NoSuchElementException("TestAttemptScore not found with id: " + id);

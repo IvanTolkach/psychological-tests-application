@@ -5,6 +5,7 @@ import dev.tolkach.usersservice.application.model.AdminRole;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import dev.tolkach.usersservice.application.port.out.AdminRepository;
 import dev.tolkach.usersservice.application.port.out.PasswordPort;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -22,17 +23,20 @@ public class AdminService implements AdminUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Admin> getAdminsByFilter(Admin filter) {
         return adminRepository.findByFilter(filter);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Admin getAdminById(UUID id) {
         return adminRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
     }
 
     @Override
+    @Transactional
     public Admin createUpdateAdmin(Admin admin) {
         Optional<Admin> existingByEmail = adminRepository.findByEmail(admin.getEmail());
         if (existingByEmail.isPresent()) {
@@ -68,6 +72,7 @@ public class AdminService implements AdminUseCase {
     }
 
     @Override
+    @Transactional
     public void changePassword(UUID id, String oldPassword, String newPassword) {
         Admin existing = adminRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
@@ -91,6 +96,7 @@ public class AdminService implements AdminUseCase {
 
     //TODO может только SUPER_ADMIN
     @Override
+    @Transactional
     public void deactivateAdmin(UUID id) {
         Admin existing = adminRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));

@@ -4,6 +4,7 @@ import dev.tolkach.testsservice.application.model.Question;
 import dev.tolkach.testsservice.application.port.in.QuestionUseCase;
 import dev.tolkach.testsservice.application.port.out.QuestionRepository;
 import dev.tolkach.testsservice.application.port.out.TestRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Comparator;
 import java.util.List;
@@ -22,6 +23,7 @@ public class QuestionService implements QuestionUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Question> getQuestionsByFilter(Question filter) {
         if (filter.getTestId() != null) {
             testRepository.findById(filter.getTestId())
@@ -31,6 +33,7 @@ public class QuestionService implements QuestionUseCase {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Question getQuestionById(UUID id) {
         return questionRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Question not found with id: " + id));
@@ -38,6 +41,7 @@ public class QuestionService implements QuestionUseCase {
 
     //TODO подумать над оптимизацией
     @Override
+    @Transactional
     public Question createUpdateQuestion(Question question) {
         testRepository.findById(question.getTestId())
                 .orElseThrow(() -> new NoSuchElementException("Test not found with id: " + question.getTestId()));
@@ -115,6 +119,7 @@ public class QuestionService implements QuestionUseCase {
     }
 
     @Override
+    @Transactional
     public void deleteQuestion(UUID id) {
         Question questionToDelete = questionRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Question not found with id: " + id));
