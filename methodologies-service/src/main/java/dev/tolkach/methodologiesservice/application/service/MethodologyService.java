@@ -1,0 +1,61 @@
+package dev.tolkach.methodologiesservice.application.service;
+
+import dev.tolkach.methodologiesservice.application.model.Methodology;
+import dev.tolkach.methodologiesservice.application.port.in.MethodologyUseCase;
+import dev.tolkach.methodologiesservice.application.port.out.MethodologyRepository;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.UUID;
+
+public class MethodologyService implements MethodologyUseCase {
+
+    private final MethodologyRepository methodologyRepository;
+
+    public MethodologyService(MethodologyRepository methodologyRepository) {
+        this.methodologyRepository = methodologyRepository;
+    }
+
+    @Override
+    public List<Methodology> getMethodologiesByFilter(Methodology filter) {
+        return methodologyRepository.findByFilter(filter);
+    }
+
+    @Override
+    public Methodology getMethodologyById(UUID id) {
+        return methodologyRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Methodology not found with id: " + id));
+    }
+
+    @Override
+    public Methodology createUpdateMethodology(Methodology methodology) {
+        methodologyRepository.findByFilter(new Methodology() {{
+                    setName(methodology.getName());
+                }}).stream()
+                .filter(m -> !m.getId().equals(methodology.getId()))
+                .findAny()
+                .ifPresent(m -> {
+                    throw new IllegalArgumentException("Methodology with name '" + methodology.getName() + "' already exists");
+                });
+
+        if (methodology.getId() == null) {
+            return methodologyRepository.save(methodology);
+        } else {
+            Methodology existing = methodologyRepository.findById(methodology.getId())
+                    .orElseThrow(() -> new NoSuchElementException("Methodology not found with id: " + methodology.getId()));
+
+            existing.setName(methodology.getName());
+            existing.setDescription(methodology.getDescription());
+
+            return methodologyRepository.save(existing);
+        }
+    }
+
+    @Override
+    public void deleteMethodology(UUID id) {
+        if (methodologyRepository.findById(id).isEmpty()) {
+            throw new NoSuchElementException("Methodology not found with id: " + id);
+        }
+        methodologyRepository.deleteById(id);
+    }
+}

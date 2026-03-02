@@ -4,10 +4,274 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="Added a business rule to check the uniqueness of the answer option text in AnswerOption">
+    <list default="true" id="f8ae6ca9-a6ee-4bae-88fb-f65e6f96b85b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/mapper/StudentAnswerDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/mapper/TestAttemptDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/mapper/TestAttemptScoreDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/UsersClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/UsersClientAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/mapper/StudentAnswerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/mapper/TestAttemptMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/mapper/TestAttemptScoreMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/MethodologiesPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestsPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/UsersPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/TestAttemptService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/005-init-attempts-schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/mapper/MethodologyDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/mapper/ScaleDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/mapper/ScaleQuestionDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/mapper/ScoreRangeDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/client/TestsClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/mapper/MethodologyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/mapper/ScaleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/mapper/ScaleQuestionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/mapper/ScoreRangeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/TestsPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/003-init-methodologies-schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/mapper/AnswerOptionDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/mapper/QuestionDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/mapper/TestDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/MethodologiesClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClientAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/mapper/AnswerOptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/mapper/QuestionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/mapper/TestMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/MethodologiesPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/UsersPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/TestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/004-init-tests-schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/FacultyEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/StudentEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/AdminDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/FacultyDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/StudentDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/mapper/AdminMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/mapper/FacultyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/mapper/StudentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/PasswordAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/AdminRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/FacultyUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/PasswordPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/001-init-users-schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/QuestionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/QuestionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compose.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/PsychologicalTestsApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/AnswerOptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/AnswerOptionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/FacultyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/FacultyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/MethodologyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/service/MethodologyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScaleQuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/service/ScaleQuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScaleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/service/ScaleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/ScoreRangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/service/ScoreRangeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/StudentAnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/StudentAnswerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/TestAttemptScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/TestAttemptScoreService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/TestAttemptService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/application/service/TestService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/AdminRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/AnswerOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/model/AnswerOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Faculty.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/Faculty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Gender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Methodology.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/model/Methodology.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/QuestionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/model/QuestionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/model/Scale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/ScaleQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/model/ScaleQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/ScoreRange.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/model/ScoreRange.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/StudentAnswer.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/StudentAnswer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/model/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/TestAttempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/TestAttempt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/TestAttemptFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/TestAttemptFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/TestAttemptScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/TestAttemptScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/model/TestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/model/TestFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/AdminUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/AdminUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/AnswerOptionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/in/AnswerOptionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/FacultyUseCase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/MethodologyUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/in/MethodologyUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/QuestionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/in/QuestionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/ScaleQuestionUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/in/ScaleQuestionUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/ScaleUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/in/ScaleUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/ScoreRangeUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/in/ScoreRangeUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/StudentAnswerUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/in/StudentAnswerUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/StudentUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/StudentUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/TestAttemptScoreUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/in/TestAttemptScoreUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/TestAttemptUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/in/TestAttemptUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/in/TestUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/in/TestUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/AdminRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/AnswerOptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/AnswerOptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/FacultyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/FacultyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/MethodologyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/MethodologyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/ScaleQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/ScaleQuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/ScaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/ScaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/ScoreRangeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/ScoreRangeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/StudentAnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/StudentAnswerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/StudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/StudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/TestAttemptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestAttemptRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/TestAttemptScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestAttemptScoreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/domain/port/out/TestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/TestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/AnswerOptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/AnswerOptionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/FacultyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/FacultyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/MethodologyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/MethodologyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/ScaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/ScaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/ScaleQuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/ScaleQuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/ScoreRangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/ScoreRangeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/StudentAnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/StudentAnswerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/TestAttemptController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/TestAttemptController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/TestAttemptScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/TestAttemptScoreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/AdminDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/dto/AdminDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/AnswerOptionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/dto/AnswerOptionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/FacultyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/dto/FacultyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/MethodologyDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/dto/MethodologyDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/QuestionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/dto/QuestionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/ScaleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/dto/ScaleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/ScaleQuestionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/dto/ScaleQuestionDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/ScoreRangeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/dto/ScoreRangeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/StudentAnswerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/StudentAnswerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/StudentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/dto/StudentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/TestAttemptDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/TestAttemptDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/TestAttemptScoreDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/TestAttemptScoreDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/dto/TestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/dto/TestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/AdminEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/AdminEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/AnswerOptionEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/AnswerOptionEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ApiEndpoints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/FacultyEndpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/MethodologyEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/MethodologyEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/QuestionEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/QuestionEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ScaleEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScaleEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ScaleQuestionEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScaleQuestionEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/ScoreRangeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScoreRangeEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/StudentAnswerEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/endpoint/StudentAnswerEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/StudentEndpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/TestAttemptEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/endpoint/TestAttemptEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/TestAttemptScoreEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/endpoint/TestAttemptScoreEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/endpoint/TestEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/TestEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/AdminDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/AnswerOptionDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/FacultyDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/MethodologyDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/QuestionDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/ScaleDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/ScaleQuestionDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/ScoreRangeDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/StudentAnswerDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/StudentDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/TestAttemptDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/TestAttemptScoreDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/in/rest/mapper/TestDtoMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/AdminEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/entity/AdminEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/AnswerOptionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/entity/AnswerOptionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/FacultyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/entity/FacultyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/MethodologyEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/entity/MethodologyEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/QuestionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/entity/QuestionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/ScaleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/entity/ScaleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/ScaleQuestionEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/entity/ScaleQuestionEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/ScoreRangeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/entity/ScoreRangeEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/StudentAnswerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/entity/StudentAnswerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/StudentEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/entity/StudentEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/TestAttemptEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/entity/TestAttemptEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/TestAttemptScoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/entity/TestAttemptScoreEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/entity/TestEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/entity/TestEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/AdminMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/AnswerOptionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/FacultyMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/MethodologyMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/QuestionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/ScaleMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/ScaleQuestionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/ScoreRangeMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/StudentAnswerMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/StudentMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/TestAttemptMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/TestAttemptScoreMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/mapper/TestMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/AdminRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/repository/AdminRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/AnswerOptionRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/AnswerOptionRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/FacultyRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/repository/FacultyRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaAdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/repository/JpaAdminRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaAnswerOptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaAnswerOptionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaFacultyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/repository/JpaFacultyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaMethodologyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/JpaMethodologyRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaQuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaScaleQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/JpaScaleQuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaScaleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/JpaScaleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaScoreRangeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/JpaScoreRangeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaStudentAnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/JpaStudentAnswerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaStudentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/repository/JpaStudentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaTestAttemptRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/JpaTestAttemptRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaTestAttemptScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/JpaTestAttemptScoreRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/JpaTestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaTestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/MethodologyRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/MethodologyRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/QuestionRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/QuestionRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/ScaleQuestionRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/ScaleQuestionRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/ScaleRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/ScaleRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/ScoreRangeRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/repository/ScoreRangeRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/StudentAnswerRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/StudentAnswerRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/StudentRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/repository/StudentRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/TestAttemptRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/repository/TestRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/TestRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/AdminSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/specification/AdminSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/AnswerOptionSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/specification/AnswerOptionSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/FacultySpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/specification/FacultySpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/MethodologySpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/specification/MethodologySpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/QuestionSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/specification/QuestionSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/ScaleQuestionSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/specification/ScaleQuestionSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/ScaleSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/specification/ScaleSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/ScoreRangeSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/persistence/specification/ScoreRangeSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/StudentAnswerSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/specification/StudentAnswerSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/StudentSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/specification/StudentSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/TestAttemptScoreSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/specification/TestAttemptScoreSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/TestAttemptSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/specification/TestAttemptSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/adapter/out/persistence/specification/TestSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/specification/TestSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/ApplicationConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dev/tolkach/psychologicalTestsApplication/infrastructure/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changes/001-init-schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changes/002-filling-faculties.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/002-filling-faculties.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/changes/003-rename-column-name-in-studentanswer.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dev/tolkach/psychologicalTestsApplication/PsychologicalTestsApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,73 +282,23 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-    <projectState path="$PROJECT_DIR$/.idea">
+    <projectState path="$PROJECT_DIR$/attempts-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/eureka-server">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/methodologies-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/tests-service">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/users-service">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$/.idea/build.gradle">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$/.idea">
-          <activation />
-        </task>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="psychologicalTestsApplication" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="com.intellij.jpb.JpaLiquibaseChangeLog" />
-        <option value="Enum" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <excluded-from-favorite>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </excluded-from-favorite>
-    <favorite-branches>
-      <branch-storage>
-        <map>
-          <entry type="REMOTE">
-            <value>
-              <list>
-                <branch-info repo="$PROJECT_DIR$" source="origin/development" />
-              </list>
-            </value>
-          </entry>
-        </map>
-      </branch-storage>
-    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
@@ -108,159 +322,151 @@
     &quot;second&quot;: &quot;12941c79-9e73-484a-b4bb-c3f9db99c340&quot;
   }
 }</component>
-  <component name="HttpClientOnboardingState">{
-  &quot;isOnboardingCommentShown&quot;: true
-}</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="39WbJH227iTZdjvdrzGCLUsEkuZ" />
+  <component name="ProjectId" id="3ADGaG6T2kBoEZdJYwI6hzV9aKx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle..idea.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build .idea.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build psychologicaltestsapplication.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (1).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (2).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3).executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.psychologicaltestsapplication [dependencies].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.psychologicaltestsapplication.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHELLCHECK.PATH&quot;: &quot;C:\\Users\\PC\\AppData\\Roaming\\JetBrains\\IntelliJIdea2024.3\\plugins\\Shell Script\\shellcheck.exe&quot;,
-    &quot;Spring Boot.PsychologicalTestsApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build attempts-service.executor": "Run",
+    "Gradle.Build psychologicaltestsapplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.AttemptsServiceApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.MethodologiesServiceApplication.executor": "Run",
+    "Spring Boot.PsychologicalTestsApplication.executor": "Run",
+    "Spring Boot.TestsServiceApplication.executor": "Run",
+    "Spring Boot.UsersServiceApplication.executor": "Run",
+    "git-widget-placeholder": "development",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/attempts-service/src/main/java/dev/tolkach/attemptsservice",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Spring Boot.PsychologicalTestsApplication">
-    <configuration name="C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea/build.gradle" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\attempts-service\src\main\java\dev\tolkach\attemptsservice" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\attempts-service\src\main\resources\db\changelog\changes" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\attempts-service\src\main\resources\db\changelog" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\tests-service\src\main\java\dev\tolkach\testsservice" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\tests-service\src\main\resources\db\changelog\changes" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="hiddenConfigurations">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <set>
+              <option value="PsychologicalTestsApplication" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="AttemptsServiceApplication" value="STOPPED" />
+              <entry key="EurekaServerApplication" value="STOPPED" />
+              <entry key="MethodologiesServiceApplication" value="STOPPED" />
+              <entry key="TestsServiceApplication" value="STOPPED" />
+              <entry key="UsersServiceApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.EurekaServerApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="psychologicalTestsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="psychologicalTestsApplication" />
+      <option name="filePath" />
       <method v="2" />
     </configuration>
-    <configuration name=".idea" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
+    <configuration name="AttemptsServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="psychologicalTestsApplication.attempts-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.attemptsservice.AttemptsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="psychologicaltestsapplication [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dependencies" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
+    <configuration name="AttemptsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="attempts-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.attemptsservice.AttemptsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="psychologicaltestsapplication" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
+    <configuration name="EurekaServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="psychologicalTestsApplication.eureka-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="PsychologicalTestsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MethodologiesServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="psychologicalTestsApplication.methodologies-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.methodologiesservice.MethodologiesServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MethodologiesServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="methodologies-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.methodologiesservice.MethodologiesServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PsychologicalTestsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DB_USERNAME" value="postgres" />
         <env name="DB_PASSWORD" value="1111" />
@@ -268,286 +474,49 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="psychologicalTestsApplication.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.psychologicalTestsApplication.PsychologicalTestsApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dev.tolkach.psychologicalTestsApplication.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Gradle.psychologicaltestsapplication" />
-      <item itemvalue="Gradle.psychologicaltestsapplication [dependencies]" />
-      <item itemvalue="Gradle..idea" />
-      <item itemvalue="Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3)" />
-      <item itemvalue="Spring Boot.PsychologicalTestsApplication" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Spring Boot.PsychologicalTestsApplication" />
-        <item itemvalue="Gradle.psychologicaltestsapplication [dependencies]" />
-        <item itemvalue="Gradle.psychologicaltestsapplication" />
-        <item itemvalue="Gradle..idea" />
-        <item itemvalue="Gradle.C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/.idea/build.gradle (3)" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="StructureViewState">
-    <option name="selectedTab" value="Logical" />
+    <configuration name="TestsServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="psychologicalTestsApplication.tests-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.testsservice.TestsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="tests-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.testsservice.TestsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="psychologicalTestsApplication.users-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.usersservice.UsersServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="users-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.usersservice.UsersServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="280f8c30-5c29-4ae0-ac9b-5a41275b5395" name="Changes" comment="" />
-      <created>1770814700737</created>
+      <changelist id="f8ae6ca9-a6ee-4bae-88fb-f65e6f96b85b" name="Changes" comment="" />
+      <created>1772119788256</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1770814700737</updated>
-      <workItem from="1770814701740" duration="147000" />
-      <workItem from="1770814867510" duration="4730000" />
-      <workItem from="1770902940440" duration="5092000" />
-      <workItem from="1770971185817" duration="12140000" />
-      <workItem from="1771231099444" duration="19053000" />
-      <workItem from="1771317211548" duration="20261000" />
-      <workItem from="1771405348610" duration="18947000" />
-      <workItem from="1771493598934" duration="15258000" />
-      <workItem from="1771576414329" duration="16547000" />
+      <updated>1772119788256</updated>
+      <workItem from="1772119789342" duration="1946000" />
+      <workItem from="1772442242993" duration="2169000" />
     </task>
-    <task id="LOCAL-00001" summary="Working initial version of Liquibase and Hexagonal architecture with 2 entities of Student and Faculty. Driver adapters: StudentController; Driven adapters: StudentRepositoryAdapter, FacultyRepositoryAdapter.">
-      <option name="closed" value="true" />
-      <created>1771236354183</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1771236354183</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Load of unversioned files">
-      <option name="closed" value="true" />
-      <created>1771236397183</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1771236397183</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Add faculty findByFilter endpoint">
-      <option name="closed" value="true" />
-      <created>1771243645675</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1771243645675</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add feature that duplicated students won't be added to the DB">
-      <option name="closed" value="true" />
-      <created>1771250302693</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1771250302693</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Add the entire list of BNTU faculties to the Liquibase query.">
-      <option name="closed" value="true" />
-      <created>1771251746867</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1771251746867</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Add raw Admin entity with basic functionality">
-      <option name="closed" value="true" />
-      <created>1771328491027</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1771328491027</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Delete @Id annotations">
-      <option name="closed" value="true" />
-      <created>1771342130853</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1771342130853</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Rename method variables">
-      <option name="closed" value="true" />
-      <created>1771342200027</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1771342200027</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Add extra endpoints">
-      <option name="closed" value="true" />
-      <created>1771342213380</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1771342213380</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Add Methodology entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771342282991</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1771342282991</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Add Scale entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771342311223</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1771342311223</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Add ScoreRange entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771342333141</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1771342333141</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Add Test entity and its CRUD and the ability to open/close Test">
-      <option name="closed" value="true" />
-      <created>1771412806925</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1771412806925</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Add Question entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771418850978</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1771418850978</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Add @NoArgsConstructor annotations">
-      <option name="closed" value="true" />
-      <created>1771419521782</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1771419521782</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Add AnswerOption entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771421370748</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1771421370748</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Add ScaleQuestion link entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771426868109</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1771426868109</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Add TestAttempt entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771497771329</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1771497771329</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Fix the time period filter in the Test entity">
-      <option name="closed" value="true" />
-      <created>1771499972995</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1771499972995</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Fix liquibase schemas">
-      <option name="closed" value="true" />
-      <created>1771505015425</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1771505015425</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Edit JSON output fields in TestAttemptDto and TestDto">
-      <option name="closed" value="true" />
-      <created>1771506440661</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1771506440662</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Add StudentAnswer entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771506506826</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1771506506826</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Add TestAttemptScore entity and its CRUD">
-      <option name="closed" value="true" />
-      <created>1771508792658</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1771508792658</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Add password strength validation">
-      <option name="closed" value="true" />
-      <created>1771582202355</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1771582202355</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Fix a bug where the Admin entity could not be modified without specifying a password or email">
-      <option name="closed" value="true" />
-      <created>1771585350206</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1771585350206</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Added a business rule where only one isTotal == true Scale can exist for one Methodology">
-      <option name="closed" value="true" />
-      <created>1771587123159</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1771587123159</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Added a business rule that only ScoreRange must have a unique interpretation, and ranges within the same Scale must not overlap">
-      <option name="closed" value="true" />
-      <created>1771587994399</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1771587994399</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Unnecessary imports removed">
-      <option name="closed" value="true" />
-      <created>1771588038569</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1771588038569</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Added a business rule to check the uniqueness of the answer option text in AnswerOption">
-      <option name="closed" value="true" />
-      <created>1771589587307</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1771589587307</updated>
-    </task>
-    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -563,37 +532,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add the entire list of BNTU faculties to the Liquibase query." />
-    <MESSAGE value="Add raw Admin entity with basic functionality" />
-    <MESSAGE value="Delete @Id annotations" />
-    <MESSAGE value="Rename method variables" />
-    <MESSAGE value="Add extra endpoints" />
-    <MESSAGE value="Add Methodology entity and its CRUD" />
-    <MESSAGE value="Add Scale entity and its CRUD" />
-    <MESSAGE value="Add ScoreRange entity and its CRUD" />
-    <MESSAGE value="Add Test entity and its CRUD and the ability to open/close Test" />
-    <MESSAGE value="Add Question entity and its CRUD" />
-    <MESSAGE value="Add @NoArgsConstructor annotations" />
-    <MESSAGE value="Add AnswerOption entity and its CRUD" />
-    <MESSAGE value="Add ScaleQuestion link entity and its CRUD" />
-    <MESSAGE value="Add TestAttempt entity and its CRUD" />
-    <MESSAGE value="Fix the time period filter in the Test entity" />
-    <MESSAGE value="Fix liquibase schemas" />
-    <MESSAGE value="Edit JSON output fields in TestAttemptDto and TestDto" />
-    <MESSAGE value="Add StudentAnswer entity and its CRUD" />
-    <MESSAGE value="Add TestAttemptScore entity and its CRUD" />
-    <MESSAGE value="Add password strength validation" />
-    <MESSAGE value="Fix a bug where the Admin entity could not be modified without specifying a password or email" />
-    <MESSAGE value="Added a business rule where only one isTotal == true Scale can exist for one Methodology" />
-    <MESSAGE value="Added a business rule that only ScoreRange must have a unique interpretation, and ranges within the same Scale must not overlap" />
-    <MESSAGE value="Unnecessary imports removed" />
-    <MESSAGE value="Added a business rule to check the uniqueness of the answer option text in AnswerOption" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a business rule to check the uniqueness of the answer option text in AnswerOption" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
