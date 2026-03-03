@@ -4,90 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f6b69e6-3ae0-42f4-9478-d1ae319a4d26" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/AnswerOptionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/QuestionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/QuestionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/ScaleDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/ScaleQuestionDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/ScoreRangeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/SearchFilterDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/StudentAnswerDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/TestAttemptCreateDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/TestAttemptScoreDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-dto/src/main/java/common/dto/TestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compose.yaml" beforeDir="false" />
+    <list default="true" id="29b9bf2e-241a-4dfc-b229-48525e71f74a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/dev/tolkach/psychologicalTestsApplication/PsychologicalTestsApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/resources/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/resources/db/changelog/changes/001-init-schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/resources/db/changelog/db.changelog-master.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/test/java/dev/tolkach/psychologicalTestsApplication/PsychologicalTestsApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/TestAttemptScoreDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/TestAttemptScoreDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/entity/TestAttemptScoreEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/entity/TestAttemptScoreEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/specification/TestAttemptScoreSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/specification/TestAttemptScoreSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/TestAttemptScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/TestAttemptScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/MethodologiesPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/MethodologiesPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestsPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestsPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/TestAttemptScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/TestAttemptScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/005-init-attempts-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/005-init-attempts-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/003-init-methodologies-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/003-init-methodologies-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/AnswerOptionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/AnswerOptionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,80 +36,62 @@
       </state>
     </system>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPENED&quot;,
-    &quot;assignee&quot;: {
-      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
-      &quot;username&quot;: &quot;ivantolkach2005&quot;,
-      &quot;fullname&quot;: &quot;Ivan Tolkach&quot;
+  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPENED",
+    "assignee": {
+      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
+      "username": "ivantolkach2005",
+      "fullname": "Ivan Tolkach"
     }
   }
-}</component>
-  <component name="GitLabMergeRequestsSettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;first&quot;: &quot;https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git&quot;,
-    &quot;second&quot;: &quot;12941c79-9e73-484a-b4bb-c3f9db99c340&quot;
+}]]></component>
+  <component name="GitLabMergeRequestsSettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "first": "https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git",
+    "second": "12941c79-9e73-484a-b4bb-c3f9db99c340"
   }
-}</component>
-  <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider">{
-  &quot;isMigrated&quot;: true
-}</component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="3AOKZnJtniqlrOqJsKPJapJifeq" />
+}]]></component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="3AQpgatf9srq8YV1iezC2Mwnr7Z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build psychologicaltestsapplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AttemptsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MethodologiesServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.TestsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
-    ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build psychologicaltestsapplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.AttemptsServiceApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.MethodologiesServiceApplication.executor": "Run",
+    "Spring Boot.TestsServiceApplication.executor": "Run",
+    "Spring Boot.UsersServiceApplication.executor": "Run",
+    "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="common.dto" />
-    </key>
-  </component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -205,10 +107,7 @@
           <value>
             <map>
               <entry key="AttemptsServiceApplication" value="STOPPED" />
-              <entry key="EurekaServerApplication" value="STOPPED" />
-              <entry key="MethodologiesServiceApplication" value="STOPPED" />
               <entry key="TestsServiceApplication" value="STOPPED" />
-              <entry key="UsersServiceApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -263,13 +162,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2f6b69e6-3ae0-42f4-9478-d1ae319a4d26" name="Changes" comment="" />
-      <created>1772458234742</created>
+      <changelist id="29b9bf2e-241a-4dfc-b229-48525e71f74a" name="Changes" comment="" />
+      <created>1772534761528</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1772458234742</updated>
-      <workItem from="1772458236047" duration="7737000" />
-      <workItem from="1772524957501" duration="5844000" />
+      <updated>1772534761528</updated>
+      <workItem from="1772534763153" duration="2949000" />
     </task>
     <servers />
   </component>

@@ -48,8 +48,14 @@ public class AnswerOptionService implements AnswerOptionUseCase {
 
         List<AnswerOption> existingInSameQuestion = answerOptionRepository.findByFilter(checkFilter);
 
-        for (AnswerOption optionOfQuestion : existingInSameQuestion) {
-            if (answerOption.getText().trim().equalsIgnoreCase(optionOfQuestion.getText().trim())) {
+        for (AnswerOption existing : existingInSameQuestion) {
+            boolean sameText = answerOption.getText().trim().equalsIgnoreCase(existing.getText().trim());
+
+            if (sameText) {
+                if (answerOption.getId() != null && answerOption.getId().equals(existing.getId())) {
+                    continue;
+                }
+
                 throw new IllegalArgumentException(
                         "Answer option with the same text '" + answerOption.getText() + "' already exists for question " + answerOption.getQuestionId()
                 );
