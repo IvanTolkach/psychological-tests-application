@@ -1,6 +1,9 @@
 server:
   port: 8084
 
+repository:
+  type: jpa
+
 spring:
   application:
     name: attempts-service

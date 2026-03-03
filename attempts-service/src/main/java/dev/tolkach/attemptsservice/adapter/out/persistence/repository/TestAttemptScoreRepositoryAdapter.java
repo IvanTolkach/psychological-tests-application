@@ -5,6 +5,7 @@ import dev.tolkach.attemptsservice.adapter.out.persistence.mapper.TestAttemptSco
 import dev.tolkach.attemptsservice.adapter.out.persistence.specification.TestAttemptScoreSpecification;
 import dev.tolkach.attemptsservice.application.model.TestAttemptScore;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptScoreRepository;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
+@ConditionalOnProperty(name = "repository.type", havingValue = "jpa", matchIfMissing = true)
 public class TestAttemptScoreRepositoryAdapter implements TestAttemptScoreRepository {
 
     private final JpaTestAttemptScoreRepository jpaTestAttemptScoreRepository;

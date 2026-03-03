@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b9bf2e-241a-4dfc-b229-48525e71f74a" name="Changes" comment="Fixed check for non-repetition of text field when changing AnswerOption entity">
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/dto/PasswordChangeDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/PasswordChangeDtoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/PasswordChange.java" afterDir="false" />
+    <list default="true" id="29b9bf2e-241a-4dfc-b229-48525e71f74a" name="Changes" comment="The password change request is now implemented via @RequestBody">
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/localstorage/LocalStorageTestAttemptScoreAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/009-filling-testattempt-and-studentanswers.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/007-filling-methodology-scales-and-scoreranges.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/008-filling-test-questions-answeroptions-and-scalequestions.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/006-filling-admin-and-user.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/AdminEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/AdminEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/ApiEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/AdminUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/AdminUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -104,6 +103,11 @@
     "nodejs_package_manager_path": "npm",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RunDashboard">
@@ -121,8 +125,10 @@
           <value>
             <map>
               <entry key="AttemptsServiceApplication" value="STOPPED" />
-              <entry key="TestsServiceApplication" value="STOPPED" />
-              <entry key="UsersServiceApplication" value="STOPPED" />
+              <entry key="EurekaServerApplication" value="STOPPED" />
+              <entry key="MethodologiesServiceApplication" value="FAILED" />
+              <entry key="TestsServiceApplication" value="FAILED" />
+              <entry key="UsersServiceApplication" value="FAILED" />
             </map>
           </value>
         </entry>
@@ -182,7 +188,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772534761528</updated>
-      <workItem from="1772534763153" duration="5058000" />
+      <workItem from="1772534763153" duration="15823000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed check for non-repetition of text field when changing AnswerOption entity">
       <option name="closed" value="true" />
@@ -192,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772537924100</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="The password change request is now implemented via @RequestBody">
+      <option name="closed" value="true" />
+      <created>1772540168078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1772540168078</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +214,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed check for non-repetition of text field when changing AnswerOption entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed check for non-repetition of text field when changing AnswerOption entity" />
+    <MESSAGE value="The password change request is now implemented via @RequestBody" />
+    <option name="LAST_COMMIT_MESSAGE" value="The password change request is now implemented via @RequestBody" />
   </component>
 </project>
