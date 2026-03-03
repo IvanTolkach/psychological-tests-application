@@ -23,7 +23,7 @@ CREATE TABLE methodologies.ScoreRange (
                                           scale_id UUID NOT NULL,
                                           min_score INTEGER NOT NULL,
                                           max_score INTEGER NOT NULL,
-                                          interpretation VARCHAR(50) NOT NULL,
+                                          interpretation VARCHAR(255) NOT NULL,
                                           description TEXT,
                                           CONSTRAINT fk_scorerange_scale FOREIGN KEY (scale_id) REFERENCES methodologies.Scale(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

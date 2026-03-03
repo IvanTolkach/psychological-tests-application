@@ -17,7 +17,8 @@ CREATE TABLE attempts.TestAttemptScore (
                                            id UUID PRIMARY KEY,
                                            test_attempt_id UUID NOT NULL,
                                            scale_id UUID NOT NULL,
-                                           score INTEGER NOT NULL,
+                                           score INTEGER NOT NULL DEFAULT 0,
+                                           interpretation VARCHAR(255) NOT NULL DEFAULT 'undefined',
                                            CONSTRAINT fk_score_attempt FOREIGN KEY (test_attempt_id) REFERENCES attempts.TestAttempt(id) ON DELETE CASCADE ON UPDATE CASCADE,
                                            CONSTRAINT fk_score_scale FOREIGN KEY (scale_id) REFERENCES methodologies.Scale(id) ON DELETE RESTRICT ON UPDATE CASCADE
 );

@@ -21,6 +21,9 @@ public class TestAttemptScoreEntity {
     @Column(name = "scale_id", nullable = false)
     private UUID scaleId;
 
-    @Column(nullable = false)
-    private Integer score;
+    @Column
+    private Integer score = 0;
+
+    @Column
+    private String interpretation = "undefined";
 }

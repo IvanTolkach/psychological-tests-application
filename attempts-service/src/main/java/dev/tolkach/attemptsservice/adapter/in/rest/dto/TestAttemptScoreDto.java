@@ -17,6 +17,7 @@ public class TestAttemptScoreDto {
     @NotNull(message = "Scale ID is required")
     private UUID scaleId;
 
-    @NotNull(message = "Score is required")
     private Integer score;
+
+    private String interpretation;
 }

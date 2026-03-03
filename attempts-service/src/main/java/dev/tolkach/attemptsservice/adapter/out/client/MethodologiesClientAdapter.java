@@ -1,10 +1,10 @@
 package dev.tolkach.attemptsservice.adapter.out.client;
 
+import common.dto.*;
 import dev.tolkach.attemptsservice.application.port.out.MethodologiesPort;
 import org.springframework.stereotype.Component;
 
-import java.util.NoSuchElementException;
-import java.util.UUID;
+import java.util.*;
 
 @Component
 public class MethodologiesClientAdapter implements MethodologiesPort {
@@ -20,5 +20,36 @@ public class MethodologiesClientAdapter implements MethodologiesPort {
         if (response == null) {
             throw new NoSuchElementException("Scale not found with id: " + scaleId);
         }
+    }
+
+    @Override
+    public List<ScaleDto> getScalesByMethodologyId(UUID methodologyId) {
+        SearchFilterDto filter = new SearchFilterDto();
+        filter.setMethodologyId(methodologyId);
+        return methodologiesClient.searchScales(filter);
+    }
+
+    @Override
+    public List<ScaleQuestionDto> getScaleQuestionsByScaleIds(Collection<UUID> scaleIds) {
+        List<ScaleQuestionDto> result = new ArrayList<>();
+        for (UUID scaleId : scaleIds) {
+            SearchFilterDto singleFilter = new SearchFilterDto();
+            singleFilter.setScaleId(scaleId);
+            result.addAll(methodologiesClient.searchScaleQuestions(singleFilter));
+        }
+
+        return result;
+    }
+
+    @Override
+    public List<ScoreRangeDto> getScoreRangesByScaleIds(Collection<UUID> scaleIds) {
+        List<ScoreRangeDto> result = new ArrayList<>();
+        for (UUID sId : scaleIds) {
+            SearchFilterDto filter = new SearchFilterDto();
+            filter.setScaleId(sId);
+            result.addAll(methodologiesClient.searchScoreRanges(filter));
+
+        }
+        return result;
     }
 }

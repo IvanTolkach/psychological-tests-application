@@ -28,6 +28,9 @@ public class TestAttemptScoreSpecification {
             if (filter.getScore() != null) {
                 predicates.add(cb.equal(root.get("score"), filter.getScore()));
             }
+            if (filter.getInterpretation() != null && !filter.getInterpretation().isBlank()) {
+                predicates.add(cb.like(cb.lower(root.get("interpretation")), "%" + filter.getInterpretation().toLowerCase() + "%"));
+            }
 
             return cb.and(predicates.toArray(new Predicate[0]));
         };

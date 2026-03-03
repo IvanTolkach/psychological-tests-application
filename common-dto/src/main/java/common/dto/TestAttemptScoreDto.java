@@ -1,13 +1,11 @@
-package dev.tolkach.attemptsservice.application.model;
+package common.dto;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Data
-@NoArgsConstructor
-public class TestAttemptScore {
+public class TestAttemptScoreDto {
     private UUID id;
     private UUID testAttemptId;
     private UUID scaleId;

@@ -1,5 +1,6 @@
 rootProject.name = 'psychologicalTestsApplication'
 
+include 'common-dto'
 include 'eureka-server'
 include 'users-service'
 include 'methodologies-service'

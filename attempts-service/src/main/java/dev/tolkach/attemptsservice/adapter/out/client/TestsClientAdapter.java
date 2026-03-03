@@ -1,10 +1,13 @@
 package dev.tolkach.attemptsservice.adapter.out.client;
 
+import common.dto.AnswerOptionDto;
+import common.dto.QuestionDto;
+import common.dto.SearchFilterDto;
+import common.dto.TestDto;
 import dev.tolkach.attemptsservice.application.port.out.TestsPort;
 import org.springframework.stereotype.Component;
 
-import java.util.NoSuchElementException;
-import java.util.UUID;
+import java.util.*;
 
 @Component
 public class TestsClientAdapter implements TestsPort {
@@ -37,5 +40,28 @@ public class TestsClientAdapter implements TestsPort {
         if (response == null) {
             throw new NoSuchElementException("AnswerOption not found with id: " + answerOptionId);
         }
+    }
+
+    @Override
+    public TestDto getTestById(UUID testId) {
+        return testsClient.getTestById(testId);
+    }
+
+    @Override
+    public List<QuestionDto> getQuestionsByTestId(UUID testId) {
+        SearchFilterDto filter = new SearchFilterDto();
+        filter.setTestId(testId);
+        return testsClient.searchQuestions(filter);
+    }
+
+    @Override
+    public List<AnswerOptionDto> getAnswerOptionsByQuestionIds(Collection<UUID> questionIds) {
+        List<AnswerOptionDto> result = new ArrayList<>();
+        for (UUID qId : questionIds) {
+            SearchFilterDto filter = new SearchFilterDto();
+            filter.setQuestionId(qId);
+            result.addAll(testsClient.searchAnswerOptions(filter));
+        }
+        return result;
     }
 }

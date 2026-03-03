@@ -14,17 +14,17 @@ import org.springframework.context.annotation.Configuration;
 public class ApplicationConfig {
 
     @Bean
-    public TestAttemptUseCase testAttemptUseCase(TestAttemptRepository testAttemptRepository, UsersPort usersPort, TestsPort testsPort) {
-        return new TestAttemptService(testAttemptRepository, usersPort, testsPort);
-    }
-
-    @Bean
     public StudentAnswerUseCase studentAnswerUseCase(StudentAnswerRepository studentAnswerRepository, TestAttemptRepository testAttemptRepository, TestsPort testsPort) {
         return new StudentAnswerService(studentAnswerRepository, testAttemptRepository, testsPort);
     }
 
     @Bean
-    public TestAttemptScoreUseCase testAttemptScoreUseCase(TestAttemptScoreRepository testAttemptScoreRepository, TestAttemptRepository testAttemptRepository, MethodologiesPort methodologiesPort) {
-        return new TestAttemptScoreService(testAttemptScoreRepository, testAttemptRepository, methodologiesPort);
+    public TestAttemptScoreUseCase testAttemptScoreUseCase(TestAttemptScoreRepository testAttemptScoreRepository, TestAttemptRepository testAttemptRepository, MethodologiesPort methodologiesPort, TestsPort testsPort, StudentAnswerRepository studentAnswerRepository) {
+        return new TestAttemptScoreService(testAttemptScoreRepository, testAttemptRepository, methodologiesPort, testsPort, studentAnswerRepository);
+    }
+
+    @Bean
+    public TestAttemptUseCase testAttemptUseCase(TestAttemptRepository testAttemptRepository, UsersPort usersPort, TestsPort testsPort) {
+        return new TestAttemptService(testAttemptRepository, usersPort, testsPort);
     }
 }
