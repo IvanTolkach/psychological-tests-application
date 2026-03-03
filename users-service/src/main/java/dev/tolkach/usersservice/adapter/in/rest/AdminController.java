@@ -1,9 +1,12 @@
 package dev.tolkach.usersservice.adapter.in.rest;
 
 import dev.tolkach.usersservice.adapter.in.rest.dto.AdminDto;
+import dev.tolkach.usersservice.adapter.in.rest.dto.PasswordChangeDto;
 import dev.tolkach.usersservice.adapter.in.rest.endpoint.AdminEndpoint;
 import dev.tolkach.usersservice.adapter.in.rest.mapper.AdminDtoMapper;
+import dev.tolkach.usersservice.adapter.in.rest.mapper.PasswordChangeDtoMapper;
 import dev.tolkach.usersservice.application.model.Admin;
+import dev.tolkach.usersservice.application.model.PasswordChange;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +20,12 @@ public class AdminController implements AdminEndpoint {
 
     private final AdminUseCase adminUseCase;
     private final AdminDtoMapper adminDtoMapper;
+    private final PasswordChangeDtoMapper passwordChangeDtoMapper;
 
-    public AdminController(AdminUseCase adminUseCase, AdminDtoMapper adminDtoMapper) {
+    public AdminController(AdminUseCase adminUseCase, AdminDtoMapper adminDtoMapper, PasswordChangeDtoMapper passwordChangeDtoMapper) {
         this.adminUseCase = adminUseCase;
         this.adminDtoMapper = adminDtoMapper;
+        this.passwordChangeDtoMapper = passwordChangeDtoMapper;
     }
 
     @Override
@@ -57,8 +62,9 @@ public class AdminController implements AdminEndpoint {
     }
 
     @Override
-    public ResponseEntity<Void> changePassword(UUID adminId, String oldPassword, String newPassword) {
-        adminUseCase.changePassword(adminId, oldPassword, newPassword);
+    public ResponseEntity<Void> changePassword(PasswordChangeDto passwordChangeDto) {
+        PasswordChange passwordChange = passwordChangeDtoMapper.toEntity(passwordChangeDto);
+        adminUseCase.changePassword(passwordChange);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

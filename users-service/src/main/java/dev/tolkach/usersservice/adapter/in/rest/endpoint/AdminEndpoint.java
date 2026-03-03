@@ -1,6 +1,7 @@
 package dev.tolkach.usersservice.adapter.in.rest.endpoint;
 
 import dev.tolkach.usersservice.adapter.in.rest.dto.AdminDto;
+import dev.tolkach.usersservice.adapter.in.rest.dto.PasswordChangeDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,5 +23,5 @@ public interface AdminEndpoint {
     ResponseEntity<Void> deactivateAdmin(@PathVariable UUID adminId);
 
     @PatchMapping(ApiEndpoints.Admin.CHANGE_PASSWORD)
-    ResponseEntity<Void> changePassword(@PathVariable UUID adminId, @RequestParam String oldPassword, @RequestParam String newPassword);
+    ResponseEntity<Void> changePassword(@Valid @RequestBody PasswordChangeDto passwordChangeDto);
 }

@@ -2,6 +2,7 @@ package dev.tolkach.usersservice.application.service;
 
 import dev.tolkach.usersservice.application.model.Admin;
 import dev.tolkach.usersservice.application.model.AdminRole;
+import dev.tolkach.usersservice.application.model.PasswordChange;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import dev.tolkach.usersservice.application.port.out.AdminRepository;
 import dev.tolkach.usersservice.application.port.out.PasswordPort;
@@ -73,24 +74,24 @@ public class AdminService implements AdminUseCase {
 
     @Override
     @Transactional
-    public void changePassword(UUID id, String oldPassword, String newPassword) {
-        Admin existing = adminRepository.findById(id)
-                .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
+    public void changePassword(PasswordChange passwordChange) {
+        Admin existing = adminRepository.findById(passwordChange.getAdminId())
+                .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + passwordChange.getAdminId()));
 
-        if (!passwordPort.matches(oldPassword, existing.getPassword())) {
+        if (!passwordPort.matches(passwordChange.getOldPassword(), existing.getPassword())) {
             throw new IllegalArgumentException("Old password is incorrect");
         }
 
-        if (!passwordPort.isStrong(newPassword, existing.getSname(), existing.getEmail(), existing.getPhoneNumber())) {
+        if (!passwordPort.isStrong(passwordChange.getNewPassword(), existing.getSname(), existing.getEmail(), existing.getPhoneNumber())) {
             throw new IllegalArgumentException("New password is too weak. It must be at least 12 characters long, " +
                     "contain uppercase, lowercase, digit and special character, and avoid common patterns.");
         }
 
-        if (passwordPort.matches(newPassword, existing.getPassword())) {
+        if (passwordPort.matches(passwordChange.getNewPassword(), existing.getPassword())) {
             throw new IllegalArgumentException("New password cannot be the same as an old password");
         }
 
-        existing.setPassword(passwordPort.encode(newPassword));
+        existing.setPassword(passwordPort.encode(passwordChange.getNewPassword()));
         adminRepository.save(existing);
     }
 
