@@ -4,15 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b9bf2e-241a-4dfc-b229-48525e71f74a" name="Changes" comment="The password change request is now implemented via @RequestBody">
-      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/localstorage/LocalStorageTestAttemptScoreAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/009-filling-testattempt-and-studentanswers.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/007-filling-methodology-scales-and-scoreranges.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/008-filling-test-questions-answeroptions-and-scalequestions.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/006-filling-admin-and-user.sql" afterDir="false" />
+    <list default="true" id="29b9bf2e-241a-4dfc-b229-48525e71f74a" name="Changes" comment="Added liquibase migrations for example data">
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/dto/JwtResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/dto/SignInDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/AuthEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/JwtResponseDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/AuthUseCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/JwtPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/AdminEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/AdminEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/ApiEndpoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/endpoint/ApiEndpoints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/AdminDtoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/mapper/AdminDtoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/persistence/mapper/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/AdminUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/in/AdminUseCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/PasswordPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/PasswordPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/006-filling-admin-and-user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/006-filling-admin-and-user.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,64 +75,65 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitLabMergeRequestFiltersHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPENED",
-    "assignee": {
-      "type": "org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue",
-      "username": "ivantolkach2005",
-      "fullname": "Ivan Tolkach"
+  <component name="GitLabMergeRequestFiltersHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPENED&quot;,
+    &quot;assignee&quot;: {
+      &quot;type&quot;: &quot;org.jetbrains.plugins.gitlab.mergerequest.ui.filters.GitLabMergeRequestsFiltersValue.MergeRequestsMemberFilterValue.MergeRequestsAssigneeFilterValue&quot;,
+      &quot;username&quot;: &quot;ivantolkach2005&quot;,
+      &quot;fullname&quot;: &quot;Ivan Tolkach&quot;
     }
   }
-}]]></component>
-  <component name="GitLabMergeRequestsSettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "first": "https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git",
-    "second": "12941c79-9e73-484a-b4bb-c3f9db99c340"
+}</component>
+  <component name="GitLabMergeRequestsSettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;first&quot;: &quot;https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git&quot;,
+    &quot;second&quot;: &quot;12941c79-9e73-484a-b4bb-c3f9db99c340&quot;
   }
-}]]></component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3AQpgatf9srq8YV1iezC2Mwnr7Z" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build psychologicaltestsapplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.AttemptsServiceApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.MethodologiesServiceApplication.executor": "Run",
-    "Spring Boot.TestsServiceApplication.executor": "Run",
-    "Spring Boot.UsersServiceApplication.executor": "Run",
-    "git-widget-placeholder": "development",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build psychologicaltestsapplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AttemptsServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.MethodologiesServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.TestsServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -126,9 +150,9 @@
             <map>
               <entry key="AttemptsServiceApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
-              <entry key="MethodologiesServiceApplication" value="FAILED" />
-              <entry key="TestsServiceApplication" value="FAILED" />
-              <entry key="UsersServiceApplication" value="FAILED" />
+              <entry key="MethodologiesServiceApplication" value="STOPPED" />
+              <entry key="TestsServiceApplication" value="STOPPED" />
+              <entry key="UsersServiceApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -188,7 +212,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772534761528</updated>
-      <workItem from="1772534763153" duration="15823000" />
+      <workItem from="1772534763153" duration="16227000" />
+      <workItem from="1772611807015" duration="9821000" />
+      <workItem from="1772624584164" duration="18000" />
+      <workItem from="1772624612474" duration="10352000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed check for non-repetition of text field when changing AnswerOption entity">
       <option name="closed" value="true" />
@@ -206,7 +233,23 @@
       <option name="project" value="LOCAL" />
       <updated>1772540168078</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added an adapter for TestAttemptScore to save to local storage and the ability to switch between adapters via application.properties">
+      <option name="closed" value="true" />
+      <created>1772555144417</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772555144417</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added liquibase migrations for example data">
+      <option name="closed" value="true" />
+      <created>1772555176509</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1772555176509</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +258,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed check for non-repetition of text field when changing AnswerOption entity" />
     <MESSAGE value="The password change request is now implemented via @RequestBody" />
-    <option name="LAST_COMMIT_MESSAGE" value="The password change request is now implemented via @RequestBody" />
+    <MESSAGE value="Added an adapter for TestAttemptScore to save to local storage and the ability to switch between adapters via application.properties" />
+    <MESSAGE value="Added liquibase migrations for example data" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added liquibase migrations for example data" />
   </component>
 </project>

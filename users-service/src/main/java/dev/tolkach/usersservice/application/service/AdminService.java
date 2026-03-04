@@ -6,14 +6,17 @@ import dev.tolkach.usersservice.application.model.PasswordChange;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import dev.tolkach.usersservice.application.port.out.AdminRepository;
 import dev.tolkach.usersservice.application.port.out.PasswordPort;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 public class AdminService implements AdminUseCase {
+
+    @Value("${admin.limits.max-super-admins}")
+    int maxSuperAdmins;
 
     private final AdminRepository adminRepository;
     private final PasswordPort passwordPort;
@@ -34,6 +37,13 @@ public class AdminService implements AdminUseCase {
     public Admin getAdminById(UUID id) {
         return adminRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Admin getAdminByEmail(String email) {
+        return adminRepository.findByEmail(email)
+                .orElseThrow(() -> new NoSuchElementException("Admin not found with email: " + email));
     }
 
     @Override
@@ -64,6 +74,16 @@ public class AdminService implements AdminUseCase {
         } else {
             Admin existing = adminRepository.findById(admin.getId())
                     .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + admin.getId()));
+
+            Admin currentAdmin = getCuttentAdmin();
+            if (!currentAdmin.getRole().equals(AdminRole.SUPER) && !currentAdmin.equals(existing)) {
+                throw new AccessDeniedException("The administrator can only change his own data if he does not have the SUPER role");
+            }
+
+            if (existing.getRole().equals(AdminRole.SUPER)) {
+                throw new AccessDeniedException("You cannot change data of the SUPER administrator");
+            }
+
             existing.setSname(admin.getSname());
             existing.setFname(admin.getFname());
             existing.setMname(admin.getMname());
@@ -77,6 +97,15 @@ public class AdminService implements AdminUseCase {
     public void changePassword(PasswordChange passwordChange) {
         Admin existing = adminRepository.findById(passwordChange.getAdminId())
                 .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + passwordChange.getAdminId()));
+
+        Admin currentAdmin = getCuttentAdmin();
+        if (!currentAdmin.getRole().equals(AdminRole.SUPER) && !currentAdmin.equals(existing)) {
+            throw new AccessDeniedException("The administrator can only change his own password if he does not have the SUPER role");
+        }
+
+        if (existing.getRole().equals(AdminRole.SUPER)) {
+            throw new AccessDeniedException("You cannot change password of the SUPER administrator");
+        }
 
         if (!passwordPort.matches(passwordChange.getOldPassword(), existing.getPassword())) {
             throw new IllegalArgumentException("Old password is incorrect");
@@ -95,18 +124,75 @@ public class AdminService implements AdminUseCase {
         adminRepository.save(existing);
     }
 
-    //TODO может только SUPER_ADMIN
     @Override
     @Transactional
     public void deactivateAdmin(UUID id) {
         Admin existing = adminRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
+
+        if (existing.getRole().equals(AdminRole.SUPER)) {
+            throw new AccessDeniedException("Admin with SUPER role cannot be deactivated. Admin id: " + id);
+        }
+
         if (!existing.getIsActive()) {
             throw new IllegalArgumentException("Admin is already deactivated with id: " + id);
         }
+
+        if (getCuttentAdmin().equals(existing)) {
+            throw new IllegalArgumentException("Current admin cannot deactivate himself");
+        }
+
         existing.setIsActive(false);
         adminRepository.save(existing);
     }
 
-    //TODO отдельная логика для смены ROLE и IS_ACTIVE
+    @Override
+    @Transactional
+    public void activateAdmin(UUID id) {
+        Admin existing = adminRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
+        if (existing.getIsActive()) {
+            throw new IllegalArgumentException("Admin is already activated with id: " + id);
+        }
+
+        existing.setIsActive(true);
+        adminRepository.save(existing);
+    }
+
+    @Override
+    @Transactional
+    public void changeRole(UUID id, AdminRole newRole) {
+        Admin existing = adminRepository.findById(id)
+                .orElseThrow(() -> new NoSuchElementException("Admin not found with id: " + id));
+
+        if (!existing.getIsActive()) {
+            throw new IllegalArgumentException("The role of admin without active status cannot be changed. Admin id: " + id);
+        }
+
+        if (getCuttentAdmin().equals(existing)) {
+            throw new IllegalArgumentException("Current admin cannot change role for himself");
+        }
+
+        if (existing.getRole().equals(newRole)) {
+            throw new IllegalArgumentException("Admin with id [" + id + "] already has role [" + newRole + "]");
+        }
+
+        if (newRole.equals(AdminRole.SUPER)) {
+            Admin adminFilter = new Admin();
+            adminFilter.setRole(AdminRole.SUPER);
+            if (getAdminsByFilter(adminFilter).size() >= maxSuperAdmins) {
+                throw new IllegalArgumentException("Admin cannot have SUPER role because maximum number of SUPER admins has been exceeded [" + maxSuperAdmins + "]");
+            }
+        }
+
+        existing.setRole(newRole);
+        adminRepository.save(existing);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Admin getCuttentAdmin() {
+        String email = Objects.requireNonNull(SecurityContextHolder.getContext().getAuthentication()).getName();
+        return getAdminByEmail(email);
+    }
 }

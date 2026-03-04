@@ -1,6 +1,14 @@
 server:
   port: 8081
 
+token:
+  signing:
+    key: VRohBVW65HZZQr2xVUSfgo4r9bbfIDIwaz6BH0ktJi0
+
+admin:
+  limits:
+    max-super-admins: 2
+
 spring:
   application:
     name: users-service

@@ -20,5 +20,14 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{adminId}";
         public static final String CHANGE_PASSWORD = BASE + "/change-password";
+        public static final String ACTIVATE = BY_ID + "/activate";
+        public static final String CHANGE_ROLE = BY_ID + "/change-role";
+
+    }
+
+    public static class Authentication {
+        public static final String BASE = API_BASE + "/auth";
+        public static final String SIGN_IN = BASE + "/sign-in";
+        public static final String SIGN_UP = BASE + "/sign-up";
     }
 }
