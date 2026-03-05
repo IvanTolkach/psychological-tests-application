@@ -1,4 +1,4 @@
-package dev.tolkach.methodologiesservice.adapter.in.rest.exception;
+package dev.tolkach.testsservice.adapter.in.rest.exception;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;

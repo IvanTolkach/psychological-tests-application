@@ -4,22 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f707a53-9d08-4cfb-bad8-0e85fb1a4d48" name="Changes" comment="Added authentication logic for users-service">
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/ErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/JwtPort.java" afterDir="false" />
+    <list default="true" id="2f707a53-9d08-4cfb-bad8-0e85fb1a4d48" name="Changes" comment="Added authentication logic for tests-service">
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/security/JwtFeignInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/JwtPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/MethodologyEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/MethodologyEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScaleEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScaleEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScaleQuestionEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScaleQuestionEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScoreRangeEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/endpoint/ScoreRangeEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/in/rest/exception/ErrorResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/dto/TestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/dto/TestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/AnswerOptionEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/AnswerOptionEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/QuestionEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/QuestionEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/TestEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/endpoint/TestEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/in/rest/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/TestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/TestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/004-init-tests-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/004-init-tests-schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/008-filling-test-questions-answeroptions-and-scalequestions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/008-filling-test-questions-answeroptions-and-scalequestions.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/exception/ErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/in/rest/exception/ErrorResponse.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +114,7 @@
     "git-widget-placeholder": "development",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/security",
+    "last_opened_file_path": "C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
@@ -120,9 +125,13 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\tests-service\src\main\java\dev\tolkach\testsservice\adapter\out" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\tests-service\src\main\java\dev\tolkach\testsservice\application\port\out" />
       <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\methodologies-service\src\main\java\dev\tolkach\methodologiesservice\adapter\out\security" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="dev.tolkach.testsservice.adapter.in.rest.exception" />
+      <recent name="dev.tolkach.testsservice.application.port.out" />
       <recent name="dev.tolkach.methodologiesservice.adapter.in.rest.exception" />
       <recent name="dev.tolkach.methodologiesservice.application.port.out" />
     </key>
@@ -144,7 +153,7 @@
               <entry key="AttemptsServiceApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="MethodologiesServiceApplication" value="STOPPED" />
-              <entry key="TestsServiceApplication" value="STOPPED" />
+              <entry key="TestsServiceApplication" value="FAILED" />
               <entry key="UsersServiceApplication" value="STOPPED" />
             </map>
           </value>
@@ -152,7 +161,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MethodologiesServiceApplication">
+  <component name="RunManager" selected="Spring Boot.TestsServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="psychologicaltestsapplication" />
       <method v="2">
@@ -207,7 +216,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1772698157999</updated>
-      <workItem from="1772698159115" duration="13580000" />
+      <workItem from="1772698159115" duration="22211000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed an issue with a 500 server error when a token expired">
       <option name="closed" value="true" />
@@ -225,15 +234,36 @@
       <option name="project" value="LOCAL" />
       <updated>1772710654408</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added authentication logic for methodologies-service and fixed logic of generation of JWT token in users-service">
+      <option name="closed" value="true" />
+      <created>1772718488954</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1772718488954</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed an issue with a 500 server error when a token expired" />
     <MESSAGE value="Added authentication logic for users-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added authentication logic for users-service" />
+    <MESSAGE value="Added authentication logic for methodologies-service and fixed logic of generation of JWT token in users-service" />
+    <MESSAGE value="Added authentication logic for tests-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added authentication logic for tests-service" />
   </component>
 </project>

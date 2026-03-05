@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.FeignException;
 import jakarta.servlet.http.HttpServletRequest;
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
@@ -17,31 +16,10 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.NoSuchElementException;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    @Getter
-    private static class ErrorResponse {
-        private final ZonedDateTime timestamp;
-        private final int status;
-        private final String error;
-        private final String message;
-        private final String path;
-
-        public ErrorResponse(HttpStatus httpStatus, String message, String path) {
-            this.timestamp = ZonedDateTime.now(ZoneId.of("UTC"));
-            this.status = httpStatus.value();
-            this.error = httpStatus.getReasonPhrase();
-            this.message = message;
-            this.path = path;
-        }
-
-    }
-
     private String getRequestPath() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if (attributes != null) {

@@ -6,10 +6,13 @@ import dev.tolkach.testsservice.application.port.in.TestUseCase;
 import dev.tolkach.testsservice.application.port.out.MethodologiesPort;
 import dev.tolkach.testsservice.application.port.out.TestRepository;
 import dev.tolkach.testsservice.application.port.out.UsersPort;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
@@ -51,13 +54,14 @@ public class TestService implements TestUseCase {
     @Override
     @Transactional
     public Test createUpdateTest(Test test) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Object detailsObj = auth.getDetails();
+
+        @SuppressWarnings("unchecked")
+        Map<String, Object> details = (Map<String, Object>) detailsObj;
+        UUID currentAdminId = (UUID) details.get("adminId");
+
         methodologiesPort.validateMethodologyExists(test.getMethodologyId());
-
-        usersPort.validateAdminExists(test.getCreatedBy());
-
-        if (test.getUpdatedBy() != null) {
-            usersPort.validateAdminExists(test.getUpdatedBy());
-        }
 
         TestFilter checkFilter = new TestFilter();
         checkFilter.setMethodologyId(test.getMethodologyId());
@@ -75,8 +79,11 @@ public class TestService implements TestUseCase {
         }
 
         LocalDateTime now = LocalDateTime.now();
+
         if (test.getId() == null) {
+            test.setCreatedBy(currentAdminId);
             test.setCreatedAt(now);
+            test.setUpdatedBy(currentAdminId);
             test.setUpdatedAt(now);
             test.setIsActive(false);
             return testRepository.save(test);
@@ -84,8 +91,13 @@ public class TestService implements TestUseCase {
             Test existing = testRepository.findById(test.getId())
                     .orElseThrow(() -> new NoSuchElementException("Test not found with id: " + test.getId()));
 
+            if (test.getCreatedBy() != null) {
+                usersPort.validateAdminExists(test.getUpdatedBy());
+            }
+
             existing.setName(test.getName());
             existing.setMethodologyId(test.getMethodologyId());
+            existing.setUpdatedBy(currentAdminId);
             existing.setUpdatedAt(now);
 
             return testRepository.save(existing);

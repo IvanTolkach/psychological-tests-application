@@ -3,6 +3,7 @@ package dev.tolkach.testsservice.adapter.in.rest.endpoint;
 import dev.tolkach.testsservice.adapter.in.rest.dto.TestDto;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,17 +11,22 @@ import java.util.UUID;
 
 public interface TestEndpoint {
     @PostMapping(ApiEndpoints.Test.SEARCH)
+    @PreAuthorize("permitAll()")
     ResponseEntity<List<TestDto>> getTests(@RequestBody TestDto filter);
 
     @GetMapping(ApiEndpoints.Test.BY_ID)
+    @PreAuthorize("permitAll()")
     ResponseEntity<TestDto> getTestById(@PathVariable UUID testId);
 
     @PostMapping(ApiEndpoints.Test.BASE)
+    @PreAuthorize("hasAuthority('ROLE_SUPER')")
     ResponseEntity<TestDto> createUpdateTest(@Valid @RequestBody TestDto dto);
 
     @PatchMapping(ApiEndpoints.Test.UPDATE_STATUS)
+    @PreAuthorize("hasAnyAuthority('ROLE_STANDARD', 'ROLE_SUPER')")
     ResponseEntity<Void> updateTestStatus(@PathVariable UUID testId);
 
     @DeleteMapping(ApiEndpoints.Test.BY_ID)
+    @PreAuthorize("hasAuthority('ROLE_SUPER')")
     ResponseEntity<Void> deleteTest(@PathVariable UUID testId);
 }

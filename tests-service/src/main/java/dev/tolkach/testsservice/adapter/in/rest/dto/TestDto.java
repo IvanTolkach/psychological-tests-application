@@ -24,8 +24,6 @@ public class TestDto {
 
     private Boolean isActive;
 
-    //TODO сделать автоматическую подстановку
-    @NotNull(message = "Created by admin ID is required")
     private UUID createdBy;
 
     private LocalDateTime createdAt;
@@ -35,7 +33,6 @@ public class TestDto {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private LocalDateTime createdAtTo;
 
-    //TODO сделать автоматическую подстановку
     private UUID updatedBy;
 
     private LocalDateTime updatedAt;

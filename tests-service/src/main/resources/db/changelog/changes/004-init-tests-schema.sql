@@ -8,7 +8,7 @@ CREATE TABLE tests.Test (
                             name VARCHAR(100) NOT NULL,
                             methodology_id UUID NOT NULL,
                             is_active BOOLEAN DEFAULT FALSE,
-                            created_by UUID NOT NULL,
+                            created_by UUID,
                             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                             updated_by UUID,
                             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
