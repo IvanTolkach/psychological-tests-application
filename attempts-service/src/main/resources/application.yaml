@@ -1,6 +1,10 @@
 server:
   port: 8084
 
+token:
+  signing:
+    key: VRohBVW65HZZQr2xVUSfgo4r9bbfIDIwaz6BH0ktJi0
+
 repository:
   type: jpa
 
