@@ -3,7 +3,6 @@ package dev.tolkach.usersservice.adapter.in.rest;
 import dev.tolkach.usersservice.adapter.in.rest.dto.AdminDto;
 import dev.tolkach.usersservice.adapter.in.rest.dto.JwtResponseDto;
 import dev.tolkach.usersservice.adapter.in.rest.dto.SignInDto;
-import dev.tolkach.usersservice.adapter.in.rest.endpoint.ApiEndpoints;
 import dev.tolkach.usersservice.adapter.in.rest.endpoint.AuthEndpoint;
 import dev.tolkach.usersservice.adapter.in.rest.mapper.AdminDtoMapper;
 import dev.tolkach.usersservice.adapter.in.rest.mapper.JwtResponseDtoMapper;
@@ -14,8 +13,6 @@ import dev.tolkach.usersservice.application.port.in.AuthUseCase;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,7 +32,6 @@ public class AuthController implements AuthEndpoint {
     }
 
     @Override
-    @PostMapping(ApiEndpoints.Authentication.SIGN_IN)
     public ResponseEntity<JwtResponseDto> signIn(@Valid @RequestBody SignInDto signInDto) {
         JwtResponse response = authUseCase.signIn(signInDto.getEmail(), signInDto.getPassword());
         JwtResponseDto responseDto = jwtResponseDtoMapper.toDto(response);
@@ -43,8 +39,6 @@ public class AuthController implements AuthEndpoint {
     }
 
     @Override
-    @PreAuthorize("isAuthenticated()")
-    @PostMapping(ApiEndpoints.Authentication.SIGN_UP)
     public ResponseEntity<AdminDto> signUp(@Valid @RequestBody AdminDto adminDto) {
         adminDto.setId(null);
         Admin admin = adminDtoMapper.toEntity(adminDto);

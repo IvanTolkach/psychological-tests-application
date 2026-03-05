@@ -3,6 +3,7 @@ package dev.tolkach.usersservice.config;
 import dev.tolkach.usersservice.adapter.out.security.JwtAuthenticationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -36,7 +37,19 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/api/auth/sign-in").permitAll()
                         .requestMatchers("/api/auth/sign-up").authenticated()
+
                         .requestMatchers("/api/admins/**").authenticated()
+
+                        .requestMatchers(HttpMethod.GET, "/api/students/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/students/**").permitAll()
+                        .requestMatchers("/api/students/**").authenticated()
+
+                        .requestMatchers(HttpMethod.GET, "/api/faculties/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/faculties/**").permitAll()
+                        .requestMatchers("/api/faculties/**").authenticated()
+
+
+
                         .anyRequest().permitAll()
                 )
                 .authenticationProvider(authenticationProvider())
