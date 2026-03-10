@@ -11,4 +11,6 @@ public class SearchFilterDto {
     private UUID scaleId;
     private UUID questionId;
     private UUID scaleQuestionId;
+    private UUID facultyId;
+    private UUID studentId;
 }

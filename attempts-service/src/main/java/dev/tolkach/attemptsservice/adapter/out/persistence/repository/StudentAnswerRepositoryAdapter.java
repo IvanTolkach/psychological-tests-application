@@ -7,6 +7,7 @@ import dev.tolkach.attemptsservice.application.model.StudentAnswer;
 import dev.tolkach.attemptsservice.application.port.out.StudentAnswerRepository;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -41,6 +42,14 @@ public class StudentAnswerRepositoryAdapter implements StudentAnswerRepository {
         return jpaStudentAnswerRepository.findAll(StudentAnswerSpecification.filterBy(filter)).stream()
                 .map(studentAnswerMapper::toDomain)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<StudentAnswer> findByTestAttemptIdIn(Collection<UUID> attemptIds) {
+        return jpaStudentAnswerRepository.findByTestAttemptIdIn(attemptIds)
+                .stream()
+                .map(studentAnswerMapper::toDomain)
+                .toList();
     }
 
     @Override

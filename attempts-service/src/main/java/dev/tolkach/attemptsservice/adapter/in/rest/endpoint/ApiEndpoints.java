@@ -21,4 +21,8 @@ public final class ApiEndpoints {
         public static final String SEARCH = BASE + "/search";
         public static final String BY_ID = BASE + "/{testAttemptScoreId}";
     }
+
+    public static class Report {
+        public static final String BASE = API_BASE + "/reports";
+    }
 }
