@@ -20,10 +20,10 @@ spring:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog-master.yaml
     default-schema: attempts
-    liquibase-schema: public
+    liquibase-schema: attempts
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/psychologicalTestsDB?currentSchema=attempts
+    url: jdbc:postgresql://localhost:5432/psychologicaltestsdb?currentSchema=attempts
     username: postgres
     password: 1111
     driver-class-name: org.postgresql.Driver

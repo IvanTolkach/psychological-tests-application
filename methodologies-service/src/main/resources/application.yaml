@@ -17,10 +17,10 @@ spring:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog-master.yaml
     default-schema: methodologies
-    liquibase-schema: public
+    liquibase-schema: methodologies
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/psychologicalTestsDB?currentSchema=methodologies
+    url: jdbc:postgresql://localhost:5432/psychologicaltestsdb?currentSchema=methodologies
     username: postgres
     password: 1111
     driver-class-name: org.postgresql.Driver
