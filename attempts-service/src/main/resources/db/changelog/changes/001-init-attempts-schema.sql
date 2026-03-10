@@ -1,8 +1,5 @@
 --liquibase formatted sql
---changeset ivantolkach:005-init-attempts-schema
-
-CREATE SCHEMA IF NOT EXISTS attempts;
-
+--changeset ivantolkach:001-init-attempts-schema
 CREATE TABLE attempts.TestAttempt (
                                       id UUID PRIMARY KEY,
                                       student_id UUID NOT NULL,

@@ -1,8 +1,5 @@
 --liquibase formatted sql
---changeset ivantolkach:004-init-tests-schema
-
-CREATE SCHEMA IF NOT EXISTS tests;
-
+--changeset ivantolkach:001-init-tests-schema
 CREATE TABLE tests.Test (
                             id UUID PRIMARY KEY,
                             name VARCHAR(100) NOT NULL,

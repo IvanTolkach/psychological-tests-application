@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset ivantolkach:008-filling-test-questions-answeroptions-and-scalequestions
+--changeset ivantolkach:002-filling-test-questions-answeroptions-and-scalequestions
 INSERT INTO tests.test(id, name, methodology_id, is_active, created_by, created_at, updated_by, updated_at)
 VALUES
     ('0435f8a9-4d5e-4e98-8052-ac09ca9a5670', 'Тест 1-2 курсы', 'c8efd2f4-3f75-4b01-af91-87d9f6ace6ca', false, 'e1cb5ed2-6850-4766-be54-75a8474cfb7c', '2026-03-03T14:08:09.1586071', 'e1cb5ed2-6850-4766-be54-75a8474cfb7c', '2026-03-03T14:08:09.1586071');

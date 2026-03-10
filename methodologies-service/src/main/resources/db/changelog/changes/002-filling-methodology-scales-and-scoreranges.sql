@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset ivantolkach:007-filling-methodology-scales-and-scoreranges
+--changeset ivantolkach:002-filling-methodology-scales-and-scoreranges
 INSERT INTO methodologies.methodology(id, name, description)
 VALUES
     ('c8efd2f4-3f75-4b01-af91-87d9f6ace6ca', 'Методика Горской', 'Пример описания методики.');

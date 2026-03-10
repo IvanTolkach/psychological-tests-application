@@ -1,8 +1,5 @@
 --liquibase formatted sql
 --changeset ivantolkach:001-init-users-schema
-
-CREATE SCHEMA IF NOT EXISTS users;
-
 CREATE TABLE users.Faculty (
                                id UUID PRIMARY KEY,
                                name VARCHAR(100) NOT NULL UNIQUE

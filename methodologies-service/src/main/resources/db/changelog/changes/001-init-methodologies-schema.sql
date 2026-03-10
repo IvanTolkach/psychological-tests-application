@@ -1,8 +1,5 @@
 --liquibase formatted sql
---changeset ivantolkach:003-init-methodologies-schema
-
-CREATE SCHEMA IF NOT EXISTS methodologies;
-
+--changeset ivantolkach:001-init-methodologies-schema
 CREATE TABLE methodologies.Methodology (
                                            id UUID PRIMARY KEY,
                                            name VARCHAR(100) NOT NULL UNIQUE,
