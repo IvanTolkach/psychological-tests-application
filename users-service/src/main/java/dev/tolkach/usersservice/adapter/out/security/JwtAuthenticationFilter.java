@@ -57,6 +57,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             if (StringUtils.hasText(email) && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UserDetails userDetails = adminUseCase.getAdminByEmail(email);
 
+                if (!userDetails.isEnabled()) {
+                    sendErrorResponse(request, response, HttpStatus.FORBIDDEN,
+                            "The account is inactive. Please contact the administrator.");
+                    return;
+                }
+
                 if (jwtPort.isTokenValid(jwt, userDetails) && userDetails.isEnabled()) {
                     UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                             userDetails, null, userDetails.getAuthorities()
