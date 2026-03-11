@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public interface TestAttemptScoreRepository {
     TestAttemptScore save(TestAttemptScore testAttemptScore);
+    List<TestAttemptScore> saveAll(List<TestAttemptScore> scores);
     Optional<TestAttemptScore> findById(UUID id);
     List<TestAttemptScore> findByFilter(TestAttemptScore filter);
     void deleteById(UUID id);

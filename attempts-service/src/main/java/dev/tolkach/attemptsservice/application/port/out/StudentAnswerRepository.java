@@ -1,8 +1,8 @@
 package dev.tolkach.attemptsservice.application.port.out;
 
+import dev.tolkach.attemptsservice.application.model.ScaleScoreResult;
 import dev.tolkach.attemptsservice.application.model.StudentAnswer;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -12,5 +12,5 @@ public interface StudentAnswerRepository {
     Optional<StudentAnswer> findById(UUID id);
     List<StudentAnswer> findByFilter(StudentAnswer filter);
     void deleteById(UUID id);
-    List<StudentAnswer> findByTestAttemptIdIn(Collection<UUID> attemptIds);
+    List<ScaleScoreResult> calculateScoresWithInterpretation(UUID attemptId);
 }

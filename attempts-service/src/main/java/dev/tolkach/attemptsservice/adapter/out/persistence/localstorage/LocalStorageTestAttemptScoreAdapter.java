@@ -5,10 +5,7 @@ import dev.tolkach.attemptsservice.application.port.out.TestAttemptScoreReposito
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
@@ -24,8 +21,28 @@ public class LocalStorageTestAttemptScoreAdapter implements TestAttemptScoreRepo
             testAttemptScore.setId(UUID.randomUUID());
         }
         storage.put(testAttemptScore.getId(), testAttemptScore);
-        System.out.println("Сохранено в local storage.");
+        System.out.println("Saved into local storage.");
         return testAttemptScore;
+    }
+
+    @Override
+    public List<TestAttemptScore> saveAll(List<TestAttemptScore> scores) {
+
+        List<TestAttemptScore> saved = new ArrayList<>();
+
+        for (TestAttemptScore score : scores) {
+
+            if (score.getId() == null) {
+                score.setId(UUID.randomUUID());
+            }
+
+            storage.put(score.getId(), score);
+            saved.add(score);
+        }
+
+        System.out.println("Saved into local storage: " + saved.size());
+
+        return saved;
     }
 
     @Override

@@ -32,14 +32,24 @@ public class TestAttemptScoreController implements TestAttemptScoreEndpoint {
     }
 
     @Override
-    public ResponseEntity<TestAttemptScoreDto> createUpdateTestAttemptScore(TestAttemptScoreDto dto) {
-        TestAttemptScore testAttemptScore = testAttemptScoreDtoMapper.toEntity(dto);
-        TestAttemptScore saved = testAttemptScoreUseCase.createUpdateTestAttemptScore(testAttemptScore);
-        TestAttemptScoreDto responseDto = testAttemptScoreDtoMapper.toDto(saved);
+    public ResponseEntity<List<TestAttemptScoreDto>> createUpdateTestAttemptScore(TestAttemptScoreDto dto) {
+
+        TestAttemptScore entity = testAttemptScoreDtoMapper.toEntity(dto);
+
+        List<TestAttemptScore> saved =
+                testAttemptScoreUseCase.createUpdateTestAttemptScore(entity);
+
+        List<TestAttemptScoreDto> response =
+                saved.stream()
+                        .map(testAttemptScoreDtoMapper::toDto)
+                        .toList();
+
         if (dto.getId() == null) {
-            return ResponseEntity.status(HttpStatus.CREATED).body(responseDto);
+            return ResponseEntity
+                    .status(HttpStatus.CREATED)
+                    .body(response);
         } else {
-            return ResponseEntity.ok(responseDto);
+            return ResponseEntity.ok(response);
         }
     }
 

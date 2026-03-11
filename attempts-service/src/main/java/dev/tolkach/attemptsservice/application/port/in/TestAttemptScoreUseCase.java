@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public interface TestAttemptScoreUseCase {
     List<TestAttemptScore> getTestAttemptScoresByFilter(TestAttemptScore filter);
-    TestAttemptScore createUpdateTestAttemptScore(TestAttemptScore testAttemptScore);
+    List<TestAttemptScore> createUpdateTestAttemptScore(TestAttemptScore testAttemptScore);
     void deleteTestAttemptScore(UUID id);
 }

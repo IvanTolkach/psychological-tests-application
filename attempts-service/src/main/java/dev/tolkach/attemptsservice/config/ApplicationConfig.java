@@ -21,8 +21,8 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public TestAttemptScoreUseCase testAttemptScoreUseCase(TestAttemptScoreRepository testAttemptScoreRepository, TestAttemptRepository testAttemptRepository, MethodologiesPort methodologiesPort, TestsPort testsPort, StudentAnswerRepository studentAnswerRepository) {
-        return new TestAttemptScoreService(testAttemptScoreRepository, testAttemptRepository, methodologiesPort, testsPort, studentAnswerRepository);
+    public TestAttemptScoreUseCase testAttemptScoreUseCase(TestAttemptScoreRepository testAttemptScoreRepository, TestAttemptRepository testAttemptRepository, MethodologiesPort methodologiesPort, StudentAnswerRepository studentAnswerRepository) {
+        return new TestAttemptScoreService(testAttemptScoreRepository, testAttemptRepository, methodologiesPort, studentAnswerRepository);
     }
 
     @Bean

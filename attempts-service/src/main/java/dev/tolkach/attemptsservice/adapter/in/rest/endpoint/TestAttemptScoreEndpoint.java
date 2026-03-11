@@ -19,7 +19,7 @@ public interface TestAttemptScoreEndpoint {
 
     @PostMapping(ApiEndpoints.TestAttemptScore.BASE)
     @PreAuthorize("#p0.id == null or (isAuthenticated() and hasAuthority('ROLE_SUPER'))")
-    ResponseEntity<TestAttemptScoreDto> createUpdateTestAttemptScore(@Valid @RequestBody TestAttemptScoreDto dto);
+    ResponseEntity<List<TestAttemptScoreDto>> createUpdateTestAttemptScore(@Valid @RequestBody TestAttemptScoreDto dto);
 
     @DeleteMapping(ApiEndpoints.TestAttemptScore.BY_ID)
     @PreAuthorize("hasAuthority('ROLE_SUPER')")

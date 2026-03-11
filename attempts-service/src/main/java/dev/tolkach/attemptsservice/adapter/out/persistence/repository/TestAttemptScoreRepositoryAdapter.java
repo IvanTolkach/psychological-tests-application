@@ -33,6 +33,20 @@ public class TestAttemptScoreRepositoryAdapter implements TestAttemptScoreReposi
     }
 
     @Override
+    public List<TestAttemptScore> saveAll(List<TestAttemptScore> scores) {
+
+        List<TestAttemptScoreEntity> entities = scores.stream()
+                .map(testAttemptScoreMapper::toEntity)
+                .toList();
+
+        List<TestAttemptScoreEntity> saved = jpaTestAttemptScoreRepository.saveAll(entities);
+
+        return saved.stream()
+                .map(testAttemptScoreMapper::toDomain)
+                .toList();
+    }
+
+    @Override
     public Optional<TestAttemptScore> findById(UUID id) {
         return jpaTestAttemptScoreRepository.findById(id)
                 .map(testAttemptScoreMapper::toDomain);

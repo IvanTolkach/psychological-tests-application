@@ -3,11 +3,11 @@ package dev.tolkach.attemptsservice.adapter.out.persistence.repository;
 import dev.tolkach.attemptsservice.adapter.out.persistence.entity.StudentAnswerEntity;
 import dev.tolkach.attemptsservice.adapter.out.persistence.mapper.StudentAnswerMapper;
 import dev.tolkach.attemptsservice.adapter.out.persistence.specification.StudentAnswerSpecification;
+import dev.tolkach.attemptsservice.application.model.ScaleScoreResult;
 import dev.tolkach.attemptsservice.application.model.StudentAnswer;
 import dev.tolkach.attemptsservice.application.port.out.StudentAnswerRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -45,15 +45,12 @@ public class StudentAnswerRepositoryAdapter implements StudentAnswerRepository {
     }
 
     @Override
-    public List<StudentAnswer> findByTestAttemptIdIn(Collection<UUID> attemptIds) {
-        return jpaStudentAnswerRepository.findByTestAttemptIdIn(attemptIds)
-                .stream()
-                .map(studentAnswerMapper::toDomain)
-                .toList();
+    public void deleteById(UUID id) {
+        jpaStudentAnswerRepository.deleteById(id);
     }
 
     @Override
-    public void deleteById(UUID id) {
-        jpaStudentAnswerRepository.deleteById(id);
+    public List<ScaleScoreResult> calculateScoresWithInterpretation(UUID attemptId) {
+        return jpaStudentAnswerRepository.calculateScoresWithInterpretation(attemptId);
     }
 }
