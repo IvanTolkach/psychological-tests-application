@@ -23,9 +23,11 @@ public class TokenRevocationService {
 
         for (String jti : tokens) {
 
-            long ttlSeconds = 60 * 60 * 12;
+            long ttlSeconds = 60 * 60 * 12; // 12 часов
 
             tokenBlacklistPort.blacklistToken(jti, ttlSeconds);
         }
+
+        tokenBlacklistPort.deleteUserTokens(userId);
     }
 }

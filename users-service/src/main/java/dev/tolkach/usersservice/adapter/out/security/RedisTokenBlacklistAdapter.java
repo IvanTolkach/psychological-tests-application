@@ -40,4 +40,9 @@ public class RedisTokenBlacklistAdapter implements TokenBlacklistPort {
     public Set<String> getUserTokens(UUID userId) {
         return redisTemplate.opsForSet().members("user_tokens:" + userId);
     }
+
+    @Override
+    public void deleteUserTokens(UUID userId) {
+        redisTemplate.delete("user_tokens:" + userId);
+    }
 }

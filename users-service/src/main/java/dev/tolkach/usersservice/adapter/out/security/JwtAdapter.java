@@ -38,7 +38,7 @@ public class JwtAdapter implements JwtPort {
         String jti = UUID.randomUUID().toString();
 
         Map<String, Object> claims = new HashMap<>();
-        claims.put("jti", jti); //
+        claims.put("jti", jti);
         claims.put("role", admin.getRole().name());
         claims.put("id", admin.getId().toString());
         claims.put("is_active", admin.getIsActive());

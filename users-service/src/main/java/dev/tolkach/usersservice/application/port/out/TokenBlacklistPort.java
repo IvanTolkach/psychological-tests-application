@@ -8,4 +8,5 @@ public interface TokenBlacklistPort {
     boolean isBlacklisted(String jti);
     void storeUserToken(UUID userId, String jti);
     Set<String> getUserTokens(UUID userId);
+    void deleteUserTokens(UUID userId);
 }
