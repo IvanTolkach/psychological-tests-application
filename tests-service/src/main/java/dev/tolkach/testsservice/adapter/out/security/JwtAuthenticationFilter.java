@@ -2,6 +2,7 @@ package dev.tolkach.testsservice.adapter.out.security;
 
 import dev.tolkach.testsservice.application.port.out.JwtPort;
 import dev.tolkach.testsservice.adapter.in.rest.exception.ErrorResponse;
+import dev.tolkach.testsservice.application.port.out.TokenBlacklistPort;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
@@ -31,9 +32,11 @@ import java.util.*;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtPort jwtPort;
+    private final TokenBlacklistPort tokenBlacklistPort;
 
-    public JwtAuthenticationFilter(JwtPort jwtPort) {
+    public JwtAuthenticationFilter(JwtPort jwtPort, TokenBlacklistPort tokenBlacklistPort) {
         this.jwtPort = jwtPort;
+        this.tokenBlacklistPort = tokenBlacklistPort;
     }
 
     @Override
@@ -59,6 +62,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                 if (jwtPort.isTokenValid(jwt)) {
 
                     Claims claims = jwtPort.extractAllClaims(jwt);
+
+                    String jti = claims.getId();
+
+                    if (tokenBlacklistPort.isBlacklisted(jti)) {
+                        sendErrorResponse(request, response, HttpStatus.UNAUTHORIZED, "Token revoked. Try to log in again or contact the administrator");
+                        return;
+                    }
+
                     List<GrantedAuthority> authorities = extractAuthoritiesFromToken(jwt);
 
                     String adminIdStr = claims.get("id", String.class);

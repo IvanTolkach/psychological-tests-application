@@ -19,6 +19,11 @@ spring:
     default-schema: tests
     liquibase-schema: tests
 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
   datasource:
     url: jdbc:postgresql://localhost:5432/psychologicaltestsdb?currentSchema=tests
     username: postgres

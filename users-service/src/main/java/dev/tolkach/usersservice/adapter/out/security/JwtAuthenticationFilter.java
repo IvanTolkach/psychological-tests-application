@@ -3,6 +3,8 @@ package dev.tolkach.usersservice.adapter.out.security;
 import dev.tolkach.usersservice.adapter.in.rest.exception.ErrorResponse;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import dev.tolkach.usersservice.application.port.out.JwtPort;
+import dev.tolkach.usersservice.application.port.out.TokenBlacklistPort;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
@@ -30,10 +32,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private final JwtPort jwtPort;
     private final AdminUseCase adminUseCase;
+    private final TokenBlacklistPort tokenBlacklistPort;
 
-    public JwtAuthenticationFilter(JwtPort jwtPort, AdminUseCase adminUseCase) {
+    public JwtAuthenticationFilter(JwtPort jwtPort, AdminUseCase adminUseCase, TokenBlacklistPort tokenBlacklistPort) {
         this.jwtPort = jwtPort;
         this.adminUseCase = adminUseCase;
+        this.tokenBlacklistPort = tokenBlacklistPort;
     }
 
     @Override
@@ -52,6 +56,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         String jwt = authHeader.substring(7);
 
         try {
+            Claims claims = jwtPort.extractAllClaims(jwt);
+            String jti = claims.getId();
+
+            if (tokenBlacklistPort.isBlacklisted(jti)) {
+                sendErrorResponse(request, response, HttpStatus.UNAUTHORIZED, "Token revoked. Try to log in again or contact the administrator");
+                return;
+            }
+
             String email = jwtPort.extractUserName(jwt);
 
             if (StringUtils.hasText(email) && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -59,7 +71,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
                 if (!userDetails.isEnabled()) {
                     sendErrorResponse(request, response, HttpStatus.FORBIDDEN,
-                            "The account is inactive. Please contact the administrator.");
+                            "The account is inactive. Please contact the administrator");
                     return;
                 }
 

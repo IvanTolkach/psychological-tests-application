@@ -5,10 +5,7 @@ import dev.tolkach.usersservice.application.port.in.AuthUseCase;
 import dev.tolkach.usersservice.application.port.in.FacultyUseCase;
 import dev.tolkach.usersservice.application.port.in.StudentUseCase;
 import dev.tolkach.usersservice.application.port.out.*;
-import dev.tolkach.usersservice.application.service.AdminService;
-import dev.tolkach.usersservice.application.service.AuthService;
-import dev.tolkach.usersservice.application.service.FacultyService;
-import dev.tolkach.usersservice.application.service.StudentService;
+import dev.tolkach.usersservice.application.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -40,12 +37,17 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public AdminUseCase adminUseCase(AdminRepository adminRepository, PasswordPort passwordPort) {
-        return new AdminService(adminRepository, passwordPort);
+    public TokenRevocationService tokenRevocationService(TokenBlacklistPort tokenBlacklistPort) {
+        return new TokenRevocationService(tokenBlacklistPort);
     }
 
     @Bean
-    public AuthUseCase authUseCase(AdminUseCase adminUseCase, JwtPort jwtPort, AuthenticationManager authenticationManager) {
-        return new AuthService(adminUseCase, jwtPort, authenticationManager);
+    public AdminUseCase adminUseCase(AdminRepository adminRepository, PasswordPort passwordPort, TokenRevocationService tokenRevocationService) {
+        return new AdminService(adminRepository, passwordPort, tokenRevocationService);
+    }
+
+    @Bean
+    public AuthUseCase authUseCase(AdminUseCase adminUseCase, JwtPort jwtPort, AuthenticationManager authenticationManager, TokenBlacklistPort tokenBlacklistPort) {
+        return new AuthService(adminUseCase, jwtPort, authenticationManager, tokenBlacklistPort);
     }
 }

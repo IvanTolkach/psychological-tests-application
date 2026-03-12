@@ -15,6 +15,7 @@ import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Function;
 
 @Component
@@ -34,13 +35,17 @@ public class JwtAdapter implements JwtPort {
             throw new IllegalArgumentException("UserDetails must be instance of Admin");
         }
 
+        String jti = UUID.randomUUID().toString();
+
         Map<String, Object> claims = new HashMap<>();
+        claims.put("jti", jti); //
         claims.put("role", admin.getRole().name());
         claims.put("id", admin.getId().toString());
         claims.put("is_active", admin.getIsActive());
 
         return Jwts.builder()
                 .claims(claims)
+                .id(jti)
                 .subject(userDetails.getUsername())
                 .issuedAt(new Date(System.currentTimeMillis()))
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 12)) // 12 часов
@@ -72,11 +77,17 @@ public class JwtAdapter implements JwtPort {
         return claimsResolver.apply(claims);
     }
 
-    private Claims extractAllClaims(String token) {
+    @Override
+    public Claims extractAllClaims(String token) {
         return Jwts.parser()
                 .verifyWith((SecretKey) this.getSigningKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
+    }
+
+    @Override
+    public String extractJti(String token) {
+        return extractAllClaims(token).getId();
     }
 }

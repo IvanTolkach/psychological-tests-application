@@ -4,22 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Added the ability to generate an Excel report based on students' answers to questions.">
-      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/model/ScaleScoreResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/003-creating-indexes.sql" afterDir="false" />
+    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Acceleration of calculation of the score field for the TestAttemptScore entity and automatic calculation of all scales.">
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/security/RedisTokenBlacklistAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TokenBlacklistPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/security/RedisTokenBlacklistAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/application/port/out/TokenBlacklistPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/security/RedisTokenBlacklistAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/TokenBlacklistPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/RedisTokenBlacklistAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/TokenBlacklistPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/TokenRevocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/TestAttemptScoreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/TestAttemptScoreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/TestAttemptScoreDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/dto/TestAttemptScoreDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/endpoint/TestAttemptScoreEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/in/rest/endpoint/TestAttemptScoreEndpoint.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/localstorage/LocalStorageTestAttemptScoreAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/localstorage/LocalStorageTestAttemptScoreAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/JpaStudentAnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/JpaStudentAnswerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/StudentAnswerRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/StudentAnswerRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/persistence/repository/TestAttemptScoreRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/in/TestAttemptScoreUseCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/in/TestAttemptScoreUseCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/StudentAnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/StudentAnswerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestAttemptScoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/port/out/TestAttemptScoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/TestAttemptScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/application/service/TestAttemptScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/JwtPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/JwtPort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +64,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="development" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLabMergeRequestFiltersHistory">{
@@ -124,7 +142,11 @@
       <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\scripts" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="common.dto" />
+      <recent name="dev.tolkach.attemptsservice.application.port.out" />
+      <recent name="dev.tolkach.methodologiesservice.application.port.out" />
+      <recent name="dev.tolkach.testsservice.application.port.out" />
+      <recent name="dev.tolkach.attemptsservice.adapter.out.security" />
+      <recent name="dev.tolkach.methodologiesservice.adapter.out.security" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -211,7 +233,8 @@
       <workItem from="1773130645429" duration="23452000" />
       <workItem from="1773157329052" duration="1770000" />
       <workItem from="1773159148490" duration="4442000" />
-      <workItem from="1773222405650" duration="7371000" />
+      <workItem from="1773222405650" duration="21293000" />
+      <workItem from="1773302031147" duration="6055000" />
     </task>
     <task id="LOCAL-00001" summary="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records.">
       <option name="closed" value="true" />
@@ -253,11 +276,30 @@
       <option name="project" value="LOCAL" />
       <updated>1773163575103</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Acceleration of calculation of the score field for the TestAttemptScore entity and automatic calculation of all scales.">
+      <option name="closed" value="true" />
+      <created>1773230001056</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773230001056</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records." />
@@ -265,6 +307,7 @@
     <MESSAGE value="Added handler for requests without a token." />
     <MESSAGE value="Added more test completion attempts." />
     <MESSAGE value="Added the ability to generate an Excel report based on students' answers to questions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the ability to generate an Excel report based on students' answers to questions." />
+    <MESSAGE value="Acceleration of calculation of the score field for the TestAttemptScore entity and automatic calculation of all scales." />
+    <option name="LAST_COMMIT_MESSAGE" value="Acceleration of calculation of the score field for the TestAttemptScore entity and automatic calculation of all scales." />
   </component>
 </project>

@@ -20,10 +20,12 @@ public class AdminService implements AdminUseCase {
 
     private final AdminRepository adminRepository;
     private final PasswordPort passwordPort;
+    private final TokenRevocationService tokenRevocationService;
 
-    public AdminService(AdminRepository adminRepository, PasswordPort passwordPort) {
+    public AdminService(AdminRepository adminRepository, PasswordPort passwordPort, TokenRevocationService tokenRevocationService) {
         this.adminRepository = adminRepository;
         this.passwordPort = passwordPort;
+        this.tokenRevocationService = tokenRevocationService;
     }
 
     @Override
@@ -122,6 +124,8 @@ public class AdminService implements AdminUseCase {
 
         existing.setPassword(passwordPort.encode(passwordChange.getNewPassword()));
         adminRepository.save(existing);
+
+        tokenRevocationService.revokeUserTokens(existing.getId());
     }
 
     @Override
@@ -144,6 +148,8 @@ public class AdminService implements AdminUseCase {
 
         existing.setIsActive(false);
         adminRepository.save(existing);
+
+        tokenRevocationService.revokeUserTokens(existing.getId());
     }
 
     @Override
@@ -157,6 +163,8 @@ public class AdminService implements AdminUseCase {
 
         existing.setIsActive(true);
         adminRepository.save(existing);
+
+        tokenRevocationService.revokeUserTokens(existing.getId());
     }
 
     @Override
@@ -187,6 +195,8 @@ public class AdminService implements AdminUseCase {
 
         existing.setRole(newRole);
         adminRepository.save(existing);
+
+        tokenRevocationService.revokeUserTokens(existing.getId());
     }
 
     @Override

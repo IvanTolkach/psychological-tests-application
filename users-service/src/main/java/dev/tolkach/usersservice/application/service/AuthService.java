@@ -5,6 +5,7 @@ import dev.tolkach.usersservice.application.model.JwtResponse;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import dev.tolkach.usersservice.application.port.in.AuthUseCase;
 import dev.tolkach.usersservice.application.port.out.JwtPort;
+import dev.tolkach.usersservice.application.port.out.TokenBlacklistPort;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,11 +15,13 @@ public class AuthService implements AuthUseCase {
     private final AdminUseCase adminUseCase;
     private final JwtPort jwtPort;
     private final AuthenticationManager authenticationManager;
+    private final TokenBlacklistPort tokenBlacklistPort;
 
-    public AuthService(AdminUseCase adminUseCase, JwtPort jwtPort, AuthenticationManager authenticationManager) {
+    public AuthService(AdminUseCase adminUseCase, JwtPort jwtPort, AuthenticationManager authenticationManager, TokenBlacklistPort tokenBlacklistPort) {
         this.adminUseCase = adminUseCase;
         this.jwtPort = jwtPort;
         this.authenticationManager = authenticationManager;
+        this.tokenBlacklistPort = tokenBlacklistPort;
     }
 
     @Override
@@ -32,6 +35,9 @@ public class AuthService implements AuthUseCase {
         }
 
         String jwt = jwtPort.generateToken(admin);
+        String jti = jwtPort.extractJti(jwt);
+        tokenBlacklistPort.storeUserToken(admin.getId(), jti);
+
         return JwtResponse.builder().token(jwt).build();
     }
 }
