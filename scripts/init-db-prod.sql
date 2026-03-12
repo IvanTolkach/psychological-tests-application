@@ -1,0 +1,9 @@
+CREATE SCHEMA IF NOT EXISTS users;
+CREATE SCHEMA IF NOT EXISTS methodologies;
+CREATE SCHEMA IF NOT EXISTS tests;
+CREATE SCHEMA IF NOT EXISTS attempts;
+
+GRANT ALL ON SCHEMA users TO postgres;
+GRANT ALL ON SCHEMA methodologies TO postgres;
+GRANT ALL ON SCHEMA tests TO postgres;
+GRANT ALL ON SCHEMA attempts TO postgres;

@@ -1,0 +1,86 @@
+services:
+
+  postgres:
+    image: postgres:18
+    container_name: postgres
+    environment:
+      POSTGRES_DB: psychologicaltestsdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1111
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+      - ./scripts/init-db-prod.sql:/docker-entrypoint-initdb.d/init-db-prod.sql
+
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  eureka-server:
+    build: ./eureka-server
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    environment:
+      SPRING_PROFILES_ACTIVE: default
+
+  users-service:
+    build: ./users-service
+    container_name: users-service
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - postgres
+      - redis
+      - eureka-server
+
+  methodologies-service:
+    build: ./methodologies-service
+    container_name: methodologies-service
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - users-service
+
+  tests-service:
+    build: ./tests-service
+    container_name: tests-service
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - methodologies-service
+
+  attempts-service:
+    build: ./attempts-service
+    container_name: attempts-service
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    depends_on:
+      - tests-service
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - users-service
+      - methodologies-service
+      - tests-service
+      - attempts-service
+
+volumes:
+  postgres_data:

@@ -13,26 +13,14 @@ spring:
   application:
     name: users-service
 
-  docker:
-    compose:
-      enabled: false
+  profiles:
+    default: dev
 
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/db.changelog-master.yaml
     default-schema: users
     liquibase-schema: users
-
-  data:
-    redis:
-      host: localhost
-      port: 6379
-
-  datasource:
-    url: jdbc:postgresql://localhost:5432/psychologicaltestsdb?currentSchema=users
-    username: postgres
-    password: 1111
-    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
@@ -43,16 +31,6 @@ spring:
   jackson:
     mapper:
       sort-properties-alphabetically: false
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    fetch-registry: true
-    register-with-eureka: true
-    enabled: true
-    jersey:
-      enabled: false
 
 management:
   endpoints:

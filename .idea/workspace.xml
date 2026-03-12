@@ -4,12 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Added a token revocation feature when changing the password, role, or admin status. Redis is used to store a token blacklist.">
+    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Fixed user_tokens: overflow issue in Redis.">
+      <change afterPath="$PROJECT_DIR$/attempts-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eureka-server/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/init-db-prod.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/application-prod.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/RedisTokenBlacklistAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/RedisTokenBlacklistAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/TokenBlacklistPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/port/out/TokenBlacklistPort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/TokenRevocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/TokenRevocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/003-filling-admin-and-user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/003-filling-admin-and-user.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +66,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -94,6 +118,7 @@
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;Spring Boot.AttemptsServiceApplication.executor&quot;: &quot;Run&quot;,
@@ -104,6 +129,7 @@
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/nginx&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -115,6 +141,13 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\nginx" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\attempts-service" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\eureka-server" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\methodologies-service" />
+      <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\tests-service" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\scripts" />
     </key>
@@ -151,7 +184,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AttemptsServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UsersServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="psychologicaltestsapplication" />
       <method v="2">
@@ -165,6 +198,7 @@
     </configuration>
     <configuration name="AttemptsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="psychologicalTestsApplication.attempts-service.main" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="dev.tolkach.attemptsservice.AttemptsServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -198,6 +232,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.AttemptsServiceApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.MethodologiesServiceApplication" />
+      <item itemvalue="Spring Boot.TestsServiceApplication" />
+      <item itemvalue="Spring Boot.UsersServiceApplication" />
+    </list>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -211,7 +258,8 @@
       <workItem from="1773157329052" duration="1770000" />
       <workItem from="1773159148490" duration="4442000" />
       <workItem from="1773222405650" duration="21293000" />
-      <workItem from="1773302031147" duration="8273000" />
+      <workItem from="1773302031147" duration="12852000" />
+      <workItem from="1773321137500" duration="6842000" />
     </task>
     <task id="LOCAL-00001" summary="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records.">
       <option name="closed" value="true" />
@@ -269,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773314145698</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed user_tokens: overflow issue in Redis.">
+      <option name="closed" value="true" />
+      <created>1773316321082</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773316321082</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,6 +350,7 @@
     <MESSAGE value="Added the ability to generate an Excel report based on students' answers to questions." />
     <MESSAGE value="Acceleration of calculation of the score field for the TestAttemptScore entity and automatic calculation of all scales." />
     <MESSAGE value="Added a token revocation feature when changing the password, role, or admin status. Redis is used to store a token blacklist." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a token revocation feature when changing the password, role, or admin status. Redis is used to store a token blacklist." />
+    <MESSAGE value="Fixed user_tokens: overflow issue in Redis." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed user_tokens: overflow issue in Redis." />
   </component>
 </project>
