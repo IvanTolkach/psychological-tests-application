@@ -2,6 +2,7 @@ package dev.tolkach.attemptsservice.adapter.out.client;
 
 import common.dto.*;
 import dev.tolkach.attemptsservice.application.port.out.MethodologiesPort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -16,8 +17,9 @@ public class MethodologiesClientAdapter implements MethodologiesPort {
 
     @Override
     public void validateScaleExists(UUID scaleId) {
-        Object response = methodologiesClient.getScale(scaleId);
-        if (response == null) {
+        try {
+            methodologiesClient.getScale(scaleId);
+        } catch (FeignException.NotFound | FeignException.Forbidden e) {
             throw new NoSuchElementException("Scale not found with id: " + scaleId);
         }
     }

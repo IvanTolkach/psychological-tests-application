@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added.">
+    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="The functionality for changing the order of questions has been optimized.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/001-init-attempts-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/001-init-attempts-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/002-filling-testattempt-and-studentanswers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/002-filling-testattempt-and-studentanswers.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/003-creating-indexes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/003-creating-indexes.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/001-init-methodologies-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/001-init-methodologies-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/002-filling-methodology-scales-and-scoreranges.sql" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/002-filling-methodology-scales-and-scoreranges.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaQuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/QuestionRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/QuestionRepositoryAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/UsersClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/UsersClientAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/client/TestsClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/MethodologiesClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClientAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/001-init-tests-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/001-init-tests-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/002-filling-test-questions-answeroptions-and-scalequestions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/002-filling-test-questions-answeroptions-and-scalequestions.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/001-init-users-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/001-init-users-schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/002-filling-faculties.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/002-filling-faculties.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/003-filling-admin-and-user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/003-filling-admin-and-user.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,15 +160,15 @@
               <entry key="AttemptsServiceApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="MethodologiesServiceApplication" value="STOPPED" />
-              <entry key="TestsServiceApplication" value="FAILED" />
-              <entry key="UsersServiceApplication" value="FAILED" />
+              <entry key="TestsServiceApplication" value="STOPPED" />
+              <entry key="UsersServiceApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UsersServiceApplication">
+  <component name="RunManager" selected="Spring Boot.AttemptsServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="psychologicaltestsapplication" />
       <method v="2">
@@ -254,7 +246,7 @@
       <workItem from="1773321137500" duration="10026000" />
       <workItem from="1773392228663" duration="2383000" />
       <workItem from="1773400515970" duration="729000" />
-      <workItem from="1773650046373" duration="6008000" />
+      <workItem from="1773650046373" duration="9641000" />
     </task>
     <task id="LOCAL-00001" summary="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records.">
       <option name="closed" value="true" />
@@ -328,7 +320,31 @@
       <option name="project" value="LOCAL" />
       <updated>1773328317498</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added comments to liquibase scripts and database tables with columns">
+      <option name="closed" value="true" />
+      <created>1773656694778</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773656694778</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Added a handler for 500 error when attempting to log in from an account with the status isActive == false">
+      <option name="closed" value="true" />
+      <created>1773656748880</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773656748880</updated>
+    </task>
+    <task id="LOCAL-00012" summary="The functionality for changing the order of questions has been optimized.">
+      <option name="closed" value="true" />
+      <created>1773656808162</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773656808162</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +371,9 @@
     <MESSAGE value="Added a token revocation feature when changing the password, role, or admin status. Redis is used to store a token blacklist." />
     <MESSAGE value="Fixed user_tokens: overflow issue in Redis." />
     <MESSAGE value="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added." />
+    <MESSAGE value="Added comments to liquibase scripts and database tables with columns" />
+    <MESSAGE value="Added a handler for 500 error when attempting to log in from an account with the status isActive == false" />
+    <MESSAGE value="The functionality for changing the order of questions has been optimized." />
+    <option name="LAST_COMMIT_MESSAGE" value="The functionality for changing the order of questions has been optimized." />
   </component>
 </project>

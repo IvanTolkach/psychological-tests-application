@@ -3,6 +3,7 @@ package dev.tolkach.attemptsservice.adapter.out.client;
 import common.dto.FacultyDto;
 import common.dto.StudentDto;
 import dev.tolkach.attemptsservice.application.port.out.UsersPort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,8 +21,9 @@ public class UsersClientAdapter implements UsersPort {
 
     @Override
     public void validateStudentExists(UUID studentId) {
-        Object response = usersClient.getStudent(studentId);
-        if (response == null) {
+        try {
+            usersClient.getStudent(studentId);
+        } catch (FeignException.NotFound | FeignException.Forbidden e) {
             throw new NoSuchElementException("Student not found with id: " + studentId);
         }
     }

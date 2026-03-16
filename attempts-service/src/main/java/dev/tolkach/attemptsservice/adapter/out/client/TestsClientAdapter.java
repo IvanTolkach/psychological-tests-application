@@ -5,6 +5,7 @@ import common.dto.QuestionDto;
 import common.dto.SearchFilterDto;
 import common.dto.TestDto;
 import dev.tolkach.attemptsservice.application.port.out.TestsPort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -20,24 +21,27 @@ public class TestsClientAdapter implements TestsPort {
 
     @Override
     public void validateQuestionExists(UUID questionId) {
-        Object response = testsClient.getQuestion(questionId);
-        if (response == null) {
+        try {
+            testsClient.getQuestion(questionId);
+        } catch (FeignException.NotFound | FeignException.Forbidden e) {
             throw new NoSuchElementException("Question not found with id: " + questionId);
         }
     }
 
     @Override
     public void validateTestExists(UUID testId) {
-        Object response = testsClient.getTest(testId);
-        if (response == null) {
+        try {
+            testsClient.getTest(testId);
+        } catch (FeignException e) {
             throw new NoSuchElementException("Test not found with id: " + testId);
         }
     }
 
     @Override
     public void validateAnswerOptionExists(UUID answerOptionId) {
-        Object response = testsClient.getAnswerOption(answerOptionId);
-        if (response == null) {
+        try {
+            testsClient.getAnswerOption(answerOptionId);
+        } catch (FeignException e) {
             throw new NoSuchElementException("AnswerOption not found with id: " + answerOptionId);
         }
     }

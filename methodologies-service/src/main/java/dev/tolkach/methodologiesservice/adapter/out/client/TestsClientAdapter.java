@@ -1,6 +1,7 @@
 package dev.tolkach.methodologiesservice.adapter.out.client;
 
 import dev.tolkach.methodologiesservice.application.port.out.TestsPort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
@@ -17,8 +18,9 @@ public class TestsClientAdapter implements TestsPort {
 
     @Override
     public void validateQuestionExists(UUID questionId) {
-        Object response = testsClient.getQuestion(questionId);
-        if (response == null) {
+        try {
+            testsClient.getQuestion(questionId);
+        } catch (FeignException.NotFound | FeignException.Forbidden e) {
             throw new NoSuchElementException("Question not found with id: " + questionId);
         }
     }

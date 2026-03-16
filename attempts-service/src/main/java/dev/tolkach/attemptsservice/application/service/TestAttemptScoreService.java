@@ -98,11 +98,14 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
         else {
 
             TestAttemptScore existing = testAttemptScoreRepository.findById(testAttemptScore.getId())
-                    .orElseThrow(() -> new NoSuchElementException(
-                            "TestAttemptScore not found with id: " + testAttemptScore.getId()));
+                    .orElseThrow(() -> new NoSuchElementException("TestAttemptScore not found with id: " + testAttemptScore.getId()));
 
-            existing.setScore(testAttemptScore.getScore());
-            existing.setInterpretation(testAttemptScore.getInterpretation());
+            if (testAttemptScore.getScore() != null) {
+                existing.setScore(testAttemptScore.getScore());
+            }
+            if (testAttemptScore.getInterpretation() != null) {
+                existing.setInterpretation(testAttemptScore.getInterpretation());
+            }
 
             TestAttemptScore updated = testAttemptScoreRepository.save(existing);
 

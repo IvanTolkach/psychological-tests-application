@@ -1,6 +1,7 @@
 package dev.tolkach.testsservice.adapter.out.client;
 
 import dev.tolkach.testsservice.application.port.out.UsersPort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
@@ -17,8 +18,9 @@ public class UsersClientAdapter implements UsersPort {
 
     @Override
     public void validateAdminExists(UUID adminId) {
-        Object response = usersClient.getAdmin(adminId);
-        if (response == null) {
+        try {
+            usersClient.getAdmin(adminId);
+        } catch (FeignException.NotFound | FeignException.Forbidden e) {
             throw new NoSuchElementException("Admin not found with id: " + adminId);
         }
     }

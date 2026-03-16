@@ -43,15 +43,13 @@ public class QuestionService implements QuestionUseCase {
         testRepository.findById(question.getTestId())
                 .orElseThrow(() -> new NoSuchElementException("Test not found with id: " + question.getTestId()));
 
-        checkTextUnique(question);
-
-        int maxPosition = questionRepository.getMaxPosition(question.getTestId());
-
-        Integer requestedPosition = question.getPosition();
-
-        // ===== CREATE =====
-
         if (question.getId() == null) {
+
+            checkTextUnique(question);
+
+            int maxPosition = questionRepository.getMaxPosition(question.getTestId());
+
+            Integer requestedPosition = question.getPosition();
 
             if (requestedPosition == null ||
                     requestedPosition <= 0 ||
@@ -71,61 +69,65 @@ public class QuestionService implements QuestionUseCase {
 
             return questionRepository.save(question);
         }
+        else {
 
-        // ===== UPDATE =====
+            Question existing = questionRepository.findById(question.getId())
+                    .orElseThrow(() -> new NoSuchElementException("Question not found with id: " + question.getId()));
 
-        Question existing = questionRepository.findById(question.getId())
-                .orElseThrow(() -> new NoSuchElementException(
-                        "Question not found: " + question.getId()
-                ));
+            checkTextUnique(question);
 
-        if (!existing.getTestId().equals(question.getTestId())) {
-            throw new IllegalArgumentException("Cannot move to another test");
-        }
+            int maxPosition = questionRepository.getMaxPosition(question.getTestId());
 
-        int oldPosition = existing.getPosition();
+            Integer requestedPosition = question.getPosition();
 
-        if (requestedPosition == null ||
-                requestedPosition.equals(oldPosition)) {
+            if (!existing.getTestId().equals(question.getTestId())) {
+                throw new IllegalArgumentException("Cannot move to another test");
+            }
+
+            int oldPosition = existing.getPosition();
+
+            if (requestedPosition == null ||
+                    requestedPosition.equals(oldPosition)) {
+
+                existing.setText(question.getText());
+                existing.setType(question.getType());
+
+                return questionRepository.save(existing);
+            }
+
+            int newPosition = requestedPosition;
+
+            if (newPosition <= 0) {
+                newPosition = 1;
+            }
+
+            if (newPosition > maxPosition) {
+                newPosition = maxPosition;
+            }
+
+            if (newPosition < oldPosition) {
+
+                questionRepository.shiftForMoveUp(
+                        question.getTestId(),
+                        newPosition,
+                        oldPosition
+                );
+
+            } else {
+
+                questionRepository.shiftForMoveDown(
+                        question.getTestId(),
+                        oldPosition,
+                        newPosition
+                );
+            }
 
             existing.setText(question.getText());
             existing.setType(question.getType());
+            existing.setPosition(newPosition);
 
             return questionRepository.save(existing);
         }
-
-        int newPosition = requestedPosition;
-
-        if (newPosition <= 0) {
-            newPosition = 1;
-        }
-
-        if (newPosition > maxPosition) {
-            newPosition = maxPosition;
-        }
-
-        if (newPosition < oldPosition) {
-
-            questionRepository.shiftForMoveUp(
-                    question.getTestId(),
-                    newPosition,
-                    oldPosition
-            );
-
-        } else {
-
-            questionRepository.shiftForMoveDown(
-                    question.getTestId(),
-                    oldPosition,
-                    newPosition
-            );
-        }
-
-        existing.setText(question.getText());
-        existing.setType(question.getType());
-        existing.setPosition(newPosition);
-
-        return questionRepository.save(existing);
     }
 
     @Override

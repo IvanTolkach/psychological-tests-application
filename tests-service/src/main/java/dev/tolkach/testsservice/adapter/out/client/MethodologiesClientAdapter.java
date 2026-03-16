@@ -1,6 +1,7 @@
 package dev.tolkach.testsservice.adapter.out.client;
 
 import dev.tolkach.testsservice.application.port.out.MethodologiesPort;
+import feign.FeignException;
 import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
@@ -16,8 +17,9 @@ public class MethodologiesClientAdapter implements MethodologiesPort {
 
     @Override
     public void validateMethodologyExists(UUID methodologyId) {
-        Object response = methodologiesClient.getMethodology(methodologyId);
-        if (response == null) {
+        try {
+            methodologiesClient.getMethodology(methodologyId);
+        } catch (FeignException.NotFound | FeignException.Forbidden e) {
             throw new NoSuchElementException("Methodology not found with id: " + methodologyId);
         }
     }
