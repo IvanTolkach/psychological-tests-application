@@ -4,21 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Fixed errors with specifying some fields when changing entities.">
+    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Fixed warnings while services start.">
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/in/AdminControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/in/AuthControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/in/FacultyControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/in/StudentControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/out/AdminRepositoryAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/out/FacultyRepositoryAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/out/JwtAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/out/PasswordAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/out/RedisTokenBlacklistAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/adapter/out/StudentRepositoryAdapterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/service/AdminServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/service/AuthServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/service/FacultyServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/service/StudentServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users-service/src/test/java/dev/tolkach/usersservice/service/TokenRevocationServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/ApplicationConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/adapter/out/security/JwtAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AdminService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,9 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -51,8 +58,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -89,7 +96,7 @@
   &quot;isMigrated&quot;: true
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="Security Analysis" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -101,7 +108,19 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.AdminControllerTest.executor": "Coverage",
+    "Gradle.AdminRepositoryAdapterTest.executor": "Coverage",
+    "Gradle.AdminServiceTest.executor": "Coverage",
+    "Gradle.AdminServiceTest.updateAdmin_notSuperAndNotOwner.executor": "Run",
+    "Gradle.AuthServiceTest.executor": "Coverage",
     "Gradle.Build psychologicaltestsapplication.executor": "Run",
+    "Gradle.PasswordAdapterTest.executor": "Coverage",
+    "Gradle.PasswordAdapterTest.isStrong_variousCases.executor": "Run",
+    "Gradle.StudentServiceTest.executor": "Coverage",
+    "Gradle.Tests in 'dev.tolkach.usersservice.adapter.in'.executor": "Coverage",
+    "Gradle.Tests in 'dev.tolkach.usersservice.service'.executor": "Coverage",
+    "Gradle.Tests in 'psychologicalTestsApplication.users-service.test'.executor": "Coverage",
+    "Gradle.TokenRevocationServiceTest.executor": "Coverage",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
@@ -121,6 +140,9 @@
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/nginx",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
     "vue.rearranger.settings.migration": "true"
   },
@@ -174,7 +196,140 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AttemptsServiceApplication">
+  <component name="RunManager" selected="Gradle.Tests in 'psychologicalTestsApplication.users-service.test'">
+    <configuration name="AdminControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":users-service:test" />
+            <option value="--tests" />
+            <option value="&quot;dev.tolkach.usersservice.adapter.in.AdminControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PasswordAdapterTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":users-service:test" />
+            <option value="--tests" />
+            <option value="&quot;dev.tolkach.usersservice.adapter.out.PasswordAdapterTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PasswordAdapterTest.isStrong_variousCases" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":users-service:test" />
+            <option value="--tests" />
+            <option value="&quot;dev.tolkach.usersservice.adapter.out.PasswordAdapterTest.isStrong_variousCases&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'dev.tolkach.usersservice.adapter.in'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":users-service:test" />
+            <option value="--tests" />
+            <option value="&quot;dev.tolkach.usersservice.adapter.in.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'psychologicalTestsApplication.users-service.test'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":users-service:test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="psychologicaltestsapplication" />
       <method v="2">
@@ -229,12 +384,26 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.AdminControllerTest" />
+      <item itemvalue="Gradle.PasswordAdapterTest" />
+      <item itemvalue="Gradle.PasswordAdapterTest.isStrong_variousCases" />
+      <item itemvalue="Gradle.Tests in 'dev.tolkach.usersservice.adapter.in'" />
+      <item itemvalue="Gradle.Tests in 'psychologicalTestsApplication.users-service.test'" />
       <item itemvalue="Spring Boot.AttemptsServiceApplication" />
       <item itemvalue="Spring Boot.EurekaServerApplication" />
       <item itemvalue="Spring Boot.MethodologiesServiceApplication" />
       <item itemvalue="Spring Boot.TestsServiceApplication" />
       <item itemvalue="Spring Boot.UsersServiceApplication" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.Tests in 'psychologicalTestsApplication.users-service.test'" />
+        <item itemvalue="Gradle.AdminControllerTest" />
+        <item itemvalue="Gradle.Tests in 'dev.tolkach.usersservice.adapter.in'" />
+        <item itemvalue="Gradle.PasswordAdapterTest" />
+        <item itemvalue="Gradle.PasswordAdapterTest.isStrong_variousCases" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -252,7 +421,7 @@
       <workItem from="1773321137500" duration="10026000" />
       <workItem from="1773392228663" duration="2383000" />
       <workItem from="1773400515970" duration="729000" />
-      <workItem from="1773650046373" duration="12645000" />
+      <workItem from="1773650046373" duration="20771000" />
     </task>
     <task id="LOCAL-00001" summary="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records.">
       <option name="closed" value="true" />
@@ -358,7 +527,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773660521919</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fixed warnings while services start.">
+      <option name="closed" value="true" />
+      <created>1773663657374</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1773663657374</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,6 +566,19 @@
     <MESSAGE value="Added a handler for 500 error when attempting to log in from an account with the status isActive == false" />
     <MESSAGE value="The functionality for changing the order of questions has been optimized." />
     <MESSAGE value="Fixed errors with specifying some fields when changing entities." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors with specifying some fields when changing entities." />
+    <MESSAGE value="Fixed warnings while services start." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed warnings while services start." />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$AdminRepositoryAdapterTest.ic" NAME="AdminRepositoryAdapterTest Coverage Results" MODIFIED="1773666792969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$TokenRevocationServiceTest.ic" NAME="TokenRevocationServiceTest Coverage Results" MODIFIED="1773666508245" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$AdminControllerTest.ic" NAME="AdminControllerTest Coverage Results" MODIFIED="1773671333548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$AuthServiceTest.ic" NAME="AuthServiceTest Coverage Results" MODIFIED="1773666209870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$PasswordAdapterTest.ic" NAME="PasswordAdapterTest Coverage Results" MODIFIED="1773668549381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$AdminServiceTest.ic" NAME="AdminServiceTest Coverage Results" MODIFIED="1773665974906" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$StudentServiceTest.ic" NAME="StudentServiceTest Coverage Results" MODIFIED="1773666405480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$Tests_in__psychologicalTestsApplication_users_service_test_.ic" NAME="Tests in 'psychologicalTestsApplication.users-service.test' Coverage Results" MODIFIED="1773670272455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$Tests_in__dev_tolkach_usersservice_adapter_in_.ic" NAME="Tests in 'dev.tolkach.usersservice.adapter.in' Coverage Results" MODIFIED="1773671288246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/psychologicalTestsApplication$Tests_in__dev_tolkach_usersservice_service_.ic" NAME="Tests in 'dev.tolkach.usersservice.service' Coverage Results" MODIFIED="1773666321877" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

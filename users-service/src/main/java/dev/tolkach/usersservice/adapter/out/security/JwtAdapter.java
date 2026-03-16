@@ -6,6 +6,8 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
@@ -22,6 +24,8 @@ import java.util.function.Function;
 public class JwtAdapter implements JwtPort {
 
     @Value("${token.signing.key}")
+    @Getter
+    @Setter
     private String jwtSigningKey;
 
     private Key getSigningKey() {

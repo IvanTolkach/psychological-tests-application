@@ -6,6 +6,8 @@ import dev.tolkach.usersservice.application.model.PasswordChange;
 import dev.tolkach.usersservice.application.port.in.AdminUseCase;
 import dev.tolkach.usersservice.application.port.out.AdminRepository;
 import dev.tolkach.usersservice.application.port.out.PasswordPort;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +18,9 @@ import java.util.*;
 public class AdminService implements AdminUseCase {
 
     @Value("${admin.limits.max-super-admins}")
-    int maxSuperAdmins;
+    @Getter
+    @Setter
+    private int maxSuperAdmins;
 
     private final AdminRepository adminRepository;
     private final PasswordPort passwordPort;
