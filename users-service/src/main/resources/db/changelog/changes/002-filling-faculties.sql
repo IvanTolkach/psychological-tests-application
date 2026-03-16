@@ -1,5 +1,7 @@
 --liquibase formatted sql
 --changeset ivantolkach:002-filling-faculties
+--comment Начальное заполнение справочника факультетов БНТУ
+
 INSERT INTO Faculty (id, name)
 VALUES
     ('00000000-0000-0000-0000-000000000001', 'АТФ'),

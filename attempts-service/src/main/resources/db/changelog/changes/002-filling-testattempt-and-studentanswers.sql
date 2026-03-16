@@ -1,5 +1,7 @@
 --liquibase formatted sql
 --changeset ivantolkach:002-filling-testattempt-and-studentanswers
+--comment Начальное заполнение попыток и ответов студентов для тестирования программы
+
 INSERT INTO attempts.testattempt(id, student_id, test_id, attempt_date)
 VALUES
     ('606ecab5-c97c-4d11-8b3a-af2bfd64d184', 'd122cdbd-36f1-4017-9b40-46729716980f', '0435f8a9-4d5e-4e98-8052-ac09ca9a5670', '2026-03-03T14:09:09.1586071'),
