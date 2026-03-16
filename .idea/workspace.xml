@@ -4,34 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Fixed user_tokens: overflow issue in Redis.">
-      <change afterPath="$PROJECT_DIR$/attempts-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eureka-server/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/init-db-prod.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users-service/src/main/resources/application-prod.yaml" afterDir="false" />
+    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/001-init-attempts-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/001-init-attempts-schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/002-filling-testattempt-and-studentanswers.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/002-filling-testattempt-and-studentanswers.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/003-creating-indexes.sql" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/db/changelog/changes/003-creating-indexes.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/001-init-methodologies-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/001-init-methodologies-schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/002-filling-methodology-scales-and-scoreranges.sql" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/db/changelog/changes/002-filling-methodology-scales-and-scoreranges.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaQuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/JpaQuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/QuestionRepositoryAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/persistence/repository/QuestionRepositoryAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/port/out/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/001-init-tests-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/001-init-tests-schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/002-filling-test-questions-answeroptions-and-scalequestions.sql" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/db/changelog/changes/002-filling-test-questions-answeroptions-and-scalequestions.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/java/dev/tolkach/usersservice/application/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/001-init-users-schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/001-init-users-schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/002-filling-faculties.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/002-filling-faculties.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/003-filling-admin-and-user.sql" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/db/changelog/changes/003-filling-admin-and-user.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +82,10 @@
     &quot;second&quot;: &quot;12941c79-9e73-484a-b4bb-c3f9db99c340&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.security/spring-security-core/7.0.3/860204d226aff326ceb064a4716a8de0d8ed3b4f/spring-security-core-7.0.3-sources.jar!/org/springframework/security/authentication/AuthenticationManager.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/7.0.5/b5f9bc792ee9822d7cdbb5a6021ae4ce9a5c90a5/spring-aop-7.0.5-sources.jar!/org/springframework/aop/support/AopUtils.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
@@ -109,37 +101,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.Build psychologicaltestsapplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.AttemptsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.MethodologiesServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.TestsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UsersServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/nginx&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build psychologicaltestsapplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.AttemptsServiceApplication.executor": "Run",
+    "Spring Boot.EurekaServerApplication.executor": "Run",
+    "Spring Boot.MethodologiesServiceApplication.executor": "Run",
+    "Spring Boot.TestsServiceApplication.executor": "Run",
+    "Spring Boot.UsersServiceApplication.executor": "Run",
+    "git-widget-placeholder": "development",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/nginx",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\PC\Documents\JavaProjects\psychologicaltestsapplication\nginx" />
@@ -176,8 +168,8 @@
               <entry key="AttemptsServiceApplication" value="STOPPED" />
               <entry key="EurekaServerApplication" value="STOPPED" />
               <entry key="MethodologiesServiceApplication" value="STOPPED" />
-              <entry key="TestsServiceApplication" value="STOPPED" />
-              <entry key="UsersServiceApplication" value="STOPPED" />
+              <entry key="TestsServiceApplication" value="FAILED" />
+              <entry key="UsersServiceApplication" value="FAILED" />
             </map>
           </value>
         </entry>
@@ -259,7 +251,10 @@
       <workItem from="1773159148490" duration="4442000" />
       <workItem from="1773222405650" duration="21293000" />
       <workItem from="1773302031147" duration="12852000" />
-      <workItem from="1773321137500" duration="6842000" />
+      <workItem from="1773321137500" duration="10026000" />
+      <workItem from="1773392228663" duration="2383000" />
+      <workItem from="1773400515970" duration="729000" />
+      <workItem from="1773650046373" duration="6008000" />
     </task>
     <task id="LOCAL-00001" summary="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records.">
       <option name="closed" value="true" />
@@ -325,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773316321082</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added.">
+      <option name="closed" value="true" />
+      <created>1773328317498</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773328317498</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,6 +354,7 @@
     <MESSAGE value="Acceleration of calculation of the score field for the TestAttemptScore entity and automatic calculation of all scales." />
     <MESSAGE value="Added a token revocation feature when changing the password, role, or admin status. Redis is used to store a token blacklist." />
     <MESSAGE value="Fixed user_tokens: overflow issue in Redis." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed user_tokens: overflow issue in Redis." />
+    <MESSAGE value="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added nginx config. Configurations are divided into general, dev, and prod. Docker container build configurations have been added." />
   </component>
 </project>

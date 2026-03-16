@@ -47,4 +47,29 @@ public class QuestionRepositoryAdapter implements QuestionRepository {
     public void deleteById(UUID id) {
         jpaQuestionRepository.deleteById(id);
     }
+
+    @Override
+    public void shiftDown(UUID testId, int position) {
+        jpaQuestionRepository.shiftDown(testId, position);
+    }
+
+    @Override
+    public void shiftUp(UUID testId, int position) {
+        jpaQuestionRepository.shiftUp(testId, position);
+    }
+
+    @Override
+    public void shiftForMoveUp(UUID testId, int newPos, int oldPos) {
+        jpaQuestionRepository.shiftForMoveUp(testId, newPos, oldPos);
+    }
+
+    @Override
+    public void shiftForMoveDown(UUID testId, int oldPos, int newPos) {
+        jpaQuestionRepository.shiftForMoveDown(testId, oldPos, newPos);
+    }
+
+    @Override
+    public int getMaxPosition(UUID testId) {
+        return jpaQuestionRepository.getMaxPosition(testId);
+    }
 }

@@ -11,4 +11,9 @@ public interface QuestionRepository {
     Optional<Question> findById(UUID id);
     List<Question> findByFilter(Question filter);
     void deleteById(UUID id);
+    void shiftDown(UUID testId, int position);
+    void shiftUp(UUID testId, int position);
+    void shiftForMoveUp(UUID testId, int newPos, int oldPos);
+    void shiftForMoveDown(UUID testId, int oldPos, int newPos);
+    int getMaxPosition(UUID testId);
 }
