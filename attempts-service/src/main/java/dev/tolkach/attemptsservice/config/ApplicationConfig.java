@@ -11,6 +11,7 @@ import dev.tolkach.attemptsservice.application.service.TestAttemptScoreService;
 import dev.tolkach.attemptsservice.application.service.TestAttemptService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class ApplicationConfig {
@@ -33,5 +34,10 @@ public class ApplicationConfig {
     @Bean
     public ReportUseCase reportUseCase(TestAttemptRepository testAttemptRepository, StudentAnswerRepository studentAnswerRepository, TestsPort testsPort, UsersPort studentsPort) {
         return new ReportService(testAttemptRepository, studentAnswerRepository, testsPort, studentsPort);
+    }
+
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        return new InMemoryUserDetailsManager();
     }
 }

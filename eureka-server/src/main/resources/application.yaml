@@ -1,6 +1,8 @@
 spring:
   application:
     name: eureka-server
+  cache:
+    type: caffeine
 
 server:
   port: 8761

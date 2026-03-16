@@ -11,6 +11,7 @@ import dev.tolkach.methodologiesservice.application.service.ScaleService;
 import dev.tolkach.methodologiesservice.application.service.ScoreRangeService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class ApplicationConfig {
@@ -29,8 +30,14 @@ public class ApplicationConfig {
     public ScoreRangeUseCase scoreRangeUseCase(ScoreRangeRepository scoreRangeRepository, ScaleRepository scaleRepository) {
         return new ScoreRangeService(scoreRangeRepository, scaleRepository);
     }
+
     @Bean
     public ScaleQuestionUseCase scaleQuestionUseCase(ScaleQuestionRepository scaleQuestionRepository, ScaleRepository scaleRepository, TestsPort testsPort) {
         return new ScaleQuestionService(scaleQuestionRepository, scaleRepository, testsPort);
+    }
+
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        return new InMemoryUserDetailsManager();
     }
 }

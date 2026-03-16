@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="The functionality for changing the order of questions has been optimized.">
+    <list default="true" id="a27726a6-bd5c-4145-b06e-4d0fadf5a898" name="Changes" comment="Fixed errors with specifying some fields when changing entities.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/UsersClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/adapter/out/client/UsersClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/client/TestsClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/adapter/out/client/TestsClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/MethodologiesClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/MethodologiesClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClientAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/adapter/out/client/UsersClientAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/application/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/java/dev/tolkach/attemptsservice/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/attempts-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/java/dev/tolkach/methodologiesservice/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/methodologies-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/java/dev/tolkach/testsservice/config/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tests-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/users-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +252,7 @@
       <workItem from="1773321137500" duration="10026000" />
       <workItem from="1773392228663" duration="2383000" />
       <workItem from="1773400515970" duration="729000" />
-      <workItem from="1773650046373" duration="9641000" />
+      <workItem from="1773650046373" duration="12645000" />
     </task>
     <task id="LOCAL-00001" summary="Added a database initialization script that creates a schema. Liquibase scripts have been renamed. Added student progress records.">
       <option name="closed" value="true" />
@@ -344,7 +350,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773656808162</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Fixed errors with specifying some fields when changing entities.">
+      <option name="closed" value="true" />
+      <created>1773660521919</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773660521919</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +388,7 @@
     <MESSAGE value="Added comments to liquibase scripts and database tables with columns" />
     <MESSAGE value="Added a handler for 500 error when attempting to log in from an account with the status isActive == false" />
     <MESSAGE value="The functionality for changing the order of questions has been optimized." />
-    <option name="LAST_COMMIT_MESSAGE" value="The functionality for changing the order of questions has been optimized." />
+    <MESSAGE value="Fixed errors with specifying some fields when changing entities." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed errors with specifying some fields when changing entities." />
   </component>
 </project>

@@ -9,6 +9,7 @@ import dev.tolkach.testsservice.application.service.QuestionService;
 import dev.tolkach.testsservice.application.service.TestService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @Configuration
 public class ApplicationConfig {
@@ -26,5 +27,10 @@ public class ApplicationConfig {
     @Bean
     public AnswerOptionUseCase answerOptionUseCase(AnswerOptionRepository answerOptionRepository, QuestionRepository questionRepository) {
         return new AnswerOptionService(answerOptionRepository, questionRepository);
+    }
+
+    @Bean
+    public InMemoryUserDetailsManager userDetailsService() {
+        return new InMemoryUserDetailsManager();
     }
 }
