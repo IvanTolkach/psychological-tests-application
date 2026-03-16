@@ -628,7 +628,7 @@ public class AdminServiceTest {
                 .thenReturn(Optional.of(admin));
 
         when(adminRepository.findByFilter(any()))
-                .thenReturn(List.of()); // нет супер-админов
+                .thenReturn(List.of());
 
         service.setMaxSuperAdmins(2);
 
