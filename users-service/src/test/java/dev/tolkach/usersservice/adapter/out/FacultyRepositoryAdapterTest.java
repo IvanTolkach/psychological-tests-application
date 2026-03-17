@@ -45,6 +45,7 @@ class FacultyRepositoryAdapterTest {
         entity.setId(faculty.getId());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void findByFilter_returnsList() {
         when(jpaFacultyRepository.findAll(any(Specification.class))).thenReturn(List.of(entity));

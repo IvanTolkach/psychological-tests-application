@@ -88,6 +88,7 @@ class AdminRepositoryAdapterTest {
         assertTrue(adapter.findByEmail("email").isEmpty());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void findByFilter_returnsList() {
         when(jpaAdminRepository.findAll(any(Specification.class))).thenReturn(List.of(entity));

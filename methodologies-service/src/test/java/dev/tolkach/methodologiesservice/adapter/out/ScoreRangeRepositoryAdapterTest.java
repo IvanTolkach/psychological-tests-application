@@ -67,6 +67,7 @@ class ScoreRangeRepositoryAdapterTest {
         assertTrue(adapter.findById(id).isEmpty());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void findByFilter_returnsMappedList() {
         ScoreRange filter = new ScoreRange();

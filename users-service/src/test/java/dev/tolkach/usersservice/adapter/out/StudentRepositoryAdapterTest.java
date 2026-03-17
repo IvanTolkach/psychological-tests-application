@@ -70,6 +70,7 @@ class StudentRepositoryAdapterTest {
         assertTrue(adapter.findById(student.getId()).isEmpty());
     }
 
+    @SuppressWarnings("unchecked")
     @Test
     void findByFilter_returnsList() {
         when(jpaStudentRepository.findAll(any(Specification.class))).thenReturn(List.of(entity));

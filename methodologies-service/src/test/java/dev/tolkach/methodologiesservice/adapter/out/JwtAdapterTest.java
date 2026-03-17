@@ -10,6 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.util.ReflectionTestUtils;
 
+import java.time.Instant;
 import java.util.Base64;
 import java.util.Date;
 
@@ -25,44 +26,40 @@ class JwtAdapterTest {
     @BeforeEach
     void setUp() {
         adapter = new JwtAdapter();
-        signingKey = Base64.getEncoder().encodeToString("testkey1234567890testkey1234567890".getBytes());
+        signingKey = Base64.getEncoder()
+                .encodeToString("testkey1234567890testkey1234567890".getBytes());
         ReflectionTestUtils.setField(adapter, "jwtSigningKey", signingKey);
+    }
+
+    private String generateToken(Instant expiration) {
+        return Jwts.builder()
+                .subject("user1")
+                .expiration(Date.from(expiration))
+                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(signingKey)))
+                .compact();
+    }
+
+    private Instant now() {
+        return Instant.now();
     }
 
     @Test
     void extractUserName_returnsSubject() {
-        String token = Jwts.builder()
-                .setSubject("user1")
-                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(adapter.getJwtSigningKey())))
-                .compact();
+        String token = generateToken(now().plusSeconds(600));
 
         assertEquals("user1", adapter.extractUserName(token));
     }
 
     @Test
     void isTokenValid_validToken_true() {
-        Date now = new Date();
-        Date exp = new Date(now.getTime() + 1000 * 60 * 10);
-
-        String token = Jwts.builder()
-                .setSubject("user1")
-                .setExpiration(exp)
-                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(signingKey)))
-                .compact();
+        String token = generateToken(now().plusSeconds(600));
 
         assertTrue(adapter.isTokenValid(token));
     }
 
     @Test
     void isTokenValid_expiredToken_false() {
-        Date now = new Date();
-        Date exp = new Date(now.getTime() - 1000 * 60);
-
-        String token = Jwts.builder()
-                .setSubject("user1")
-                .setExpiration(exp)
-                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(signingKey)))
-                .compact();
+        String token = generateToken(now().minusSeconds(60));
 
         assertFalse(adapter.isTokenValid(token));
     }
@@ -70,19 +67,13 @@ class JwtAdapterTest {
     @Test
     void isTokenValid_invalidToken_false() {
         String invalidToken = "invalid.token.value";
+
         assertFalse(adapter.isTokenValid(invalidToken));
     }
 
     @Test
     void isTokenValid_userDetails_matches_true() {
-        Date now = new Date();
-        Date exp = new Date(now.getTime() + 1000 * 60 * 10);
-
-        String token = Jwts.builder()
-                .setSubject("user1")
-                .setExpiration(exp)
-                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(signingKey)))
-                .compact();
+        String token = generateToken(now().plusSeconds(600));
 
         UserDetails userDetails = mock(UserDetails.class);
         when(userDetails.getUsername()).thenReturn("user1");
@@ -92,14 +83,7 @@ class JwtAdapterTest {
 
     @Test
     void isTokenValid_userDetails_mismatch_false() {
-        Date now = new Date();
-        Date exp = new Date(now.getTime() + 1000 * 60 * 10);
-
-        String token = Jwts.builder()
-                .setSubject("user1")
-                .setExpiration(exp)
-                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(signingKey)))
-                .compact();
+        String token = generateToken(now().plusSeconds(600));
 
         UserDetails userDetails = mock(UserDetails.class);
         when(userDetails.getUsername()).thenReturn("otherUser");
@@ -109,14 +93,7 @@ class JwtAdapterTest {
 
     @Test
     void isTokenValid_userDetails_null_callsIsTokenValid() {
-        Date now = new Date();
-        Date exp = new Date(now.getTime() + 1000 * 60 * 10);
-
-        String token = Jwts.builder()
-                .setSubject("user1")
-                .setExpiration(exp)
-                .signWith(Keys.hmacShaKeyFor(Base64.getDecoder().decode(signingKey)))
-                .compact();
+        String token = generateToken(now().plusSeconds(600));
 
         assertTrue(adapter.isTokenValid(token, null));
     }
