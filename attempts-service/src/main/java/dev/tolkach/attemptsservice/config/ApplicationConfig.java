@@ -32,8 +32,8 @@ public class ApplicationConfig {
     }
 
     @Bean
-    public ReportUseCase reportUseCase(TestAttemptRepository testAttemptRepository, StudentAnswerRepository studentAnswerRepository, TestsPort testsPort, UsersPort studentsPort) {
-        return new ReportService(testAttemptRepository, studentAnswerRepository, testsPort, studentsPort);
+    public ReportUseCase reportUseCase(TestAttemptRepository testAttemptRepository, StudentAnswerRepository studentAnswerRepository, TestsPort testsPort, UsersPort studentsPort, ExcelReportBuilderPort excelReportBuilder) {
+        return new ReportService(testAttemptRepository, studentAnswerRepository, testsPort, studentsPort, excelReportBuilder);
     }
 
     @Bean

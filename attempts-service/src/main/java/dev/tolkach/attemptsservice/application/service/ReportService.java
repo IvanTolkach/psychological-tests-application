@@ -4,16 +4,12 @@ import common.dto.AnswerOptionDto;
 import common.dto.FacultyDto;
 import common.dto.QuestionDto;
 import common.dto.StudentDto;
-import dev.tolkach.attemptsservice.adapter.out.builder.ExcelReportBuilder;
 import dev.tolkach.attemptsservice.application.model.ReportRequest;
 import dev.tolkach.attemptsservice.application.model.StudentAnswer;
 import dev.tolkach.attemptsservice.application.model.TestAttempt;
 import dev.tolkach.attemptsservice.application.model.TestAttemptFilter;
 import dev.tolkach.attemptsservice.application.port.in.ReportUseCase;
-import dev.tolkach.attemptsservice.application.port.out.StudentAnswerRepository;
-import dev.tolkach.attemptsservice.application.port.out.TestAttemptRepository;
-import dev.tolkach.attemptsservice.application.port.out.TestsPort;
-import dev.tolkach.attemptsservice.application.port.out.UsersPort;
+import dev.tolkach.attemptsservice.application.port.out.*;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
@@ -25,12 +21,15 @@ public class ReportService implements ReportUseCase {
     private final StudentAnswerRepository studentAnswerRepository;
     private final TestsPort testsPort;
     private final UsersPort studentsPort;
+    private final ExcelReportBuilderPort excelReportBuilder;
 
-    public ReportService(TestAttemptRepository testAttemptRepository, StudentAnswerRepository studentAnswerRepository, TestsPort testsPort, UsersPort studentsPort) {
+
+    public ReportService(TestAttemptRepository testAttemptRepository, StudentAnswerRepository studentAnswerRepository, TestsPort testsPort, UsersPort studentsPort, ExcelReportBuilderPort excelReportBuilder) {
         this.testAttemptRepository = testAttemptRepository;
         this.studentAnswerRepository = studentAnswerRepository;
         this.testsPort = testsPort;
         this.studentsPort = studentsPort;
+        this.excelReportBuilder = excelReportBuilder;
     }
 
     @Override
@@ -158,7 +157,7 @@ public class ReportService implements ReportUseCase {
             }
         }
 
-        return ExcelReportBuilder.build(
+        return excelReportBuilder.buildReport(
                 totalStudents,
                 facultyIds,
                 facultyNames,

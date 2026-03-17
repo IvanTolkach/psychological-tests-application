@@ -3,19 +3,23 @@ package dev.tolkach.attemptsservice.adapter.out.builder;
 import common.dto.AnswerOptionDto;
 import dev.tolkach.attemptsservice.application.model.StudentAnswer;
 import dev.tolkach.attemptsservice.application.model.TestAttempt;
+import dev.tolkach.attemptsservice.application.port.out.ExcelReportBuilderPort;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFRichTextString;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.stereotype.Component;
 
 import java.io.ByteArrayOutputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class ExcelReportBuilder {
+@Component
+public class ExcelReportBuilder implements ExcelReportBuilderPort {
 
     record OptionFaculty(UUID optionId, UUID facultyId) {}
 
-    public static byte[] build(
+    @Override
+    public byte[] buildReport(
             int totalStudents,
             List<UUID> faculties,
             Map<UUID,String> facultyNames,
