@@ -108,7 +108,7 @@ example-service/
 │   │   │       │       ├── persistence/      # JPA, Hibernate и т.д.
 │   │   │       │       ├── client/           # Клиенты внешних API
 │   │   │       │       └── security/         # Аутентификация и Security
-│   │   │       └── config/                   # Конфигурация Spring, security, exceptions handling
+│   │   │       └── config/                   # Конфигурация Spring, security
 │   │   └── resources/
 │   │       ├── application.yаml              # Конфигурационный файл микросервиса
 │   │       └── db.changelog/
@@ -260,7 +260,7 @@ docker compose up --build
 
 ## 📄 API Документация
 
-Вся документация по API содержится на соответствующей странице [Wiki](https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication/-/wikis/home) проекта.
+Вся документация по API содержится на соответствующей странице [Wiki](https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication/-/wikis/API-Endpoints) проекта.
 
 ---
 
@@ -278,9 +278,12 @@ docker compose up --build
 * Web UI
 * Kubernetes
 * Создание лучших условий для отказоустойчивости (Например, подключение 2‑го Redis)
+* Кеширование запросов
 * Модуль для работы с аналитикой на стороне сервера
+* Можно попробовать создать множество входных DTO на создание и изменение чтобы Validation для изменения не требовал поля, которые не изменяются.
 * Новые отчёты Apache POI (по требованию ЦИРиДМ БНТУ) 
 * Создание новых предустановленных тестов (по требованию ЦИРиДМ БНТУ) 
+* Продолжать вести документацию
 
 ---
 
