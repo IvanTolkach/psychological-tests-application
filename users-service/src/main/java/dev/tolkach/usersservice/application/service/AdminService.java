@@ -109,7 +109,7 @@ public class AdminService implements AdminUseCase {
             throw new AccessDeniedException("The administrator can only change his own password if he does not have the SUPER role");
         }
 
-        if (existing.getRole().equals(AdminRole.SUPER)) {
+        if (existing.getRole().equals(AdminRole.SUPER) && !existing.equals(currentAdmin)) {
             throw new AccessDeniedException("You cannot change password of the SUPER administrator");
         }
 

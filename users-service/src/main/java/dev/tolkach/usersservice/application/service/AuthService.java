@@ -7,8 +7,7 @@ import dev.tolkach.usersservice.application.port.in.AuthUseCase;
 import dev.tolkach.usersservice.application.port.out.JwtPort;
 import dev.tolkach.usersservice.application.port.out.TokenBlacklistPort;
 import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.*;
 import org.springframework.transaction.annotation.Transactional;
 
 public class AuthService implements AuthUseCase {
@@ -31,8 +30,11 @@ public class AuthService implements AuthUseCase {
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
         }
-        catch (Exception e) {
+        catch (DisabledException e) {
             throw new AccessDeniedException("Access denied: Account is not active");
+        }
+        catch (BadCredentialsException | InternalAuthenticationServiceException e) {
+            throw new AccessDeniedException("Access denied: Wrong login or password");
         }
 
         Admin admin = adminUseCase.getAdminByEmail(email);
