@@ -15,6 +15,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
@@ -46,8 +49,11 @@ class ReportControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertArrayEquals(file, response.getBody());
 
-        assertEquals("attachment; filename=report.xlsx", response.getHeaders().getFirst(HttpHeaders.CONTENT_DISPOSITION));
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmmddMMyy");
+        String filename = "report_" + LocalDateTime.now().format(formatter) + ".xlsx";
 
-        assertEquals(MediaType.APPLICATION_OCTET_STREAM, response.getHeaders().getContentType());
+        assertEquals("attachment; filename=" + filename, response.getHeaders().getFirst(HttpHeaders.CONTENT_DISPOSITION));
+
+        assertEquals(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"), response.getHeaders().getContentType());
     }
 }

@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 public class ReportController implements ReportEndpoint {
@@ -26,11 +27,11 @@ public class ReportController implements ReportEndpoint {
     @Override
     public ResponseEntity<byte[]> generateReport(ReportRequestDto dto) {
         byte[] file = reportUseCase.generateReport(reportRequestDtoMapper.toEntity(dto));
-        String filename = LocalDateTime.now() + "_report";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmmddMMyy");
+        String filename = "report_" + LocalDateTime.now().format(formatter) + ".xlsx";
         return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION,
-                        "attachment; filename=report.xlsx")
-                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
+                .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
                 .body(file);
     }
 }
