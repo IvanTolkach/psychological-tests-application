@@ -40,7 +40,7 @@ public interface AdminEndpoint {
     @PreAuthorize("hasAuthority('ROLE_SUPER')")
     ResponseEntity<Void> changeRole(@PathVariable UUID adminId, @RequestParam AdminRole adminRole);
 
-    @GetMapping(ApiEndpoints.Admin.BASE)
+    @GetMapping(ApiEndpoints.Admin.CURRENT)
     @PreAuthorize("isAuthenticated()")
     ResponseEntity<AdminDto> getCurrentAdmin();
 }

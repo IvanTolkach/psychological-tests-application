@@ -22,6 +22,7 @@ public final class ApiEndpoints {
         public static final String CHANGE_PASSWORD = BASE + "/change-password";
         public static final String ACTIVATE = BY_ID + "/activate";
         public static final String CHANGE_ROLE = BY_ID + "/change-role";
+        public static final String CURRENT = BASE + "/current";
 
     }
 
