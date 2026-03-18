@@ -58,6 +58,8 @@ public class TestAttemptService implements TestAttemptUseCase {
             TestAttempt existing = testAttemptRepository.findById(testAttempt.getId())
                     .orElseThrow(() -> new NoSuchElementException("TestAttempt not found with id: " + testAttempt.getId()));
 
+            existing.setStudentId(testAttempt.getStudentId());
+            existing.setTestId(testAttempt.getTestId());
             existing.setAttemptDate(testAttempt.getAttemptDate());
 
             return testAttemptRepository.save(existing);
