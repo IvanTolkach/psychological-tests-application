@@ -79,6 +79,10 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
                     continue;
                 }
 
+                if (r.getInterpretation() == null) {
+                    throw new IllegalStateException("Interpretation is null for scaleId: " + r.getScaleId());
+                }
+
                 TestAttemptScore score = new TestAttemptScore();
                 score.setTestAttemptId(attemptId);
                 score.setScaleId(r.getScaleId());
