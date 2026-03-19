@@ -14,6 +14,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 
 import java.util.UUID;
 
@@ -51,13 +53,24 @@ class AuthServiceTest {
 
     @Test
     void signIn_authenticationFailed() {
-
-        doThrow(new RuntimeException())
+        doThrow(new BadCredentialsException("bad credentials"))
                 .when(authenticationManager)
                 .authenticate(any());
 
         assertThrows(AccessDeniedException.class,
                 () -> service.signIn("mail", "pass"));
+    }
+
+    @Test
+    void signIn_accountDisabled_throwsAccessDeniedException() {
+        doThrow(new DisabledException("account disabled"))
+                .when(authenticationManager)
+                .authenticate(any());
+
+        AccessDeniedException exception = assertThrows(AccessDeniedException.class,
+                () -> service.signIn("mail", "pass"));
+
+        assertEquals("Access denied: Account is not active", exception.getMessage());
     }
 
     @Test
