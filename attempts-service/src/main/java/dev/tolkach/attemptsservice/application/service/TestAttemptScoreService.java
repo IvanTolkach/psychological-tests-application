@@ -48,17 +48,14 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
         }
 
         testAttemptRepository.findById(attemptId)
-                .orElseThrow(() -> new NoSuchElementException(
-                        "TestAttempt not found with id: " + attemptId));
+                .orElseThrow(() -> new NoSuchElementException("TestAttempt not found with id: " + attemptId));
 
         if (testAttemptScore.getId() == null) {
 
-            List<ScaleScoreResult> results =
-                    studentAnswerRepository.calculateScoresWithInterpretation(attemptId);
+            List<ScaleScoreResult> results = studentAnswerRepository.calculateScoresWithInterpretation(attemptId);
 
             if (results.isEmpty()) {
-                throw new IllegalStateException(
-                        "Scores cannot be calculated for attempt " + attemptId);
+                throw new IllegalArgumentException("Scores cannot be calculated for attempt " + attemptId);
             }
 
             TestAttemptScore filter = new TestAttemptScore();
@@ -80,7 +77,7 @@ public class TestAttemptScoreService implements TestAttemptScoreUseCase {
                 }
 
                 if (r.getInterpretation() == null) {
-                    throw new IllegalStateException("Interpretation is null for scaleId: " + r.getScaleId());
+                    throw new IllegalArgumentException("Interpretation is null for scaleId: " + r.getScaleId());
                 }
 
                 TestAttemptScore score = new TestAttemptScore();
