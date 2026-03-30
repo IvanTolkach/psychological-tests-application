@@ -20,4 +20,4 @@ GRANT USAGE ON SCHEMA attempts TO public;
 \q
 
 --.\psql -U postgres -h localhost -p 5432
---\i C:/Users/PC/Documents/JavaProjects/psychologicaltestsapplication/scripts/init-db.sql
+--\i C:/Users/PC/Documents/JavaProjects/psychological-tests-application/scripts/init-db.sql
