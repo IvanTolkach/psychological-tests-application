@@ -31,21 +31,27 @@ public interface JpaStudentAnswerRepository extends JpaRepository<StudentAnswerE
         ),
     
         total_score AS (
-            SELECT
-                s.id AS scale_id,
-                SUM(
-                    COALESCE(
-                        ao.score,
-                        NULLIF(sa.answer_value,'')::INTEGER,
-                        0
-                    )
-                ) AS score
-            FROM methodologies.scale s
-            JOIN attempts.studentanswer sa ON sa.test_attempt_id = :attemptId
-            LEFT JOIN tests.answeroption ao ON ao.id = sa.answer_option_id
-            WHERE s.is_total = true
-            GROUP BY s.id
-        )
+             SELECT
+                 s.id AS scale_id,
+                 SUM(
+                     COALESCE(
+                         ao.score,
+                         NULLIF(sa.answer_value,'')::INTEGER,
+                         0
+                     )
+                 ) AS score
+             FROM attempts.testattempt ta
+             JOIN tests.test t ON t.id = ta.test_id
+             JOIN methodologies.scale s\s
+                 ON s.methodology_id = t.methodology_id
+             JOIN attempts.studentanswer sa\s
+                 ON sa.test_attempt_id = ta.id
+             LEFT JOIN tests.answeroption ao\s
+                 ON ao.id = sa.answer_option_id
+             WHERE ta.id = :attemptId
+               AND s.is_total = true
+             GROUP BY s.id
+         )
     
         SELECT
             ss.scale_id AS scaleId,
@@ -54,7 +60,12 @@ public interface JpaStudentAnswerRepository extends JpaRepository<StudentAnswerE
         FROM (
             SELECT * FROM scale_scores
             UNION ALL
-            SELECT * FROM total_score
+            SELECT * FROM total_score ts
+            WHERE NOT EXISTS (
+                SELECT 1
+                FROM scale_scores ss
+                WHERE ss.scale_id = ts.scale_id
+            )
         ) ss
         LEFT JOIN methodologies.scorerange sr
             ON sr.scale_id = ss.scale_id
