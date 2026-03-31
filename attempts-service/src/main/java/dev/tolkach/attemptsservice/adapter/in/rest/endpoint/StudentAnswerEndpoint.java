@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public interface StudentAnswerEndpoint {
     @PostMapping(ApiEndpoints.StudentAnswer.SEARCH)
-    @PreAuthorize("permitAll()")
+    @PreAuthorize("isAuthenticated()")
     ResponseEntity<List<StudentAnswerDto>> getStudentAnswers(
             @RequestBody StudentAnswerDto filter
     );

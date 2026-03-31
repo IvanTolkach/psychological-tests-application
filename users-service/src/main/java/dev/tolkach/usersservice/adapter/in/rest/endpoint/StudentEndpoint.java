@@ -11,11 +11,11 @@ import java.util.UUID;
 
 public interface StudentEndpoint {
     @PostMapping(ApiEndpoints.Student.SEARCH)
-    @PreAuthorize("permitAll()")
+    @PreAuthorize("isAuthenticated()")
     ResponseEntity<List<StudentDto>> getStudents(@RequestBody StudentDto filter);
 
     @GetMapping(ApiEndpoints.Student.BY_ID)
-    @PreAuthorize("permitAll()")
+    @PreAuthorize("isAuthenticated()")
     ResponseEntity<StudentDto> getStudentById(@PathVariable UUID studentId);
 
     @PostMapping(ApiEndpoints.Student.BASE)

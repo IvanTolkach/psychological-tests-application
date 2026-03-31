@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public interface TestAttemptScoreEndpoint {
     @PostMapping(ApiEndpoints.TestAttemptScore.SEARCH)
-    @PreAuthorize("permitAll()")
+    @PreAuthorize("isAuthenticated()")
     ResponseEntity<List<TestAttemptScoreDto>> getTestAttemptScores(@RequestBody TestAttemptScoreDto filter);
 
     @PostMapping(ApiEndpoints.TestAttemptScore.BASE)
