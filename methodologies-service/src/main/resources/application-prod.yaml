@@ -1,14 +1,18 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/psychologicaltestsdb?currentSchema=methodologies
-    username: postgres
-    password: 1111
+    url: ${DB_URL:jdbc:postgresql://postgres:5432/psychologicaltestsdb?currentSchema=methodologies}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:1111}
     driver-class-name: org.postgresql.Driver
 
   data:
     redis:
       port: 6379
       host: redis
+
+token:
+  signing:
+    key: ${TOKEN_SIGNING_KEY:VRohBVW65HZZQr2xVUSfgo4r9bbfIDIwaz6BH0ktJi0}
 
 eureka:
   client:

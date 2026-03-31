@@ -10,6 +10,10 @@ spring:
       port: 6379
       host: localhost
 
+token:
+  signing:
+    key: VRohBVW65HZZQr2xVUSfgo4r9bbfIDIwaz6BH0ktJi0
+
 eureka:
   client:
     service-url:
