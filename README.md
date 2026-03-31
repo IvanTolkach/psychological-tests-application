@@ -69,7 +69,7 @@
 
 ## 🤝 Соответствие требованиям заказчика
 
-Документы с требованиями заказчика по выполнению проекта, а также разработанная модель базы данных по требованиям указаны в [Wiki](https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication/-/wikis/home) проекта.
+Документы с требованиями заказчика по выполнению проекта, а также разработанная модель базы данных по требованиям указаны в [Wiki](https://github.com/IvanTolkach/psychological-tests-application/wiki) проекта.
 
 ---
 
@@ -260,7 +260,7 @@ docker compose up --build
 
 ## 📄 API Документация
 
-Вся документация по API содержится на соответствующей странице [Wiki](https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication/-/wikis/API-Endpoints) проекта.
+Вся документация по API содержится на соответствующей странице [Wiki](https://github.com/IvanTolkach/psychological-tests-application/wiki/API-Endpoints) проекта.
 
 ---
 
