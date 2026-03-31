@@ -1,4 +1,5 @@
 services:
+
   postgres:
     image: postgres:18
     container_name: postgres
@@ -19,7 +20,7 @@ services:
       - "6379:6379"
 
   eureka-server:
-    image: ghcr.io/IvanTolkach/psychological-tests-application/eureka-server:latest
+    build: ./eureka-server
     container_name: eureka-server
     ports:
       - "8761:8761"
@@ -27,7 +28,7 @@ services:
       SPRING_PROFILES_ACTIVE: default
 
   users-service:
-    image: ghcr.io/IvanTolkach/psychological-tests-application/users-service:latest
+    build: ./users-service
     container_name: users-service
     ports:
       - "8081:8081"
@@ -39,7 +40,7 @@ services:
       - eureka-server
 
   methodologies-service:
-    image: ghcr.io/IvanTolkach/psychological-tests-application/methodologies-service:latest
+    build: ./methodologies-service
     container_name: methodologies-service
     ports:
       - "8082:8082"
@@ -49,7 +50,7 @@ services:
       - users-service
 
   tests-service:
-    image: ghcr.io/IvanTolkach/psychological-tests-application/tests-service:latest
+    build: ./tests-service
     container_name: tests-service
     ports:
       - "8083:8083"
@@ -59,7 +60,7 @@ services:
       - methodologies-service
 
   attempts-service:
-    image: ghcr.io/IvanTolkach/psychological-tests-application/attempts-service:latest
+    build: ./attempts-service
     container_name: attempts-service
     ports:
       - "8084:8084"
