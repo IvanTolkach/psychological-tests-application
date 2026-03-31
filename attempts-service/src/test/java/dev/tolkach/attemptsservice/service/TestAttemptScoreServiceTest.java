@@ -123,7 +123,7 @@ class TestAttemptScoreServiceTest {
                 .thenReturn(List.of());
 
         assertThrows(
-                IllegalStateException.class,
+                IllegalArgumentException.class,
                 () -> service.createUpdateTestAttemptScore(s)
         );
     }
