@@ -93,6 +93,21 @@ class TestsClientAdapterTest {
     }
 
     @Test
+    void validateQuestionExists_unexpectedException_throwsRuntimeException() {
+        UUID id = UUID.randomUUID();
+        String errorMessage = "Service connection timeout";
+
+        when(client.getQuestion(id)).thenThrow(new RuntimeException(errorMessage));
+
+        RuntimeException ex = assertThrows(
+                RuntimeException.class,
+                () -> adapter.validateQuestionExists(id)
+        );
+
+        assertEquals(errorMessage, ex.getMessage());
+    }
+
+    @Test
     void getTestById() {
         TestDto dto = new TestDto();
 

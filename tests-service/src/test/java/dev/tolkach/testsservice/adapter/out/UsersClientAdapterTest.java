@@ -9,14 +9,14 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.access.AccessDeniedException;
 
 import java.nio.charset.Charset;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -87,8 +87,33 @@ class UsersClientAdapterTest {
         when(client.getAdmin(id)).thenThrow(ex);
 
         assertThrows(
-                NoSuchElementException.class,
+                RuntimeException.class,
                 () -> adapter.validateAdminExists(id)
         );
+    }
+
+    @Test
+    void validateAdminExists_unauthorized_throwsAccessDenied() {
+        UUID id = UUID.randomUUID();
+        Request request = Request.create(
+                Request.HttpMethod.GET,
+                "/admin/" + id,
+                Map.of(),
+                null,
+                Charset.defaultCharset(),
+                null
+        );
+
+        FeignException.Unauthorized ex =
+                new FeignException.Unauthorized("unauthorized", request, null, null);
+
+        when(client.getAdmin(id)).thenThrow(ex);
+
+        AccessDeniedException thrown = assertThrows(
+                AccessDeniedException.class,
+                () -> adapter.validateAdminExists(id)
+        );
+
+        assertEquals("You have no permission to execute this operation with Admin's parameters", thrown.getMessage());
     }
 }

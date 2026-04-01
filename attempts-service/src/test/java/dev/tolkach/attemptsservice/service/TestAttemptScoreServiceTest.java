@@ -20,8 +20,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.UUID;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -181,6 +180,32 @@ class TestAttemptScoreServiceTest {
                 service.createUpdateTestAttemptScore(s);
 
         assertEquals(1, result.size());
+    }
+
+    @Test
+    void create_interpretationNull_throwsIllegalArgumentException() {
+        TestAttemptScore s = new TestAttemptScore();
+        s.setTestAttemptId(attemptId);
+
+        ScaleScoreResult mockResult = mock(ScaleScoreResult.class);
+        when(mockResult.getScaleId()).thenReturn(scaleId);
+        when(mockResult.getInterpretation()).thenReturn(null);
+
+        when(attemptRepo.findById(attemptId))
+                .thenReturn(Optional.of(new TestAttempt()));
+
+        when(answerRepo.calculateScoresWithInterpretation(attemptId))
+                .thenReturn(List.of(mockResult));
+
+        when(repo.findByFilter(any()))
+                .thenReturn(List.of());
+
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> service.createUpdateTestAttemptScore(s)
+        );
+
+        assertTrue(ex.getMessage().contains("Interpretation is null for scaleId: " + scaleId));
     }
 
     @Test

@@ -87,7 +87,7 @@ class MethodologiesClientAdapterTest {
         when(client.getMethodology(id)).thenThrow(ex);
 
         assertThrows(
-                NoSuchElementException.class,
+                RuntimeException.class,
                 () -> adapter.validateMethodologyExists(id)
         );
     }

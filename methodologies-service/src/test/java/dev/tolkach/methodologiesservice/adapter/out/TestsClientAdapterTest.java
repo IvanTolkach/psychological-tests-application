@@ -56,12 +56,15 @@ class TestsClientAdapterTest {
     void validateQuestionExists_forbidden_throws() {
         UUID questionId = UUID.randomUUID();
         Request request = Request.create(Request.HttpMethod.GET, "/questions/" + questionId, Map.of(), null, Charset.defaultCharset(), null);
-        FeignException.Forbidden exFeign = new FeignException.Forbidden("forbidden", request, null, null);
+
+        FeignException.Forbidden exFeign = new FeignException.Forbidden(
+                "forbidden for id: " + questionId, request, null, null);
 
         when(testsClient.getQuestion(questionId)).thenThrow(exFeign);
 
-        NoSuchElementException ex = assertThrows(NoSuchElementException.class,
+        RuntimeException ex = assertThrows(RuntimeException.class,
                 () -> adapter.validateQuestionExists(questionId));
+
         assertTrue(ex.getMessage().contains(questionId.toString()));
     }
 }

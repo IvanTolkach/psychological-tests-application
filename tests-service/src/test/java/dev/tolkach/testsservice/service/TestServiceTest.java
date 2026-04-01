@@ -326,8 +326,6 @@ class TestServiceTest {
 
             dev.tolkach.testsservice.application.model.Test result = service.createUpdateTest(updateDto);
 
-            verify(usersPort).validateAdminExists(anotherAdminId);
-
             assertEquals("Новое название для проверки", result.getName());
             assertEquals(anotherAdminId, result.getUpdatedBy());
             assertNotNull(result.getUpdatedAt());

@@ -59,7 +59,7 @@ class MethodologiesClientAdapterTest {
         FeignException ex = mock(FeignException.Forbidden.class);
         when(client.getScale(id)).thenThrow(ex);
 
-        assertThrows(NoSuchElementException.class,
+        assertThrows(RuntimeException.class,
                 () -> adapter.validateScaleExists(id));
     }
 

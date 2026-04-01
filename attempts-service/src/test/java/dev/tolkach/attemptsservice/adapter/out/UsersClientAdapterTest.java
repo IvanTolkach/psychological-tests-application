@@ -53,6 +53,21 @@ class UsersClientAdapterTest {
     }
 
     @Test
+    void validateStudentExists_unexpectedException_throwsRuntimeException() {
+        UUID id = UUID.randomUUID();
+        String errorMessage = "Unexpected connection error";
+
+        when(client.getStudent(id)).thenThrow(new RuntimeException(errorMessage));
+
+        RuntimeException ex = assertThrows(
+                RuntimeException.class,
+                () -> adapter.validateStudentExists(id)
+        );
+
+        assertEquals(errorMessage, ex.getMessage());
+    }
+
+    @Test
     void searchStudents() {
         when(client.searchStudents(any()))
                 .thenReturn(List.of(new StudentDto()));
