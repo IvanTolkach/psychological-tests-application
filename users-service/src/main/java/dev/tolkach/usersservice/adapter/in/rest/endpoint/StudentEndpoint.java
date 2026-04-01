@@ -15,7 +15,7 @@ public interface StudentEndpoint {
     ResponseEntity<List<StudentDto>> getStudents(@RequestBody StudentDto filter);
 
     @GetMapping(ApiEndpoints.Student.BY_ID)
-    @PreAuthorize("isAuthenticated()")
+    @PreAuthorize("permitAll()")
     ResponseEntity<StudentDto> getStudentById(@PathVariable UUID studentId);
 
     @PostMapping(ApiEndpoints.Student.BASE)
