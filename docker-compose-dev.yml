@@ -13,6 +13,23 @@ services:
       - postgres_data:/var/lib/postgresql
       - ./scripts/init-db-prod.sql:/docker-entrypoint-initdb.d/init-db-prod.sql
 
+  postgres-db-backup:
+    image: prodrigestivill/postgres-backup-local
+    container_name: postgres-db-backup
+    restart: always
+    volumes:
+      - ./backups:/backups
+    links:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+      - POSTGRES_DB=psychologicaltestsdb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1111
+      - SCHEDULE=@monthly
+      - BACKUP_KEEP_DAYS=180
+      - BACKUP_SUFFIX=.sql.gz
+
   redis:
     image: redis:7
     container_name: redis
