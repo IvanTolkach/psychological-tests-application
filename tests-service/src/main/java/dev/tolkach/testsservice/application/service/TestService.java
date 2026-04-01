@@ -91,10 +91,6 @@ public class TestService implements TestUseCase {
             Test existing = testRepository.findById(test.getId())
                     .orElseThrow(() -> new NoSuchElementException("Test not found with id: " + test.getId()));
 
-            if (test.getCreatedBy() != null) {
-                usersPort.validateAdminExists(test.getUpdatedBy());
-            }
-
             existing.setName(test.getName());
             existing.setMethodologyId(test.getMethodologyId());
             existing.setUpdatedBy(currentAdminId);
