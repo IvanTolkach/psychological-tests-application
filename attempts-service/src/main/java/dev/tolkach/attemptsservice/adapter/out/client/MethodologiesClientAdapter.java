@@ -19,8 +19,10 @@ public class MethodologiesClientAdapter implements MethodologiesPort {
     public void validateScaleExists(UUID scaleId) {
         try {
             methodologiesClient.getScale(scaleId);
-        } catch (FeignException.NotFound | FeignException.Forbidden e) {
+        } catch (FeignException.NotFound e) {
             throw new NoSuchElementException("Scale not found with id: " + scaleId);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 

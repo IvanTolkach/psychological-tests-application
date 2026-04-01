@@ -2,6 +2,7 @@ package dev.tolkach.testsservice.adapter.out.client;
 
 import dev.tolkach.testsservice.application.port.out.UsersPort;
 import feign.FeignException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
@@ -20,8 +21,12 @@ public class UsersClientAdapter implements UsersPort {
     public void validateAdminExists(UUID adminId) {
         try {
             usersClient.getAdmin(adminId);
-        } catch (FeignException.NotFound | FeignException.Forbidden e) {
+        } catch (FeignException.NotFound e) {
             throw new NoSuchElementException("Admin not found with id: " + adminId);
+        } catch (FeignException.Unauthorized e) {
+            throw new AccessDeniedException("You have no permission to execute this operation with Admin's parameters");
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 }

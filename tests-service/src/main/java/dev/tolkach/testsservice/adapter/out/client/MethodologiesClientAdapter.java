@@ -19,8 +19,10 @@ public class MethodologiesClientAdapter implements MethodologiesPort {
     public void validateMethodologyExists(UUID methodologyId) {
         try {
             methodologiesClient.getMethodology(methodologyId);
-        } catch (FeignException.NotFound | FeignException.Forbidden e) {
+        } catch (FeignException.NotFound e) {
             throw new NoSuchElementException("Methodology not found with id: " + methodologyId);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 }

@@ -23,8 +23,10 @@ public class TestsClientAdapter implements TestsPort {
     public void validateQuestionExists(UUID questionId) {
         try {
             testsClient.getQuestion(questionId);
-        } catch (FeignException.NotFound | FeignException.Forbidden e) {
+        } catch (FeignException.NotFound e) {
             throw new NoSuchElementException("Question not found with id: " + questionId);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 

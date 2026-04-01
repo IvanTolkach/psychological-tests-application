@@ -23,8 +23,10 @@ public class UsersClientAdapter implements UsersPort {
     public void validateStudentExists(UUID studentId) {
         try {
             usersClient.getStudent(studentId);
-        } catch (FeignException.NotFound | FeignException.Forbidden e) {
+        } catch (FeignException.NotFound e) {
             throw new NoSuchElementException("Student not found with id: " + studentId);
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
     }
 
