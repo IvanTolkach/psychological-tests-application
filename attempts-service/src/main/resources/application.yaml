@@ -1,12 +1,24 @@
 server:
   port: 8084
 
+  tomcat:
+    threads:
+      max: 500
+    accept-count: 200
+    max-connections: 10000
+
 repository:
   type: jpa
 
 spring:
   application:
     name: attempts-service
+
+  datasource:
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 20
+      connection-timeout: 30000
 
   profiles:
     default: dev

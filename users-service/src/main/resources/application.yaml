@@ -1,6 +1,12 @@
 server:
   port: 8081
 
+  tomcat:
+    threads:
+      max: 500
+    accept-count: 200
+    max-connections: 10000
+
 admin:
   limits:
     max-super-admins: 2
@@ -8,6 +14,12 @@ admin:
 spring:
   application:
     name: users-service
+
+  datasource:
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 20
+      connection-timeout: 30000
 
   profiles:
     default: dev
