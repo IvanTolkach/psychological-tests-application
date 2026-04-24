@@ -9,7 +9,7 @@ server:
 
 admin:
   limits:
-    max-super-admins: 2
+    max-super-admins: ${ADMIN_MAX_SUPER_ADMINS:2}
 
 spring:
   application:

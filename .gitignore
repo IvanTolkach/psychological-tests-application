@@ -37,3 +37,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Environment files
+.env
+.env.local
