@@ -22,7 +22,6 @@ jobs:
         run: |
           mkdir -p Deploy/nginx Deploy/scripts
           cp nginx/nginx.conf             Deploy/nginx/nginx.conf
-          cp scripts/init-db.sql          Deploy/scripts/init-db.sql
           cp scripts/init-db-prod.sql     Deploy/scripts/init-db-prod.sql
           cp .env.example                 Deploy/.env.example
           cp docker-compose.yml           Deploy/docker-compose.yml
@@ -46,7 +45,6 @@ jobs:
           |-- nginx/
           |   `-- nginx.conf
           |-- scripts/
-          |   |-- init-db.sql
           |   `-- init-db-prod.sql
           |-- .env.example
           `-- docker-compose.yml
