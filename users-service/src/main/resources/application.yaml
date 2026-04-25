@@ -1,0 +1,48 @@
+server:
+  port: 8081
+
+  tomcat:
+    threads:
+      max: 500
+    accept-count: 200
+    max-connections: 10000
+
+admin:
+  limits:
+    max-super-admins: ${ADMIN_MAX_SUPER_ADMINS:2}
+
+spring:
+  application:
+    name: users-service
+
+  datasource:
+    hikari:
+      maximum-pool-size: 50
+      minimum-idle: 20
+      connection-timeout: 30000
+
+  profiles:
+    default: dev
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    default-schema: users
+    liquibase-schema: users
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    open-in-view: false
+
+  jackson:
+    mapper:
+      sort-properties-alphabetically: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

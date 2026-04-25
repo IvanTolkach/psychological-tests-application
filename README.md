@@ -1,93 +1,294 @@
-# PsychologicalTestsApplication
+# 📊 Психосоциальное анкетирование студентов БНТУ
+
+**Серверная часть веб-приложения для автоматизированного проведения психологического тестирования студентов с целью раннего выявления суицидоопасного поведения и факторов риска**
+
+[![Java](https://img.shields.io/badge/Java-25-007396?logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.x-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Spring Data JPA](https://img.shields.io/badge/Spring_Data_JPA-2.7-6DB33F?logo=spring&logoColor=white)](https://spring.io/projects/spring-data-jpa)
+[![Liquibase](https://img.shields.io/badge/Liquibase-5.0-0052CC?logo=liquibase&logoColor=white)](https://www.liquibase.org/)
+[![Apache POI](https://img.shields.io/badge/Apache_POI-5.2-FFFFFF?logo=apache&logoColor=orange)](https://poi.apache.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-336791?logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Redis](https://img.shields.io/badge/Redis-7-DC382D?logo=redis&logoColor=white)](https://redis.io/)
+[![Gradle](https://img.shields.io/badge/Gradle-8.3-02303A?logo=gradle&logoColor=white)](https://gradle.org/)
+[![JUnit 5](https://img.shields.io/badge/JUnit_5-5C43B0?logo=junit&logoColor=white)](https://junit.org/junit5/)
+
+---
+
+## 📚 Оглавление
+  * [📘️ О проекте](#-о-проекте)
+  * [✨ Основные возможности](#-основные-возможности)
+  * [🤝 Соответствие требованиям заказчика](#-соответствие-требованиям-заказчика)
+  * [🏗️ Архитектура системы](#-архитектура-системы)
+  * [🛠️ Основной технологический стек](#-основной-технологический-стек)
+  * [🚀 Установка и запуск (локально)](#-установка-и-запуск-локально)
+  * [🐳 Установка и запуск (Docker)](#-установка-и-запуск-docker)
+  * [📄 API Документация](#-api-документация)
+  * [🧪 Тестирование](#-тестирование)
+  * [📖 Будущие улучшения](#-будущие-улучшения)
+  * [🐵 Автор](#-автор)
+
+---
+
+## 📘️ О проекте
+
+Веб-система предназначена для проведения психосоциального анкетирования студентов Белорусского национального технического университета (БНТУ).  
+Основная цель — **автоматизация** сбора, обработки и анализа результатов психологических тестов для своевременного выявления студентов с высоким риском суицидального поведения.
+
+🤓 Проект выполнен в рамках дипломной работы по специальности «Программное обеспечение информационных технологий».
+
+### Встроенные тесты (2026)
+
+| Методика                                               | Целевая аудитория       | Кол-во вопросов | Тип ответа            | Диапазоны интерпретации (основные)                                                        |
+|--------------------------------------------------------|-------------------------|-----------------|-----------------------|-------------------------------------------------------------------------------------------|
+| Шкала безнадёжности Бека                               | 3–5 курсы               | 20              | Верно / Неверно       | 0–3 норма · 4–8 лёгкая · 9–14 умеренная · 15–20 тяжёлая                                   |
+| ТСП (тест суицидального поведения) автора М.В. Горской | 1–2 курсы               | 40 (4×10)       | Да / Не совсем / Нет  | 0–7/10 низкий · 8–11/12 средний · 12–16/17+ высокий/оч. высокий; общий ≥46 — высокий риск |
+| Анкета отношения к психоактивным веществам             | До 18 лет               | ~40             | Выбор варианта ответа | 26-65 низкий · 66-128 средний · 129-176 высокий                                           |
+
+---
+
+## ✨ Основные возможности
+
+### Для студентов
+- Доступ только к открытым администратором тестам
+- Удобное пошаговое прохождение тестов
+- Сохранение всех попыток (можно проходить тест повторно)
+
+### Для администраторов (психологов / методистов)
+- Конструктор тестов: создание/редактирование тестов, вопросов, вариантов ответов, баллов
+- Управление шкалами, диапазонами интерпретации, связями вопросов со шкалами
+- Предустановленные тесты
+- Встроенные методики + возможность добавлять новые
+- Открытие/закрытие тестов для прохождения студентами
+- Аналитика:
+  - по студенту (динамика по попыткам)
+  - по группе / факультету / университету (средние, распределение рисков)
+  - фильтры: период, методика, уровень риска, конкретный вопрос
+- Генерация отчётов в формате .xlsx
+
+---
+
+## 🤝 Соответствие требованиям заказчика
+
+Документы с требованиями заказчика по выполнению проекта, а также разработанная модель базы данных по требованиям указаны в [Wiki](https://github.com/IvanTolkach/psychological-tests-application/wiki) проекта.
+
+---
+
+## 🏗️ Архитектура системы
+
+Серверная часть проекта построена на **микросервисной архитектуре** с использованием **REST API** в качестве основного транспортного протокола. Каждый микросервис реализован в соответствии с принципами **чистой гексагональной архитектуры** (Ports & Adapters / Hexagonal Architecture), также известной как архитектура портов и адаптеров.
+
+Это позволяет:
+
+- полностью изолировать доменную модель и бизнес-логику от инфраструктурных деталей (СУБД, фреймворков, внешних сервисов, форматов данных)
+- добиться высокой тестируемости (чистые unit-тесты домена и application-сервисов без запуска Spring-контекста)
+- упростить замену технологий (СУБД, брокера сообщений, клиента аутентификации и др.)
+- обеспечить независимость бизнес-правил от внешних фреймворков
+
+В некоторых местах (в частности, при работе с Lombok и Spring Security) пришлось сделать компромиссы, допустив небольшую зависимость домена от аннотаций фреймворка. Тем не менее общая структура остаётся близкой к идеальной гексагональной архитектуре.
+
+Подробнее о гексагональной архитектуре: [Гексагональная архитектура — Ports and Adapters](https://habr.com/ru/companies/timeweb/articles/771338/)
+
+### Типовая структура микросервиса
+````
+example-service/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── dev/tolkach/exampleservice/
+│   │   │       ├── application/              # Слой ядра
+│   │   │       │   ├── model/                # Модели основных сущностей ядра
+│   │   │       │   ├── port/                 # Входные и выходные порты
+│   │   │       │   │   ├── in/               # Driving Ports (use-case interfaces)
+│   │   │       │   │   └── out/              # Driven Ports (repository, jwt и т.д.)
+│   │   │       │   └── service/              # Реализация use-case (Application Services)
+│   │   │       ├── adapter/                  # Все адаптеры
+│   │   │       │   ├── in/
+│   │   │       │   │   └── rest/             # REST-контроллеры, DTO → domain мапперы
+│   │   │       │   └── out/
+│   │   │       │       ├── persistence/      # JPA, Hibernate и т.д.
+│   │   │       │       ├── client/           # Клиенты внешних API
+│   │   │       │       └── security/         # Аутентификация и Security
+│   │   │       └── config/                   # Конфигурация Spring, security
+│   │   └── resources/
+│   │       ├── application.yаml              # Конфигурационный файл микросервиса
+│   │       └── db.changelog/
+│   │           ├── changes/                  # SQL скрипты для liquibase
+│   │           └── db.changelog-master.yaml  # Конфигурационный файл liquibase
+│   └── test/
+│       └── java/
+│           └── dev/tolkach/exampleservice/
+│               ├── adapter/                  # Unit-тесты адаптеров
+│               │   ├── in/
+│               │   └── out/
+│               └── service/                  # Unit-тесты домена
+└── build.gradle
+````
+
+---
+
+## 🛠️ Основной технологический стек
+
+| Компонент               | Технология        | Назначение                        |
+|-------------------------|-------------------|-----------------------------------|
+| Язык                    | Java 25           | основа проекта                    |
+| Фреймворк               | Spring Boot 4.x   | ядро микросервисов                |
+| Доступ к данным         | Spring Data JPA   | работа с БД через Hibernate       |
+| Безопасность            | Spring Security   | JWT, роли, фильтры аутентификации |
+| Облачная инфраструктура | Spring Cloud      | сервис-дискавери, конфигурация    |
+| Аннотации               | Lombok            | сокращение boilerplate-кода       |
+| Миграции БД             | Liquibase         | версионирование схемы БД          |
+| База данных             | PostgreSQL 18     | основное хранилище                |
+| Кэширование             | Redis 7           | кэш токенов отзыва                |
+| Сборка                  | Gradle            | сборщик проекта                   |
+| Тестирование            | JUnit 5 + Mockito | unit- и интеграционные тесты      |
+
+### Дополнительные инструменты и технологии
+- **Docker** — контейнеризация всех микросервисов
+- **Apache POI** — генерация отчётов в формате Microsoft Excel (.xlsx)
+- **Nginx** — reverse proxy, балансировка, SSL-терминация (в продакшене)
+
+---
+
+## 🚀 Установка и запуск (локально)
+
+### Предварительные требования
+
+- Java 25+
+- PostgreSQL 18+
+- Redis
+- Docker
+- Git
+- Nginx (опционально)
+
+### Инструкция
+
+1) **Клонируйте репозиторий**
+````
+git clone https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git
+cd PsychologicalTestsApplication
+````
+
+2) **Настройте базу данных с помощью файла инициализации**
+````
+.\psql -U postgres -h localhost -p 5432
+\i {your_directory}/psychologicaltestsapplication/scripts/init-db.sql
+````
+3) **Настройте подключение к базе данных в файле конфигурации application-dev.yaml каждого микросервиса**
+````
+3) spring.datasource.url=jdbc:postgresql:{your_url}
+spring.datasource.username={your_username}
+spring.datasource.password={your_password}
+````
+
+4) **Сборка проекта**
+
+`./gradlew clean build`
+
+5) **Запуск Redis в Docker**
+
+````
+ docker run -d -p 6379:6379 --name redis-blacklist redis
+ ````
+
+6) **Запуск проекта**
+
+❗❗❗Запускать микросервисы следует в строго определённом порядке❗❗❗
+
+`eureka-server` → `users-service` → `methodologies-service` → `tests-service` → `attempts-service`
+
+Сделано это для успешного создания связей в реляционной БД и создания соответствующих предустановленных записей.
+
+`./gradlew :eureka-server:bootJar`
+
+`./gradlew :users-service:bootJar`
+
+`./gradlew :methodologies-service:bootJar`
+
+`./gradlew :tests-service:bootJar`
+
+`./gradlew :attempts-service:bootJar`
+
+Сервер будет запущен на портах:
+- http://localhost:8081 — users-service
+- http://localhost:8082 — methodologies-service
+- http://localhost:8083 — tests-service
+- http://localhost:8084 — attempts-service
+- http://localhost:8761 — eureka-server
+
+6) Включение прокси сервера (опционально)
+
+Для работы всех микросервисов (кроме eureka-server) на порту 8080 следует включить nginx с конфигурацией, указанной в файле `{your_directory}/psychologicaltestsapplication/nginx/nginx.conf`
+
+Сервер будет запущен на портах:
+- http://localhost:8080 — вся логика работы
+- http://localhost:8761 — eureka-server
+
+---
+
+## 🐳 Установка и запуск (Docker)
+
+### Предварительные требования
+
+- Java 25+
+- Docker
+- Git
+
+### Инструкция
+
+1) **Клонируйте репозиторий**
+````
+git clone https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git
+
+cd PsychologicalTestsApplication
+````
+
+2) **Сборка проекта**
+
+`./gradlew clean build`
 
 
+3) **Создание контейнеров Docker**
+````
+docker compose up --build  
+````
 
-## Getting started
+Сервер будет запущен на портах:
+- http://localhost:8080 — вся логика работы
+- http://localhost:8761 — eureka-server
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+---
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+## 📄 API Документация
 
-## Add your files
+Вся документация по API содержится на соответствующей странице [Wiki](https://github.com/IvanTolkach/psychological-tests-application/wiki/API-Endpoints) проекта.
 
-* [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+---
 
-```
-cd existing_repo
-git remote add origin https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication.git
-git branch -M main
-git push -uf origin main
-```
+## 🧪 Тестирование
 
-## Integrate with your tools
+Тесты каждого микросервиса покрывают 100% методов и линий в классах **сервисов** (бизнес-логика), а также **входных и выходных адаптеров**. 
 
-* [Set up project integrations](https://gitlab-stud.epolsoft.com/kanbanboardgroup/psychologicaltestsapplication/-/settings/integrations)
+Для запуска тестов необходимо выполнить команду:
 
-## Collaborate with your team
+`./gradlew test `
 
-* [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+---
+## 📖 Будущие улучшения
 
-## Test and Deploy
+* Web UI
+* Kubernetes
+* Создание лучших условий для отказоустойчивости (Например, подключение 2‑го Redis)
+* Кеширование запросов
+* Модуль для работы с аналитикой на стороне сервера
+* Можно попробовать создать множество входных DTO на создание и изменение чтобы Validation для изменения не требовал поля, которые не изменяются.
+* Новые отчёты Apache POI (по требованию ЦИРиДМ БНТУ) 
+* Создание новых предустановленных тестов (по требованию ЦИРиДМ БНТУ) 
+* Продолжать вести документацию
 
-Use the built-in continuous integration in GitLab.
+---
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+## 🐵 Автор
 
-***
+Разработчиком серверной части является **Толкач Иван**.
 
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Контактные данные: _ivantolkach2005@gmail.com_ ~~(по любым вопросам отвечать не буду)~~
