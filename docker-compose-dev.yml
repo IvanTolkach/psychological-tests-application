@@ -49,7 +49,9 @@ services:
       - "${REDIS_EXTERNAL_PORT}:6379"
 
   eureka-server:
-    build: ./eureka-server
+    build:
+      context: .
+      dockerfile: eureka-server/Dockerfile
     container_name: eureka-server
     ports:
       - "${EUREKA_EXTERNAL_PORT}:8761"
@@ -57,7 +59,9 @@ services:
       SPRING_PROFILES_ACTIVE: ${EUREKA_SERVER_PROFILE}
 
   users-service:
-    build: ./users-service
+    build:
+      context: .
+      dockerfile: users-service/Dockerfile
     container_name: users-service
     ports:
       - "${USERS_SERVICE_EXTERNAL_PORT}:8081"
@@ -85,7 +89,9 @@ services:
       - eureka-server
 
   methodologies-service:
-    build: ./methodologies-service
+    build:
+      context: .
+      dockerfile: methodologies-service/Dockerfile
     container_name: methodologies-service
     ports:
       - "${METHODOLOGIES_SERVICE_EXTERNAL_PORT}:8082"
@@ -110,7 +116,9 @@ services:
       - users-service
 
   tests-service:
-    build: ./tests-service
+    build:
+      context: .
+      dockerfile: tests-service/Dockerfile
     container_name: tests-service
     ports:
       - "${TESTS_SERVICE_EXTERNAL_PORT}:8083"
@@ -138,7 +146,9 @@ services:
       - methodologies-service
 
   attempts-service:
-    build: ./attempts-service
+    build:
+      context: .
+      dockerfile: attempts-service/Dockerfile
     container_name: attempts-service
     ports:
       - "${ATTEMPTS_SERVICE_EXTERNAL_PORT}:8084"
