@@ -20,12 +20,11 @@ jobs:
 
       - name: Build deployment-package.zip
         run: |
-          mkdir -p Deploy/nginx Deploy/scripts Deploy/docs
+          mkdir -p Deploy/nginx Deploy/scripts
           cp nginx/nginx.conf             Deploy/nginx/nginx.conf
           cp scripts/init-db-prod.sql     Deploy/scripts/init-db-prod.sql
           cp scripts/preflight-prod.ps1   Deploy/scripts/preflight-prod.ps1
           cp scripts/smoke-prod.ps1       Deploy/scripts/smoke-prod.ps1
-          cp docs/PRODUCTION-GO-LIVE-CHECKLIST.md Deploy/docs/PRODUCTION-GO-LIVE-CHECKLIST.md
           cp .env.example                 Deploy/.env.example
           cp docker-compose.yml           Deploy/docker-compose.yml
           zip -r deployment-package.zip Deploy/
@@ -51,8 +50,6 @@ jobs:
           |   |-- init-db-prod.sql
           |   |-- preflight-prod.ps1
           |   `-- smoke-prod.ps1
-          |-- docs/
-          |   `-- PRODUCTION-GO-LIVE-CHECKLIST.md
           |-- .env.example
           `-- docker-compose.yml
           ```
