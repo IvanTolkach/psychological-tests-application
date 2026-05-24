@@ -1,0 +1,66 @@
+name: Quality Gate
+
+on:
+  pull_request:
+    branches: [ "main", "development" ]
+  push:
+    branches: [ "main", "development" ]
+
+jobs:
+  gradle-tests:
+    name: Gradle tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+          cache: gradle
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Run unit/integration tests
+        run: ./gradlew --no-daemon clean test
+
+  compose-validate:
+    name: Docker Compose validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Prepare .env for validation
+        run: cp .env.example .env
+
+      - name: Validate production compose
+        run: docker compose -f docker-compose.yml config > /dev/null
+
+      - name: Validate development compose
+        run: docker compose -f docker-compose-dev.yml config > /dev/null
+
+  docker-build-smoke:
+    name: Docker build smoke
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        service:
+          - eureka-server
+          - users-service
+          - methodologies-service
+          - tests-service
+          - attempts-service
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -f ${{ matrix.service }}/Dockerfile -t local/${{ matrix.service }}:${{ github.sha }} .

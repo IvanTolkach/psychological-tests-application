@@ -20,9 +20,12 @@ jobs:
 
       - name: Build deployment-package.zip
         run: |
-          mkdir -p Deploy/nginx Deploy/scripts
+          mkdir -p Deploy/nginx Deploy/scripts Deploy/docs
           cp nginx/nginx.conf             Deploy/nginx/nginx.conf
           cp scripts/init-db-prod.sql     Deploy/scripts/init-db-prod.sql
+          cp scripts/preflight-prod.ps1   Deploy/scripts/preflight-prod.ps1
+          cp scripts/smoke-prod.ps1       Deploy/scripts/smoke-prod.ps1
+          cp docs/PRODUCTION-GO-LIVE-CHECKLIST.md Deploy/docs/PRODUCTION-GO-LIVE-CHECKLIST.md
           cp .env.example                 Deploy/.env.example
           cp docker-compose.yml           Deploy/docker-compose.yml
           zip -r deployment-package.zip Deploy/
@@ -37,7 +40,7 @@ jobs:
       - name: Create release with package
         run: |
           cat > RELEASE_NOTES.md << 'EOF'
-          Actual deployment package with nginx config, SQL scripts, `.env.example`, and `docker-compose.yml`.
+          Actual deployment package with nginx config, SQL scripts, production checks, `.env.example`, and `docker-compose.yml`.
 
           Archive contents (`deployment-package.zip`):
           ```
@@ -45,7 +48,11 @@ jobs:
           |-- nginx/
           |   `-- nginx.conf
           |-- scripts/
-          |   `-- init-db-prod.sql
+          |   |-- init-db-prod.sql
+          |   |-- preflight-prod.ps1
+          |   `-- smoke-prod.ps1
+          |-- docs/
+          |   `-- PRODUCTION-GO-LIVE-CHECKLIST.md
           |-- .env.example
           `-- docker-compose.yml
           ```
@@ -57,7 +64,9 @@ jobs:
              - `TOKEN_SIGNING_KEY` - JWT signing secret key (base64 string).
              - `CORS_ALLOWED_ORIGINS` - allowed frontend origins.
           3. Adjust ports and service profiles in `.env` if needed.
-          4. Run: `docker compose up -d`.
+          4. Run preflight: `powershell -ExecutionPolicy Bypass -File scripts/preflight-prod.ps1 -EnvFile .env -ComposeFile docker-compose.yml`.
+          5. Run: `docker compose up -d`.
+          6. Run smoke: `powershell -ExecutionPolicy Bypass -File scripts/smoke-prod.ps1 -EnvFile .env`.
 
           Updated automatically on each push to `main` and `development`.
           EOF
