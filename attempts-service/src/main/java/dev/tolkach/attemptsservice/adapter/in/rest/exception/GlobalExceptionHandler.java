@@ -2,6 +2,7 @@ package dev.tolkach.attemptsservice.adapter.in.rest.exception;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import dev.tolkach.attemptsservice.application.exception.DuplicateTestAttemptException;
 import feign.FeignException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -83,6 +84,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> handleDataIntegrityViolation(DataIntegrityViolationException ex) {
         ErrorResponse response = new ErrorResponse(HttpStatus.CONFLICT, "Cannot delete: this record is referenced by existing test attempts, scores or answers.", getRequestPath());
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
+
+    @ExceptionHandler(DuplicateTestAttemptException.class)
+    public ResponseEntity<ErrorResponse> handleDuplicateTestAttempt(DuplicateTestAttemptException ex) {
+        ErrorResponse response = new ErrorResponse(HttpStatus.CONFLICT, ex.getMessage(), getRequestPath());
         return new ResponseEntity<>(response, HttpStatus.CONFLICT);
     }
 

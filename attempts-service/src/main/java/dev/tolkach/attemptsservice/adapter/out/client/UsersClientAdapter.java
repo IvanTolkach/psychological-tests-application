@@ -21,8 +21,13 @@ public class UsersClientAdapter implements UsersPort {
 
     @Override
     public void validateStudentExists(UUID studentId) {
+        getStudentById(studentId);
+    }
+
+    @Override
+    public StudentDto getStudentById(UUID studentId) {
         try {
-            usersClient.getStudent(studentId);
+            return usersClient.getStudent(studentId);
         } catch (FeignException.NotFound e) {
             throw new NoSuchElementException("Student not found with id: " + studentId);
         } catch (Exception e) {

@@ -16,7 +16,7 @@ import java.util.UUID;
 public interface UsersClient {
 
     @GetMapping("/api/students/{id}")
-    Object getStudent(@PathVariable UUID id);
+    StudentDto getStudent(@PathVariable UUID id);
 
     @PostMapping("/api/students/search")
     List<StudentDto> searchStudents(@RequestBody StudentDto filter);
