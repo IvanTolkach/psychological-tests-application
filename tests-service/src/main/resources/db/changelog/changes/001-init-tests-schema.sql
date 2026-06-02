@@ -5,6 +5,7 @@
 CREATE TABLE tests.Test (
                             id UUID PRIMARY KEY,
                             name VARCHAR(100) NOT NULL,
+                            introduction TEXT,
                             methodology_id UUID NOT NULL,
                             is_active BOOLEAN DEFAULT FALSE,
                             created_by UUID,
@@ -19,6 +20,7 @@ CREATE TABLE tests.Test (
 COMMENT ON TABLE tests.Test IS 'Конкретные тесты / анкеты, доступные для прохождения студентами. Связаны с методикой и автором-создателем';
 COMMENT ON COLUMN tests.Test.id IS 'Уникальный идентификатор теста';
 COMMENT ON COLUMN tests.Test.name IS 'Название теста (например: "Шкала безнадёжности Бека", "ТСП 1-2 курс", "Анкета до 18 лет")';
+COMMENT ON COLUMN tests.Test.introduction IS 'Вводный текст теста, отображаемый студенту перед началом прохождения';
 COMMENT ON COLUMN tests.Test.methodology_id IS 'Ссылка на методику, к которой относится тест';
 COMMENT ON COLUMN tests.Test.is_active IS 'Тест доступен студентам для прохождения';
 COMMENT ON COLUMN tests.Test.created_by IS 'Администратор, создавший тест';

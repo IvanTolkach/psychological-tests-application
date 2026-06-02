@@ -22,6 +22,9 @@ public class TestSpecification {
             if (filter.getName() != null && !filter.getName().isBlank()) {
                 predicates.add(cb.like(cb.lower(root.get("name")), "%" + filter.getName().toLowerCase() + "%"));
             }
+            if (filter.getIntroduction() != null && !filter.getIntroduction().isBlank()) {
+                predicates.add(cb.like(cb.lower(root.get("introduction")), "%" + filter.getIntroduction().toLowerCase() + "%"));
+            }
             if (filter.getMethodologyId() != null) {
                 predicates.add(cb.equal(root.get("methodologyId"), filter.getMethodologyId()));
             }

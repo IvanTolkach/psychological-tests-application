@@ -19,6 +19,8 @@ public class TestDto {
     @Size(max = 100, message = "Name must be at most 100 characters")
     private String name;
 
+    private String introduction;
+
     @NotNull(message = "Methodology ID is required")
     private UUID methodologyId;
 
