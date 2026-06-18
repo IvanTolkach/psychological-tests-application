@@ -1,5 +1,7 @@
 package dev.tolkach.attemptsservice.service;
 
+import common.dto.StudentDto;
+import dev.tolkach.attemptsservice.application.exception.DuplicateTestAttemptException;
 import dev.tolkach.attemptsservice.application.model.TestAttempt;
 import dev.tolkach.attemptsservice.application.model.TestAttemptFilter;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptRepository;
@@ -23,6 +25,8 @@ import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -46,6 +50,7 @@ class TestAttemptServiceTest {
     UUID testId;
 
     TestAttempt attempt;
+    StudentDto student;
 
     @BeforeEach
     void setup() {
@@ -58,6 +63,15 @@ class TestAttemptServiceTest {
         attempt.setId(id);
         attempt.setStudentId(studentId);
         attempt.setTestId(testId);
+
+        student = new StudentDto();
+        student.setId(studentId);
+        student.setGroupNumber(10701122);
+
+        lenient().when(usersPort.getStudentById(studentId))
+                .thenReturn(student);
+        lenient().when(repository.existsByStudentAndTestInPeriod(any(), any(), any(), any(), any()))
+                .thenReturn(false);
     }
 
     @Test
@@ -95,6 +109,53 @@ class TestAttemptServiceTest {
     }
 
     @Test
+    void create_firstCourseAttempt_checksAcademicYearPeriod() {
+
+        attempt.setId(null);
+        attempt.setAttemptDate(LocalDateTime.of(2023, 8, 31, 23, 59));
+
+        when(repository.save(any()))
+                .thenAnswer(i -> i.getArgument(0));
+
+        service.createUpdateTestAttempt(attempt);
+
+        verify(repository).existsByStudentAndTestInPeriod(
+                eq(studentId),
+                eq(testId),
+                eq(LocalDateTime.of(2022, 9, 1, 0, 0)),
+                eq(LocalDateTime.of(2023, 9, 1, 0, 0)),
+                eq(null)
+        );
+    }
+
+    @Test
+    void create_duplicateAttemptInSameCourse_throws() {
+
+        attempt.setId(null);
+        attempt.setAttemptDate(LocalDateTime.of(2022, 9, 1, 0, 0));
+
+        when(repository.existsByStudentAndTestInPeriod(any(), any(), any(), any(), any()))
+                .thenReturn(true);
+
+        assertThrows(
+                DuplicateTestAttemptException.class,
+                () -> service.createUpdateTestAttempt(attempt)
+        );
+    }
+
+    @Test
+    void create_attemptBeforeAdmission_throws() {
+
+        attempt.setId(null);
+        attempt.setAttemptDate(LocalDateTime.of(2022, 8, 31, 23, 59));
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> service.createUpdateTestAttempt(attempt)
+        );
+    }
+
+    @Test
     void create_futureDate_throws() {
 
         attempt.setId(null);
@@ -125,6 +186,7 @@ class TestAttemptServiceTest {
                 service.createUpdateTestAttempt(attempt);
 
         assertEquals(date, result.getAttemptDate());
+        verify(repository).existsByStudentAndTestInPeriod(any(), any(), any(), any(), eq(id));
     }
 
     @Test

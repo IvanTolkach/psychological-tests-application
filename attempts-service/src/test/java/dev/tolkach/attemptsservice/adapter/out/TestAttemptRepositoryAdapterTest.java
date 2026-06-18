@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.jpa.domain.Specification;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -78,6 +79,33 @@ class TestAttemptRepositoryAdapterTest {
         List<TestAttempt> result = adapter.findByFilter(new TestAttemptFilter());
 
         assertEquals(1, result.size());
+    }
+
+    @Test
+    void existsByStudentAndTestInPeriod_withoutExcludedId_shouldCallRepository() {
+        UUID studentId = UUID.randomUUID();
+        UUID testId = UUID.randomUUID();
+        LocalDateTime from = LocalDateTime.of(2022, 9, 1, 0, 0);
+        LocalDateTime to = LocalDateTime.of(2023, 9, 1, 0, 0);
+
+        when(repository.existsByStudentIdAndTestIdAndAttemptDateGreaterThanEqualAndAttemptDateLessThan(studentId, testId, from, to))
+                .thenReturn(true);
+
+        assertTrue(adapter.existsByStudentAndTestInPeriod(studentId, testId, from, to, null));
+    }
+
+    @Test
+    void existsByStudentAndTestInPeriod_withExcludedId_shouldCallRepository() {
+        UUID studentId = UUID.randomUUID();
+        UUID testId = UUID.randomUUID();
+        UUID excludedId = UUID.randomUUID();
+        LocalDateTime from = LocalDateTime.of(2022, 9, 1, 0, 0);
+        LocalDateTime to = LocalDateTime.of(2023, 9, 1, 0, 0);
+
+        when(repository.existsByStudentIdAndTestIdAndAttemptDateGreaterThanEqualAndAttemptDateLessThanAndIdNot(studentId, testId, from, to, excludedId))
+                .thenReturn(true);
+
+        assertTrue(adapter.existsByStudentAndTestInPeriod(studentId, testId, from, to, excludedId));
     }
 
     @Test

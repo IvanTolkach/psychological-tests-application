@@ -8,6 +8,7 @@ import dev.tolkach.attemptsservice.application.model.TestAttemptFilter;
 import dev.tolkach.attemptsservice.application.port.out.TestAttemptRepository;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -42,6 +43,25 @@ public class TestAttemptRepositoryAdapter implements TestAttemptRepository {
         return jpaTestAttemptRepository.findAll(TestAttemptSpecification.filterBy(filter)).stream()
                 .map(testAttemptMapper::toDomain)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public boolean existsByStudentAndTestInPeriod(UUID studentId, UUID testId, LocalDateTime fromInclusive, LocalDateTime toExclusive, UUID excludedId) {
+        if (excludedId == null) {
+            return jpaTestAttemptRepository.existsByStudentIdAndTestIdAndAttemptDateGreaterThanEqualAndAttemptDateLessThan(
+                    studentId,
+                    testId,
+                    fromInclusive,
+                    toExclusive
+            );
+        }
+        return jpaTestAttemptRepository.existsByStudentIdAndTestIdAndAttemptDateGreaterThanEqualAndAttemptDateLessThanAndIdNot(
+                studentId,
+                testId,
+                fromInclusive,
+                toExclusive,
+                excludedId
+        );
     }
 
     @Override

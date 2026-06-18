@@ -37,9 +37,30 @@ class UsersClientAdapterTest {
     void validateStudentExists_success() {
         UUID id = UUID.randomUUID();
 
-        when(client.getStudent(id)).thenReturn(new Object());
+        when(client.getStudent(id)).thenReturn(new StudentDto());
 
         assertDoesNotThrow(() -> adapter.validateStudentExists(id));
+    }
+
+    @Test
+    void getStudentById_success() {
+        UUID id = UUID.randomUUID();
+        StudentDto student = new StudentDto();
+        student.setId(id);
+
+        when(client.getStudent(id)).thenReturn(student);
+
+        assertEquals(student, adapter.getStudentById(id));
+    }
+
+    @Test
+    void getStudentById_fail() {
+        UUID id = UUID.randomUUID();
+
+        when(client.getStudent(id)).thenThrow(mock(FeignException.NotFound.class));
+
+        assertThrows(NoSuchElementException.class,
+                () -> adapter.getStudentById(id));
     }
 
     @Test

@@ -1,5 +1,5 @@
 --liquibase formatted sql
---changeset ivantolkach:003-creating-indexes
+--changeset ivantolkach:002-creating-indexes
 --comment Создание индексов для часто используемых условий фильтрации и соединений (ускорение аналитики и отчётов)
 
 CREATE INDEX idx_studentanswer_attempt

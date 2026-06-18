@@ -8,6 +8,7 @@ import java.util.UUID;
 
 public interface UsersPort {
     void validateStudentExists(UUID studentId);
+    StudentDto getStudentById(UUID studentId);
     List<StudentDto> searchStudents(StudentDto filter);
     List<FacultyDto> getAllFaculties();
 }

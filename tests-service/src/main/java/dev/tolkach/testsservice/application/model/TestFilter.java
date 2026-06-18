@@ -11,6 +11,7 @@ import java.util.UUID;
 public class TestFilter {
     private UUID id;
     private String name;
+    private String introduction;
     private UUID methodologyId;
     private Boolean isActive;
     private UUID createdBy;

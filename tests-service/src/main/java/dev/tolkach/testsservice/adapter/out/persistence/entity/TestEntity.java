@@ -19,6 +19,9 @@ public class TestEntity {
     @Column(nullable = false, length = 100)
     private String name;
 
+    @Column(columnDefinition = "TEXT")
+    private String introduction;
+
     @Column(name = "methodology_id", nullable = false)
     private UUID methodologyId;
 
