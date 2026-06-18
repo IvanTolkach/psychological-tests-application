@@ -16,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
@@ -50,7 +51,7 @@ class ReportControllerTest {
         assertArrayEquals(file, response.getBody());
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HHmmddMMyy");
-        String filename = "report_" + LocalDateTime.now().format(formatter) + ".xlsx";
+        String filename = "report_" + LocalDateTime.now(ZoneId.of("UTC+3")).format(formatter) + ".xlsx";
 
         assertEquals("attachment; filename=" + filename, response.getHeaders().getFirst(HttpHeaders.CONTENT_DISPOSITION));
 

@@ -36,6 +36,7 @@ spring:
   jackson:
     mapper:
       sort-properties-alphabetically: false
+    time-zone: Europe/Moscow
 
 management:
   endpoints:

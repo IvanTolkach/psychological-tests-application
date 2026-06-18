@@ -16,6 +16,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -159,7 +160,7 @@ class TestAttemptServiceTest {
     void create_futureDate_throws() {
 
         attempt.setId(null);
-        attempt.setAttemptDate(LocalDateTime.now().plusDays(1));
+        attempt.setAttemptDate(LocalDateTime.now(ZoneId.of("UTC+3")).plusDays(1));
 
         assertThrows(
                 IllegalArgumentException.class,
@@ -170,7 +171,7 @@ class TestAttemptServiceTest {
     @Test
     void update_existing() {
 
-        LocalDateTime date = LocalDateTime.now().minusDays(1);
+        LocalDateTime date = LocalDateTime.now(ZoneId.of("UTC+3")).minusDays(1);
         attempt.setAttemptDate(date);
 
         TestAttempt existing = new TestAttempt();

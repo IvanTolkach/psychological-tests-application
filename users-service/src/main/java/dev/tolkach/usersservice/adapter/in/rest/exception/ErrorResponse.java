@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @Data
 @AllArgsConstructor
@@ -24,7 +25,7 @@ public class ErrorResponse {
     private final String path;
 
     public ErrorResponse(HttpStatus httpStatus, String message, String path) {
-        this.timestamp = LocalDateTime.now();
+        this.timestamp = LocalDateTime.now(ZoneId.of("UTC+3"));
         this.status = httpStatus.value();
         this.error = httpStatus.getReasonPhrase();
         this.message = message;

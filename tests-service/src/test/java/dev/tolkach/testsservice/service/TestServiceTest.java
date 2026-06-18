@@ -18,6 +18,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -65,9 +66,9 @@ class TestServiceTest {
         existingTest.setName("Старое название");
         existingTest.setMethodologyId(methodologyId);
         existingTest.setCreatedBy(adminId);
-        existingTest.setCreatedAt(LocalDateTime.now().minusDays(5));
+        existingTest.setCreatedAt(LocalDateTime.now(ZoneId.of("UTC+3")).minusDays(5));
         existingTest.setUpdatedBy(adminId);
-        existingTest.setUpdatedAt(LocalDateTime.now().minusDays(3));
+        existingTest.setUpdatedAt(LocalDateTime.now(ZoneId.of("UTC+3")).minusDays(3));
         existingTest.setIsActive(true);
     }
 

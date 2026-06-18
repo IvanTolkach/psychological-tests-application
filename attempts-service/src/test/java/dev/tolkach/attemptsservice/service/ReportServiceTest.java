@@ -17,6 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.UUID;
 
@@ -94,7 +95,7 @@ class ReportServiceTest {
         s.setId(studentId);
         s.setFacultyId(facultyId);
 
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("UTC+3"));
 
         TestAttempt oldAttempt = new TestAttempt();
         oldAttempt.setId(UUID.randomUUID());
@@ -150,7 +151,7 @@ class ReportServiceTest {
         TestAttempt attempt = new TestAttempt();
         attempt.setId(attemptId);
         attempt.setStudentId(studentId);
-        attempt.setAttemptDate(LocalDateTime.now());
+        attempt.setAttemptDate(LocalDateTime.now(ZoneId.of("UTC+3")));
 
         QuestionDto q1 = new QuestionDto();
         q1.setId(questionId);
@@ -222,7 +223,7 @@ class ReportServiceTest {
         TestAttempt a = new TestAttempt();
         a.setId(attemptId);
         a.setStudentId(studentId);
-        a.setAttemptDate(LocalDateTime.now());
+        a.setAttemptDate(LocalDateTime.now(ZoneId.of("UTC+3")));
 
         QuestionDto q = new QuestionDto();
         q.setId(questionId);

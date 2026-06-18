@@ -22,6 +22,7 @@ import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -107,7 +108,7 @@ public class SecurityConfig {
         Map<String, Object> errorBody = new HashMap<>();
         errorBody.put("message", message);
         errorBody.put("path", request.getRequestURI());
-        errorBody.put("timestamp", LocalDateTime.now().toString());
+        errorBody.put("timestamp", LocalDateTime.now(ZoneId.of("UTC+3")).toString());
         errorBody.put("status", status.value());
         errorBody.put("error", status.getReasonPhrase());
 

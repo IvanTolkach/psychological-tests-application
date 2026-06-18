@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.UUID;
@@ -47,7 +48,7 @@ public class TestAttemptService implements TestAttemptUseCase {
 
         testsPort.validateTestExists(testAttempt.getTestId());
 
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("UTC+3"));
 
         if (testAttempt.getAttemptDate() == null) {
             testAttempt.setAttemptDate(now);
